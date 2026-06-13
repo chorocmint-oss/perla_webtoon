@@ -474,137 +474,6 @@ body.export-mode .preview-panel {
   color: #8f7750;
 }
 
-/* 1-2컷 상단 연결 */
-.opening-lake-panel {
-  position: relative;
-}
-
-.opening-lake-panel::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 300px;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(243,239,231,1) 0%,
-      rgba(243,239,231,0.82) 20%,
-      rgba(243,239,231,0.46) 48%,
-      rgba(243,239,231,0.18) 72%,
-      rgba(243,239,231,0) 100%
-    );
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* 2컷 상단만 1컷 배경색으로 덮어서 연결 */
-.opening-lake-panel {
-  position: relative;
-}
-
-.opening-lake-panel::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 300px;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(241,236,227,1) 0%,
-      rgba(241,236,227,0.82) 20%,
-      rgba(241,236,227,0.46) 48%,
-      rgba(241,236,227,0.18) 72%,
-      rgba(241,236,227,0) 100%
-    );
-  pointer-events: none;
-  z-index: 2;
-}
-
-.opening-lake-panel .caption {
-  z-index: 3;
-  bottom: 8%;
-  font-size: 74px;
-  line-height: 1.55;
-}
-
-/* 1-2컷: 1컷 크림 종이 배경이 이미지 위로 녹아드는 전환 */
-.soft-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      to bottom,
-      #eee8dc 0%,
-      rgba(238, 232, 220, 0.98) 8%,
-      rgba(238, 232, 220, 0.86) 18%,
-      rgba(238, 232, 220, 0.56) 31%,
-      rgba(238, 232, 220, 0.24) 44%,
-      transparent 58%
-    ),
-    radial-gradient(
-      ellipse at 50% 43%,
-      rgba(246, 240, 228, 0.76) 0%,
-      rgba(246, 240, 228, 0.48) 26%,
-      rgba(246, 240, 228, 0.16) 46%,
-      transparent 68%
-    );
-}
-
-/* 1-2컷: 전체 이미지는 아직 평화롭게, 아래만 살짝 눌러서 다음 컷으로 연결 */
-.overlay-soft {
-  z-index: 2;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(238, 232, 220, 0.18) 0%,
-      rgba(255, 255, 255, 0.04) 38%,
-      rgba(0, 0, 0, 0.10) 68%,
-      rgba(0, 0, 0, 0.36) 100%
-    ),
-    radial-gradient(
-      circle at center,
-      transparent 46%,
-      rgba(0, 0, 0, 0.20) 92%
-    );
-}
-
-/* 1-2컷: 박스 없는 중앙권 내레이션 */
-.caption-soft {
-  top: 40.5%;
-  bottom: auto;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-
-  width: 72%;
-  padding: 70px 90px 82px;
-
-  color: #3f3a33;
-  font-size: 82px;
-  line-height: 1.64;
-  letter-spacing: -0.045em;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(246, 240, 228, 0.84) 0%,
-      rgba(246, 240, 228, 0.58) 42%,
-      rgba(246, 240, 228, 0.18) 66%,
-      transparent 82%
-    );
-
-  text-shadow:
-    0 2px 10px rgba(255, 255, 255, 0.92),
-    0 1px 2px rgba(0, 0, 0, 0.16);
-}
-
 /* 1컷 기록문 느낌이 이어지게 짧은 금빛 선만 남김 */
 .caption-soft::before {
   width: 132px;
@@ -625,55 +494,6 @@ body.export-mode .preview-panel {
     0 2px 8px rgba(255, 255, 255, 0.8),
     0 0 16px rgba(215, 191, 134, 0.22);
 }
-/* 하단 가독성용 어둠 */
-.opening-lake-panel::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 42%;
-  background:
-    linear-gradient(
-      to top,
-      rgba(3, 8, 15, 0.58) 0%,
-      rgba(3, 8, 15, 0.32) 38%,
-      rgba(3, 8, 15, 0.08) 76%,
-      rgba(3, 8, 15, 0) 100%
-    );
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* 서정 내레이션 박스 */
-.lyrical-panel .narration-box {
-  position: absolute;
-  left: 50%;
-  bottom: 6.8%;
-  transform: translateX(-50%);
-  width: 62%;
-  padding: 34px 44px;
-  border-radius: 20px;
-  background: rgba(8, 12, 18, 0.44);
-  border: 1px solid rgba(222, 199, 153, 0.20);
-  box-shadow:
-    0 14px 38px rgba(0,0,0,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-  z-index: 4;
-}
-
-.lyrical-panel .narration-text {
-  text-align: center;
-  color: #f4ede1;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1.62;
-  letter-spacing: -0.03em;
-  text-shadow:
-    0 2px 10px rgba(0,0,0,0.72),
-    0 0 16px rgba(0,0,0,0.28);
-  word-break: keep-all;
-}
 
 /* 내레이션 글씨 */
 .lyrical-panel .narration-text {
@@ -689,7 +509,116 @@ body.export-mode .preview-panel {
   word-break: keep-all;
 }
 
-/* 혹시 기존 caption이 남아 있으면 안 보이게 */
-.lyrical-panel .caption {
-  display: none;
+/* 1-2컷: 백수련 호수 / 크림 안개 내레이션 */
+.opening-lake-panel {
+  position: relative;
+  background: #f1ece3;
+}
+
+/* 이미지 톤: 아직 평화롭지만 다음 어둠으로 살짝 눌림 */
+.opening-lake-panel img {
+  filter:
+    saturate(0.96)
+    contrast(0.98)
+    brightness(0.98);
+}
+
+/* 1컷 크림 종이 배경이 1-2컷 위로 흘러내리는 전환 */
+.opening-lake-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      #f1ece3 0%,
+      rgba(241, 236, 227, 0.98) 7%,
+      rgba(241, 236, 227, 0.88) 16%,
+      rgba(241, 236, 227, 0.62) 29%,
+      rgba(241, 236, 227, 0.30) 43%,
+      rgba(241, 236, 227, 0.08) 56%,
+      transparent 68%
+    );
+}
+
+/* 하단은 다음 검은 마차 컷으로 넘어가도록 살짝 어둡게 */
+.opening-lake-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 48%,
+      rgba(4, 10, 16, 0.10) 68%,
+      rgba(4, 10, 16, 0.42) 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 42%,
+      rgba(0, 0, 0, 0.20) 92%
+    );
+}
+
+/* 박스 없는 중앙권 내레이션 */
+.lake-narration {
+  position: absolute;
+  left: 50%;
+  top: 41%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  width: 76%;
+  padding: 86px 120px 96px;
+
+  text-align: center;
+  color: #403a32;
+  font-size: 82px;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: -0.045em;
+  word-break: keep-all;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(248, 242, 231, 0.88) 0%,
+      rgba(248, 242, 231, 0.62) 38%,
+      rgba(248, 242, 231, 0.24) 62%,
+      transparent 82%
+    );
+
+  text-shadow:
+    0 2px 10px rgba(255, 255, 255, 0.96),
+    0 1px 2px rgba(0, 0, 0, 0.14);
+}
+
+/* 기록문 패널에서 이어지는 얇은 금빛 선 */
+.lake-narration::before {
+  content: "";
+  display: block;
+  width: 132px;
+  height: 1px;
+  margin: 0 auto 30px;
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(184, 155, 97, 0.58),
+      transparent
+    );
+  opacity: 0.72;
+}
+
+.gold-word {
+  color: #a88954;
+  font-weight: 600;
+  text-shadow:
+    0 2px 8px rgba(255, 255, 255, 0.86),
+    0 0 18px rgba(215, 191, 134, 0.22);
 }
