@@ -1,11 +1,3 @@
-/* =========================================================
-   1컷 하단 경계 전용 보정
-   - 목표: 1컷 마지막 줄과 intro-to-lake-transition 상단을 같은 크림색으로 맞춤.
-   - 그 색을 1컷 안쪽으로만 위로 번지게 해서 컷/패널 경계선을 지움.
-   - 1-2컷 내부, lake-to-carriage, vertical-dots, carriage-panel::before는 건드리지 않음.
-========================================================= */
-
-/* 1컷 바로 아래 전환 패널의 시작색. 1컷 마지막 픽셀과 같은 색이어야 함. */
 .export-panel.transition-panel.intro-to-lake-transition {
   height: 600px !important;
   min-height: 600px !important;
@@ -16,43 +8,22 @@
   border-radius: 0 !important;
   box-shadow: none !important;
   isolation: isolate !important;
-
   --intro-edge: #f0ebe2;
   --lake-mist: #e9e5dc;
-
-  background:
-    linear-gradient(
-      to bottom,
-      var(--intro-edge) 0%,
-      var(--intro-edge) 18%,
-      #eee9df 42%,
-      #ebe7de 68%,
-      var(--lake-mist) 100%
-    ) !important;
+  background: linear-gradient(to bottom, var(--intro-edge) 0%, var(--intro-edge) 18%, #eee9df 42%, #ebe7de 68%, var(--lake-mist) 100%) !important;
 }
 
-/* 전환 패널 자체에 생기던 덧그라데이션은 끔. 경계는 1컷 안에서 처리함. */
 .export-panel.transition-panel.intro-to-lake-transition::before,
 .export-panel.transition-panel.intro-to-lake-transition::after {
   content: none !important;
   display: none !important;
 }
 
-/* 1컷 마지막부분이 전환 패널 첫 색과 완전히 같게 닿도록 함. */
 .intro-panel {
-  background:
-    linear-gradient(
-      to bottom,
-      #f3efe7 0%,
-      #f2eee6 42%,
-      #f1ede4 64%,
-      #f0ebe2 82%,
-      #f0ebe2 100%
-    ) !important;
+  background: linear-gradient(to bottom, #f3efe7 0%, #f2eee6 42%, #f1ede4 64%, #f0ebe2 82%, #f0ebe2 100%) !important;
   overflow: hidden !important;
 }
 
-/* 1컷 안쪽에서만 아래 색을 위로 끌어올리는 페이드. */
 .intro-panel::before {
   content: "" !important;
   position: absolute !important;
@@ -61,23 +32,13 @@
   pointer-events: none !important;
   mix-blend-mode: normal !important;
   opacity: 1 !important;
-
   background:
     radial-gradient(circle at 50% 38%, rgba(255,255,255,0.30), transparent 42%),
-    radial-gradient(circle at 20% 20%, rgba(189, 164, 118, 0.08), transparent 28%),
-    radial-gradient(circle at 82% 80%, rgba(120, 102, 74, 0.055), transparent 34%),
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08) 0%,
-      rgba(255,255,255,0.03) 48%,
-      rgba(240,235,226,0.00) 62%,
-      rgba(240,235,226,0.34) 78%,
-      rgba(240,235,226,0.76) 91%,
-      rgba(240,235,226,1.00) 100%
-    ) !important;
+    radial-gradient(circle at 20% 20%, rgba(189,164,118,0.08), transparent 28%),
+    radial-gradient(circle at 82% 80%, rgba(120,102,74,0.055), transparent 34%),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 48%, rgba(240,235,226,0.00) 62%, rgba(240,235,226,0.34) 78%, rgba(240,235,226,0.76) 91%, rgba(240,235,226,1.00) 100%) !important;
 }
 
-/* 기존 종이결은 유지하되, 아래쪽만 같은 크림색으로 한 번 더 덮음. */
 .intro-panel::after {
   content: "" !important;
   position: absolute !important;
@@ -87,24 +48,10 @@
   opacity: 0.42 !important;
   mix-blend-mode: normal !important;
   background:
-    linear-gradient(
-      to bottom,
-      rgba(240,235,226,0.00) 0%,
-      rgba(240,235,226,0.00) 62%,
-      rgba(240,235,226,0.20) 78%,
-      rgba(240,235,226,0.58) 91%,
-      rgba(240,235,226,0.92) 100%
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(90,70,45,0.018) 0px,
-      rgba(90,70,45,0.018) 1px,
-      transparent 1px,
-      transparent 8px
-    ) !important;
+    linear-gradient(to bottom, rgba(240,235,226,0.00) 0%, rgba(240,235,226,0.00) 62%, rgba(240,235,226,0.20) 78%, rgba(240,235,226,0.58) 91%, rgba(240,235,226,0.92) 100%),
+    repeating-linear-gradient(0deg, rgba(90,70,45,0.018) 0px, rgba(90,70,45,0.018) 1px, transparent 1px, transparent 8px) !important;
 }
 
-/* 프레임 안쪽 아래도 같은 색으로 살짝만 받아서 프레임 아래가 따로 끊겨 보이지 않게 함. */
 .record-frame::after {
   content: "";
   position: absolute;
@@ -114,35 +61,18 @@
   height: 300px;
   z-index: 1;
   pointer-events: none;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(240,235,226,0.00) 0%,
-      rgba(240,235,226,0.16) 48%,
-      rgba(240,235,226,0.46) 100%
-    );
+  background: linear-gradient(to bottom, rgba(240,235,226,0.00) 0%, rgba(240,235,226,0.16) 48%, rgba(240,235,226,0.46) 100%);
 }
 
-.intro-text {
-  z-index: 3 !important;
-}
+.intro-text { z-index: 3 !important; }
 
-/* =========================================================
-   2컷: 검은 마차 패널 디자인 패스
-   - 1-2의 서정 뒤에 바로 식는 충격감.
-   - 장식은 줄이고, 위 암막 / 바닥 냉기 / 마차 그림자 / 식은 눈입자 중심.
-========================================================= */
-
-.carriage-panel {
-  background: #03060a !important;
-}
+.carriage-panel { background: #03060a !important; }
 
 .carriage-panel img {
   object-position: center center !important;
   filter: saturate(0.72) contrast(1.12) brightness(0.88) !important;
 }
 
-/* 1-2 → 2 긴 전환 끝색을 2컷 상단으로 받아주는 암막. 절대 제거 금지. */
 .carriage-panel::before {
   content: "" !important;
   position: absolute !important;
@@ -152,19 +82,9 @@
   height: 560px !important;
   z-index: 4 !important;
   pointer-events: none !important;
-  background:
-    linear-gradient(
-      to bottom,
-      #03060a 0%,
-      rgba(3, 6, 10, 1.00) 12%,
-      rgba(3, 6, 10, 0.88) 34%,
-      rgba(3, 6, 10, 0.58) 58%,
-      rgba(3, 6, 10, 0.24) 82%,
-      transparent 100%
-    ) !important;
+  background: linear-gradient(to bottom, #03060a 0%, rgba(3,6,10,1.00) 12%, rgba(3,6,10,0.88) 34%, rgba(3,6,10,0.58) 58%, rgba(3,6,10,0.24) 82%, transparent 100%) !important;
 }
 
-/* 패널 전체 질감: 차가운 눈입자 + 하단 압박 그림자. */
 .carriage-panel::after {
   content: "" !important;
   position: absolute !important;
@@ -184,26 +104,17 @@
 .carriage-panel .cold-wash {
   opacity: 1 !important;
   mix-blend-mode: normal !important;
-  background:
-    linear-gradient(135deg, rgba(125,154,178,0.13), transparent 36%, rgba(0,0,0,0.28)) !important;
+  background: linear-gradient(135deg, rgba(125,154,178,0.13), transparent 36%, rgba(0,0,0,0.28)) !important;
 }
 
 .carriage-panel .overlay {
   z-index: 2 !important;
   background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,0.88) 0%,
-      rgba(0,0,0,0.62) 18%,
-      rgba(0,0,0,0.24) 43%,
-      rgba(0,0,0,0.18) 68%,
-      rgba(0,0,0,0.46) 100%
-    ),
+    linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.62) 18%, rgba(0,0,0,0.24) 43%, rgba(0,0,0,0.18) 68%, rgba(0,0,0,0.46) 100%),
     linear-gradient(to right, rgba(0,0,0,0.54) 0%, transparent 38%, rgba(0,0,0,0.34) 100%),
     radial-gradient(ellipse at 50% 80%, transparent 0%, transparent 34%, rgba(0,0,0,0.42) 86%) !important;
 }
 
-/* 바닥에 찬 안개가 얇게 깔리는 효과. */
 .carriage-panel .overlay::before {
   content: "";
   position: absolute;
@@ -220,7 +131,6 @@
   filter: blur(2px);
 }
 
-/* 마차와 군화가 화면을 누르는 듯한 하단 암부. */
 .carriage-panel .overlay::after {
   content: "";
   position: absolute;
@@ -230,8 +140,7 @@
   height: 42%;
   pointer-events: none;
   opacity: 0.72;
-  background:
-    radial-gradient(ellipse at 50% 88%, rgba(0,0,0,0.76) 0%, rgba(0,0,0,0.34) 42%, transparent 72%);
+  background: radial-gradient(ellipse at 50% 88%, rgba(0,0,0,0.76) 0%, rgba(0,0,0,0.34) 42%, transparent 72%);
 }
 
 .carriage-panel .caption {
@@ -250,10 +159,7 @@
     linear-gradient(to right, rgba(3,6,10,0.00) 0%, rgba(3,6,10,0.30) 24%, rgba(3,6,10,0.42) 50%, rgba(3,6,10,0.30) 76%, rgba(3,6,10,0.00) 100%) !important;
   border-top: 1px solid rgba(235,226,210,0.055) !important;
   border-bottom: 1px solid rgba(215,191,134,0.08) !important;
-  text-shadow:
-    0 6px 24px rgba(0,0,0,0.98),
-    0 0 40px rgba(0,0,0,0.84),
-    0 0 2px rgba(255,255,255,0.18) !important;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.98), 0 0 40px rgba(0,0,0,0.84), 0 0 2px rgba(255,255,255,0.18) !important;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
@@ -279,28 +185,10 @@
   color: #f2eadf;
 }
 
-/* =========================================================
-   2 → 2-2 전환: 군화 아래 검은 바닥에서 닫힌 문으로 열림
-========================================================= */
-
 .export-panel.transition-panel.carriage-to-door-transition {
-  height: 560px !important;
-  min-height: 560px !important;
-  --rp-from: #03060a;
-  --rp-mid: #04080d;
-  --rp-to: #0b1012;
-  --rp-glow: rgba(120, 145, 155, 0.06);
-  --rp-top-opacity: 0.92;
-  --rp-bottom-opacity: 0.86;
-  background:
-    linear-gradient(
-      to bottom,
-      #03060a 0%,
-      #03060a 20%,
-      #04070c 52%,
-      #080d10 78%,
-      #0b1012 100%
-    ) !important;
+  height: 500px !important;
+  min-height: 500px !important;
+  background: linear-gradient(to bottom, #03060a 0%, #03060a 18%, #04070c 46%, #070c0f 72%, #0b1012 100%) !important;
 }
 
 .carriage-to-door-transition::before {
@@ -309,11 +197,12 @@
   inset: 0 !important;
   z-index: 1 !important;
   pointer-events: none !important;
-  opacity: 0.62 !important;
+  opacity: 0.86 !important;
   mix-blend-mode: normal !important;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.54) 0%, rgba(0,0,0,0.22) 46%, transparent 72%),
-    radial-gradient(ellipse at 50% 100%, rgba(145,160,164,0.075) 0%, rgba(145,160,164,0.025) 34%, transparent 68%) !important;
+    radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.28) 44%, transparent 70%),
+    radial-gradient(ellipse at 50% 100%, rgba(165,176,176,0.12) 0%, rgba(165,176,176,0.045) 32%, transparent 68%),
+    linear-gradient(to bottom, transparent 0%, transparent 64%, rgba(180,190,188,0.035) 100%) !important;
 }
 
 .carriage-to-door-transition::after {
@@ -322,9 +211,43 @@
   inset: 0 !important;
   z-index: 2 !important;
   pointer-events: none !important;
-  opacity: 0.82 !important;
+  opacity: 0.76 !important;
   mix-blend-mode: normal !important;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,0.30) 0%, transparent 38%, rgba(150,160,160,0.055) 100%),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 54px) !important;
+    linear-gradient(to bottom, rgba(0,0,0,0.24) 0%, transparent 32%, rgba(150,160,160,0.075) 100%),
+    radial-gradient(ellipse at 50% 86%, rgba(210,198,170,0.055) 0%, rgba(210,198,170,0.018) 28%, transparent 58%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0 1px, transparent 1px 58px) !important;
+}
+
+.export-bundle[data-export-name="part_01_before_goodbye"] > .dark-scene-panel:nth-of-type(7) {
+  background: #0b1012 !important;
+}
+
+.export-bundle[data-export-name="part_01_before_goodbye"] > .dark-scene-panel:nth-of-type(7) img {
+  filter: saturate(0.84) contrast(1.04) brightness(0.94) !important;
+}
+
+.export-bundle[data-export-name="part_01_before_goodbye"] > .dark-scene-panel:nth-of-type(7)::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 420px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  background: linear-gradient(to bottom, #0b1012 0%, rgba(11,16,18,0.96) 12%, rgba(11,16,18,0.70) 36%, rgba(11,16,18,0.36) 66%, rgba(11,16,18,0.10) 88%, transparent 100%) !important;
+}
+
+.export-bundle[data-export-name="part_01_before_goodbye"] > .dark-scene-panel:nth-of-type(7) .caption-slightly-small {
+  bottom: 9.2% !important;
+  width: 74% !important;
+  z-index: 6 !important;
+  font-size: 78px !important;
+  line-height: 1.66 !important;
+}
+
+.export-bundle[data-export-name="part_01_before_goodbye"] > .dark-scene-panel:nth-of-type(7) .caption-slightly-small::before {
+  opacity: 0.58 !important;
+  margin-bottom: 30px !important;
 }
