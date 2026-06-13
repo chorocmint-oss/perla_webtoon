@@ -656,3 +656,95 @@ body.export-mode .preview-panel {
     0 5px 22px rgba(0,0,0,0.98),
     0 0 24px rgba(215,191,134,0.30);
 }
+
+/* =========================
+   1-2 → 2컷 전환 패널 길이 확장
+   봄이 꺼지는 스크롤 호흡 강화
+========================= */
+
+.export-panel.transition-panel,
+.transition-panel,
+.lake-to-carriage-transition {
+  height: 520px !important;
+  min-height: 520px !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #04141b 0%,
+      #041219 18%,
+      #030d14 46%,
+      #03090f 74%,
+      #03060a 100%
+    ) !important;
+}
+
+/* 위쪽은 1-2컷 하단의 수면 잔광을 조금 더 오래 남김 */
+.lake-to-carriage-transition::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  opacity: 0.82 !important;
+  mix-blend-mode: normal !important;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(44, 107, 112, 0.13) 0%,
+      rgba(44, 107, 112, 0.07) 22%,
+      rgba(44, 107, 112, 0.025) 48%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(215, 191, 134, 0.05) 0%,
+      rgba(215, 191, 134, 0.02) 28%,
+      transparent 58%
+    ) !important;
+}
+
+/* 아래쪽은 2컷 직전에 더 깊게 잠김 */
+.lake-to-carriage-transition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 36%,
+      rgba(0, 0, 0, 0.22) 66%,
+      rgba(0, 0, 0, 0.48) 100%
+    ) !important;
+}
+
+/* 2컷 시작부 그라데이션 유지 + 전환 패널 길이에 맞춰 살짝 확장 */
+.carriage-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 360px !important;
+  z-index: 4;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      rgba(3, 6, 10, 0.96) 12%,
+      rgba(3, 6, 10, 0.72) 36%,
+      rgba(3, 6, 10, 0.38) 64%,
+      rgba(3, 6, 10, 0.10) 88%,
+      transparent 100%
+    ) !important;
+}
