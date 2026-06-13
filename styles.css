@@ -1819,3 +1819,116 @@ body.export-mode .preview-panel {
       transparent 100%
     ) !important;
 }
+
+/* =========================
+   FINAL FIX:
+   1-2컷 하단 자체에 전환 그라데이션 추가
+   + 전환 패널 시작색 맞춤
+========================= */
+
+/* 1-2컷 아래쪽: 바로 아래 전환 패널 색으로 스며들게 */
+.opening-lake-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 25, 31, 0.00) 0%,
+      rgba(5, 25, 31, 0.00) 62%,
+      rgba(5, 25, 31, 0.10) 72%,
+      rgba(5, 25, 31, 0.28) 82%,
+      rgba(5, 25, 31, 0.58) 92%,
+      rgba(5, 25, 31, 0.92) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 82%,
+      transparent 38%,
+      rgba(0, 0, 0, 0.14) 92%
+    ) !important;
+}
+
+/* 전환 패널은 겹치지 말고, 정상 배치 */
+.export-panel.transition-panel,
+.transition-panel,
+.lake-to-carriage-transition {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+
+  height: 320px !important;
+  min-height: 320px !important;
+
+  /* 1-2컷 하단 마지막 색과 정확히 이어지게 */
+  background:
+    linear-gradient(
+      to bottom,
+      #05191f 0%,
+      #04141b 16%,
+      #041019 42%,
+      #030b12 72%,
+      #03060a 100%
+    ) !important;
+}
+
+/* 전환 패널 위쪽 잔광은 아주 약하게만 */
+.lake-to-carriage-transition::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(44, 107, 112, 0.10) 0%,
+      rgba(44, 107, 112, 0.05) 28%,
+      transparent 64%
+    ),
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(215, 191, 134, 0.045) 0%,
+      rgba(215, 191, 134, 0.018) 22%,
+      transparent 52%
+    ) !important;
+  opacity: 0.9;
+}
+
+/* 전환 패널 아래쪽은 2컷으로 갈수록 더 잠김 */
+.lake-to-carriage-transition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.10) 40%,
+      rgba(0, 0, 0, 0.24) 68%,
+      rgba(0, 0, 0, 0.44) 100%
+    ) !important;
+}
+
+/* 2컷 상단은 그대로 부드럽게 열기 */
+.carriage-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 300px !important;
+  z-index: 4;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      rgba(3, 6, 10, 0.96) 12%,
+      rgba(3, 6, 10, 0.72) 36%,
+      rgba(3, 6, 10, 0.38) 64%,
+      rgba(3, 6, 10, 0.10) 88%,
+      transparent 100%
+    ) !important;
+}
