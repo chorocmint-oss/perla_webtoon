@@ -470,3 +470,40 @@ body.export-mode .preview-panel {
   font-size: 74px;
   line-height: 1.55;
 }
+
+/* 1-2컷: 라구나 호수 / 빌려온 봄 */
+.opening-lake-panel .caption {
+  bottom: 7.5%;
+  font-size: 66px;
+  font-weight: 400;
+  line-height: 1.62;
+  letter-spacing: -0.035em;
+  color: #f5eddf;
+  text-shadow:
+    0 3px 12px rgba(0,0,0,0.92),
+    0 0 20px rgba(0,0,0,0.62);
+}
+
+/* 1-2컷 하단을 조금 더 눌러서 다음 어두운 컷으로 연결 */
+.opening-lake-panel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.62) 0%,
+      rgba(0,0,0,0.34) 38%,
+      rgba(0,0,0,0.08) 78%,
+      rgba(0,0,0,0) 100%
+    );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.opening-lake-panel .caption {
+  z-index: 4;
+}
