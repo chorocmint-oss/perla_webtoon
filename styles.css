@@ -1390,3 +1390,200 @@ body.export-mode .preview-panel {
       rgba(0, 0, 0, 0.34) 100%
     );
 }
+
+/* =========================
+   1-2 → 전환 여백 → 2컷 연결 보강
+   호수 하단 / 침잠 여백 / 검은 마차 시작부를 자연스럽게 잇기
+========================= */
+
+/* 1-2컷 하단: 전환 패널 색으로 먼저 가라앉게 */
+.opening-lake-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 56%,
+      rgba(6, 31, 39, 0.10) 70%,
+      rgba(6, 24, 33, 0.36) 86%,
+      rgba(4, 13, 20, 0.72) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 70%,
+      transparent 36%,
+      rgba(0, 0, 0, 0.22) 92%
+    );
+}
+
+/* 전환 여백: 위는 호수색, 아래는 2컷의 흑청색 */
+.lake-to-carriage-transition {
+  height: 240px !important;
+  min-height: 240px !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(4, 13, 20, 0.98) 0%,
+      rgba(4, 15, 22, 1) 16%,
+      rgba(5, 12, 19, 1) 48%,
+      rgba(4, 8, 13, 1) 78%,
+      #03060a 100%
+    ) !important;
+}
+
+/* 전환 여백 위쪽: 호수 잔광을 아주 약하게 남김 */
+.lake-to-carriage-transition::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(215, 191, 134, 0.10) 0%,
+      rgba(215, 191, 134, 0.045) 26%,
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(17, 69, 78, 0.14) 0%,
+      transparent 42%
+    );
+
+  opacity: 0.72;
+}
+
+/* 전환 여백 아래쪽: 2컷으로 들어가기 전 완전히 잠김 */
+.lake-to-carriage-transition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.16) 56%,
+      rgba(0, 0, 0, 0.40) 100%
+    );
+}
+
+/* 2컷 시작부: 검은 여백에서 마차 이미지로 녹아들기 */
+.carriage-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 260px;
+  z-index: 4;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      rgba(3, 6, 10, 0.96) 12%,
+      rgba(3, 6, 10, 0.74) 34%,
+      rgba(3, 6, 10, 0.42) 58%,
+      rgba(3, 6, 10, 0.16) 82%,
+      transparent 100%
+    );
+}
+
+/* =========================
+   1-2 → 2컷 전환 여백 길이 조정
+   스크롤 호흡 확보용
+========================= */
+
+.export-panel.transition-panel,
+.transition-panel,
+.lake-to-carriage-transition {
+  height: 320px !important;
+  min-height: 320px !important;
+}
+
+/* 길어진 전환부에 맞춰 색이 더 천천히 가라앉게 */
+.lake-to-carriage-transition {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(4, 18, 24, 0.98) 0%,
+      rgba(4, 15, 22, 1) 18%,
+      rgba(5, 12, 19, 1) 45%,
+      rgba(4, 8, 13, 1) 76%,
+      #03060a 100%
+    ) !important;
+}
+
+/* 위쪽 호수 잔광도 조금 더 길게 남김 */
+.lake-to-carriage-transition::before {
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(215, 191, 134, 0.105) 0%,
+      rgba(215, 191, 134, 0.050) 24%,
+      transparent 64%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(18, 76, 84, 0.13) 0%,
+      rgba(18, 76, 84, 0.055) 32%,
+      transparent 62%
+    ) !important;
+
+  opacity: 0.76;
+}
+
+/* 아래쪽은 2컷 들어가기 직전에 더 단단히 잠기게 */
+.lake-to-carriage-transition::after {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.10) 42%,
+      rgba(0, 0, 0, 0.28) 72%,
+      rgba(0, 0, 0, 0.48) 100%
+    ) !important;
+}
+
+/* 1-2컷 하단도 길어진 전환부 색에 맞춰 더 부드럽게 침잠 */
+.opening-lake-panel::after {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 52%,
+      rgba(6, 31, 39, 0.08) 66%,
+      rgba(6, 24, 33, 0.30) 84%,
+      rgba(4, 13, 20, 0.68) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 72%,
+      transparent 36%,
+      rgba(0, 0, 0, 0.22) 92%
+    ) !important;
+}
+
+/* 2컷 상단 페이드도 전환부 끝색이랑 맞춤 */
+.carriage-panel::before {
+  height: 300px !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      rgba(3, 6, 10, 0.96) 13%,
+      rgba(3, 6, 10, 0.76) 36%,
+      rgba(3, 6, 10, 0.44) 62%,
+      rgba(3, 6, 10, 0.16) 84%,
+      transparent 100%
+    ) !important;
+}
