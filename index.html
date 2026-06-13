@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="transition-fix.css?v=20260614-door-panel-pass1" />
+  <link rel="stylesheet" href="transition-fix.css?v=20260614-door-panel-pass2" />
   <style>
     .export-panel.transition-panel.carriage-to-door-transition {
       height: 500px !important;
@@ -28,7 +28,11 @@
     }
 
     .door-panel img {
-      filter: saturate(0.56) contrast(1.13) brightness(0.72) !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      transform: translateY(160px) scale(1.065) !important;
+      transform-origin: center top !important;
+      filter: saturate(0.50) contrast(1.16) brightness(0.66) !important;
     }
 
     .door-panel::before {
@@ -37,16 +41,17 @@
       left: 0 !important;
       right: 0 !important;
       top: 0 !important;
-      height: 720px !important;
+      height: 940px !important;
       z-index: 4 !important;
       pointer-events: none !important;
       background: linear-gradient(
         to bottom,
         #03060a 0%,
-        rgba(3,6,10,1) 18%,
-        rgba(3,6,10,0.88) 36%,
-        rgba(3,6,10,0.60) 58%,
-        rgba(3,6,10,0.28) 82%,
+        #03060a 28%,
+        rgba(3,6,10,0.98) 40%,
+        rgba(3,6,10,0.82) 56%,
+        rgba(3,6,10,0.50) 74%,
+        rgba(3,6,10,0.16) 90%,
         rgba(3,6,10,0) 100%
       ) !important;
     }
@@ -58,16 +63,14 @@
       z-index: 5 !important;
       pointer-events: none !important;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.08) 38%, rgba(0,0,0,0.44) 100%),
-        linear-gradient(to right, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.16) 24%, transparent 50%, rgba(0,0,0,0.18) 76%, rgba(0,0,0,0.66) 100%),
-        radial-gradient(ellipse at 50% 62%, transparent 0%, rgba(0,0,0,0.12) 48%, rgba(0,0,0,0.52) 100%);
+        linear-gradient(to right, rgba(0,0,0,0.64) 0%, rgba(0,0,0,0.20) 24%, transparent 50%, rgba(0,0,0,0.22) 76%, rgba(0,0,0,0.66) 100%),
+        linear-gradient(to top, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.40) 26%, rgba(0,0,0,0.10) 52%, rgba(0,0,0,0.18) 100%) !important;
     }
 
     .door-panel .overlay {
       z-index: 2 !important;
       background:
-        linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.46) 28%, rgba(0,0,0,0.18) 58%, rgba(0,0,0,0.20) 100%),
-        radial-gradient(ellipse at 50% 78%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.32) 72%, rgba(0,0,0,0.58) 100%) !important;
+        linear-gradient(to top, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.34) 24%, rgba(0,0,0,0.10) 52%, rgba(0,0,0,0.14) 100%) !important;
     }
 
     .door-panel .caption-slightly-small {
