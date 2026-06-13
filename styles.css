@@ -394,15 +394,15 @@ body.export-mode .preview-panel {
   border-radius: 0 !important;
 }
 
-/* 1컷 인트로 조정 */
+/* 1컷 인트로 */
 .intro-panel {
   background:
-    radial-gradient(
-      circle at 50% 38%,
-      rgba(255,255,255,1) 0%,
-      rgba(250,247,240,0.98) 36%,
-      rgba(239,232,220,0.96) 72%,
-      rgba(226,217,203,0.96) 100%
+    linear-gradient(
+      to bottom,
+      #f3efe8 0%,
+      #efe8dd 52%,
+      #e8dcc9 78%,
+      #e0cfb2 100%
     );
 }
 
@@ -411,32 +411,32 @@ body.export-mode .preview-panel {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at center, rgba(255,255,255,0.22), transparent 62%),
-    linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+    radial-gradient(circle at 50% 34%, rgba(255,255,255,0.38), transparent 48%),
+    linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0.04) 55%, rgba(255,255,255,0) 100%);
   pointer-events: none;
   z-index: 1;
 }
 
 .intro-text {
-  color: #3b3935;
-  font-size: 110px;
-  line-height: 1.75;
-  letter-spacing: -0.045em;
-  padding: 250px 260px 180px;
+  color: #4a443d;
+  font-size: 94px;
+  font-weight: 400;
+  line-height: 1.92;
+  letter-spacing: -0.035em;
+  padding: 300px 260px 220px;
   text-shadow:
-    0 2px 10px rgba(255,255,255,0.78),
-    0 1px 2px rgba(0,0,0,0.10);
+    0 1px 0 rgba(255,255,255,0.45),
+    0 2px 8px rgba(0,0,0,0.06);
 }
 
-.spring-word {
-  display: inline;
-  color: #c8aa66;
+.spring-line {
+  color: #8c7752;
   text-shadow:
-    0 2px 10px rgba(255,255,255,0.72),
-    0 0 10px rgba(200,170,102,0.18);
+    0 1px 0 rgba(255,255,255,0.35),
+    0 2px 8px rgba(210, 180, 120, 0.08);
 }
 
-/* 1컷과 1-2컷 사이 연결 여백 */
+/* 1컷-2컷 연결용 여백 */
 .bundle-seam {
   width: var(--panel-width);
   height: 220px;
@@ -448,25 +448,46 @@ body.export-mode .preview-panel {
   background:
     linear-gradient(
       to bottom,
-      #e5dac8 0%,
-      #eee5d5 34%,
-      rgba(238,229,213,0.72) 62%,
-      rgba(238,229,213,0.18) 100%
+      #e0cfb2 0%,
+      #dcc9a8 18%,
+      #d7c7ab 34%,
+      #cfbea0 48%,
+      #c9b998 62%,
+      #cbbf9f 70%,
+      #d6ccba 82%,
+      rgba(214,204,186,0) 100%
     );
 }
 
-/* 1-2컷 상단을 부드럽게 받아주기 */
-.opening-lake-panel::before {
+.cream-to-lake::after {
   content: "";
   position: absolute;
-  inset: 0 0 auto 0;
-  height: 260px;
+  inset: 0;
   background:
     linear-gradient(
       to bottom,
-      rgba(238,229,213,0.82) 0%,
-      rgba(238,229,213,0.38) 42%,
-      rgba(238,229,213,0) 100%
+      rgba(255,255,255,0.10) 0%,
+      rgba(255,255,255,0.04) 40%,
+      rgba(255,255,255,0) 100%
+    );
+  pointer-events: none;
+}
+
+/* 1-2컷 상단 연결 */
+.opening-lake-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 320px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(232,220,201,0.92) 0%,
+      rgba(221,206,179,0.52) 30%,
+      rgba(210,193,164,0.18) 58%,
+      rgba(255,255,255,0) 100%
     );
   pointer-events: none;
   z-index: 2;
@@ -474,4 +495,7 @@ body.export-mode .preview-panel {
 
 .opening-lake-panel .caption {
   z-index: 3;
+  bottom: 8%;
+  font-size: 82px;
+  line-height: 1.58;
 }
