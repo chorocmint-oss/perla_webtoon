@@ -1214,23 +1214,27 @@ body.export-mode .preview-panel {
   top: 50%;
   z-index: 4;
 
-  width: 8px;
-  height: 520px;
+  width: 12px;
+  height: 760px;
 
   transform: translate(-50%, -50%);
   pointer-events: none;
 
   background:
-    radial-gradient(circle, rgba(215, 191, 134, 0.58) 0 3px, transparent 4px)
-    center top / 8px 58px repeat-y;
+    radial-gradient(
+      circle,
+      rgba(215, 191, 134, 0.68) 0 4px,
+      transparent 5px
+    )
+    center top / 12px 72px repeat-y;
 
-  opacity: 0.42;
+  opacity: 0.46;
 
   -webkit-mask-image:
     linear-gradient(
       to bottom,
       transparent 0%,
-      black 18%,
+      black 16%,
       black 78%,
       transparent 100%
     );
@@ -1238,12 +1242,13 @@ body.export-mode .preview-panel {
     linear-gradient(
       to bottom,
       transparent 0%,
-      black 18%,
+      black 16%,
       black 78%,
       transparent 100%
     );
 
   filter:
-    drop-shadow(0 0 8px rgba(215, 191, 134, 0.18))
-    drop-shadow(0 0 18px rgba(0, 0, 0, 0.42));
+    drop-shadow(0 0 10px rgba(215, 191, 134, 0.22))
+    drop-shadow(0 0 24px rgba(215, 191, 134, 0.10))
+    drop-shadow(0 0 18px rgba(0, 0, 0, 0.50));
 }
