@@ -568,13 +568,20 @@ body.export-mode .preview-panel {
   z-index: 4;
 }
 
-/* 1-2컷 : 빌려온 봄 / 서정 내레이션 컷 */
+/* 1-2컷 : 라구나 호수 / 빌려온 봄 */
 .opening-lake-panel {
   position: relative;
   overflow: hidden;
 }
 
-/* 1컷과의 연결용 상단 크림 그라데이션 */
+.opening-lake-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 1컷과 연결되는 상단 크림빛 */
 .opening-lake-panel::before {
   content: "";
   position: absolute;
@@ -585,16 +592,16 @@ body.export-mode .preview-panel {
   background:
     linear-gradient(
       to bottom,
-      rgba(243,239,231,0.92) 0%,
-      rgba(243,239,231,0.60) 26%,
-      rgba(243,239,231,0.22) 58%,
+      rgba(243,239,231,0.88) 0%,
+      rgba(243,239,231,0.54) 30%,
+      rgba(243,239,231,0.18) 65%,
       rgba(243,239,231,0) 100%
     );
   pointer-events: none;
   z-index: 2;
 }
 
-/* 컷 하단을 조금 어둡게 눌러서 자막 가독성 + 다음 컷 준비 */
+/* 하단 가독성용 어둠 */
 .opening-lake-panel::after {
   content: "";
   position: absolute;
@@ -605,32 +612,43 @@ body.export-mode .preview-panel {
   background:
     linear-gradient(
       to top,
-      rgba(3, 8, 15, 0.74) 0%,
-      rgba(3, 8, 15, 0.42) 36%,
-      rgba(3, 8, 15, 0.12) 72%,
+      rgba(3, 8, 15, 0.58) 0%,
+      rgba(3, 8, 15, 0.32) 38%,
+      rgba(3, 8, 15, 0.08) 76%,
       rgba(3, 8, 15, 0) 100%
     );
   pointer-events: none;
   z-index: 2;
 }
 
-/* 내레이션 박스 */
+/* 서정 내레이션 박스 */
 .lyrical-panel .narration-box {
   position: absolute;
   left: 50%;
   bottom: 6.8%;
   transform: translateX(-50%);
   width: 62%;
-  padding: 36px 44px;
-  border-radius: 22px;
-  background: rgba(10, 14, 20, 0.42);
-  border: 1px solid rgba(222, 199, 153, 0.18);
+  padding: 34px 44px;
+  border-radius: 20px;
+  background: rgba(8, 12, 18, 0.44);
+  border: 1px solid rgba(222, 199, 153, 0.20);
   box-shadow:
-    0 14px 40px rgba(0,0,0,0.24),
+    0 14px 38px rgba(0,0,0,0.28),
     inset 0 1px 0 rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   z-index: 4;
+}
+
+.lyrical-panel .narration-text {
+  text-align: center;
+  color: #f4ede1;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.62;
+  letter-spacing: -0.03em;
+  text-shadow:
+    0 2px 10px rgba(0,0,0,0.72),
+    0 0 16px rgba(0,0,0,0.28);
+  word-break: keep-all;
 }
 
 /* 내레이션 글씨 */
