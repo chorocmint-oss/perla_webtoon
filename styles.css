@@ -1574,7 +1574,7 @@ body.export-mode .preview-panel {
 
 /* 2컷 상단 페이드도 전환부 끝색이랑 맞춤 */
 .carriage-panel::before {
-  height: 700px !important;
+  height: 500px !important;
 
   background:
     linear-gradient(
@@ -2057,7 +2057,7 @@ body.export-mode .preview-panel {
   right: 0;
   bottom: 0;
 
-  height: 42%;
+  height: 55%;
   z-index: 3;
   pointer-events: none;
 
