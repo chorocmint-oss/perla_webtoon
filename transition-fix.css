@@ -29,16 +29,16 @@
     linear-gradient(
       to bottom,
       #f0ebe2 0%,
-      #efeade 18%,
-      #ece8df 42%,
-      #e8e8e1 64%,
-      #e7e7df 78%,
+      #eeeae1 12%,
+      #ece8df 30%,
+      #e9e8e1 54%,
+      #e7e7df 76%,
       #e8e5dc 90%,
       #e9e5dc 100%
     ) !important;
 }
 
-/* 위쪽 경계: 1컷 크림 종이색이 부드럽게 빠짐 */
+/* 위쪽 경계: 1컷 종이색을 바로 잇되, 너무 평평하지 않게 살짝 풀어줌 */
 .export-panel.transition-panel.intro-to-lake-transition::before {
   content: "" !important;
   position: absolute !important;
@@ -51,17 +51,16 @@
   background:
     linear-gradient(
       to bottom,
-      rgba(240, 235, 226, 1.00) 0%,
-      rgba(240, 235, 226, 0.92) 16%,
-      rgba(240, 235, 226, 0.58) 38%,
-      rgba(240, 235, 226, 0.18) 62%,
-      rgba(240, 235, 226, 0.00) 80%
+      rgba(240, 235, 226, 0.96) 0%,
+      rgba(240, 235, 226, 0.70) 22%,
+      rgba(240, 235, 226, 0.28) 48%,
+      rgba(240, 235, 226, 0.00) 72%
     ),
     radial-gradient(
       ellipse at 50% 0%,
-      rgba(255, 250, 240, 0.30) 0%,
-      rgba(255, 250, 240, 0.08) 46%,
-      rgba(255, 250, 240, 0.00) 76%
+      rgba(255, 250, 240, 0.28) 0%,
+      rgba(255, 250, 240, 0.08) 44%,
+      rgba(255, 250, 240, 0.00) 74%
     ) !important;
 }
 
@@ -79,10 +78,10 @@
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.00) 0%,
-      rgba(0, 0, 0, 0.00) 50%,
-      rgba(238, 234, 224, 0.10) 68%,
-      rgba(235, 231, 221, 0.36) 82%,
-      rgba(233, 229, 220, 0.82) 94%,
+      rgba(0, 0, 0, 0.00) 44%,
+      rgba(238, 234, 224, 0.14) 62%,
+      rgba(235, 231, 221, 0.40) 78%,
+      rgba(233, 229, 220, 0.82) 93%,
       rgba(233, 229, 220, 1.00) 100%
     ),
     radial-gradient(
@@ -114,4 +113,67 @@
       rgba(233, 229, 220, 0.12) 86%,
       rgba(233, 229, 220, 0.00) 100%
     ) !important;
+}
+
+/* =========================================================
+   1컷 하단 페이드
+   전환 패널이 아니라 1컷 내부 아래쪽부터 종이색이 미스트로 풀리게 함.
+========================================================= */
+
+.intro-panel {
+  background:
+    linear-gradient(
+      to bottom,
+      #f3efe7 0%,
+      #f2eee6 48%,
+      #f0ebe2 70%,
+      #ece8df 86%,
+      #e9e5dc 100%
+    ) !important;
+}
+
+.intro-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.30), transparent 42%),
+    radial-gradient(circle at 20% 20%, rgba(189, 164, 118, 0.08), transparent 28%),
+    radial-gradient(circle at 82% 80%, rgba(120, 102, 74, 0.055), transparent 34%),
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08) 0%,
+      rgba(255,255,255,0.02) 50%,
+      rgba(238,234,224,0.22) 70%,
+      rgba(233,229,220,0.62) 88%,
+      rgba(233,229,220,0.96) 100%
+    ) !important;
+}
+
+/* 프레임 안쪽도 아래로 갈수록 아주 약하게 빠져야 컷 경계가 덜 딱딱함 */
+.record-frame::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 360px;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(240,235,226,0.00) 0%,
+      rgba(240,235,226,0.18) 46%,
+      rgba(233,229,220,0.58) 100%
+    );
+}
+
+.intro-text {
+  z-index: 3 !important;
 }
