@@ -1,0 +1,395 @@
+:root {
+  --panel-width: 2432px;
+  --panel-height: 1664px;
+
+  --bg: #05070b;
+  --bg-deep: #03050a;
+  --navy: #0a1020;
+  --text: #f3eadb;
+  --text-soft: #eee3cf;
+  --accent: #d7bf86;
+  --accent-deep: #b89b61;
+  --ink: #353330;
+  --shadow: rgba(0, 0, 0, 0.95);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #08090d;
+  color: var(--text);
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Malgun Myeongjo", "Batang", serif;
+}
+
+/* 브라우저 미리보기용. 실제 렌더링 때는 export-mode가 붙어서 원본 크기로 출력됨. */
+.page {
+  width: var(--panel-width);
+  margin: 0 auto;
+  padding: 80px 0 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  zoom: 0.32;
+  transform-origin: top center;
+}
+
+.export-bundle {
+  width: var(--panel-width);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.export-panel,
+.preview-panel {
+  width: var(--panel-width);
+  height: var(--panel-height);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  border-radius: 0;
+  box-shadow: none;
+  isolation: isolate;
+}
+
+.image-panel img,
+.video-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 전체 컷에 얹는 미세 질감. 너무 티 안 나게. */
+.export-panel::after,
+.preview-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.105;
+  background-image:
+    radial-gradient(circle at 11% 21%, rgba(255,255,255,0.32) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 78% 36%, rgba(215,191,134,0.22) 0 1px, transparent 1.5px),
+    linear-gradient(115deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 14px);
+  background-size: 31px 31px, 43px 43px, 18px 18px;
+  mix-blend-mode: screen;
+}
+
+.paper-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.22;
+  background:
+    linear-gradient(115deg, rgba(0,0,0,0.035) 0 1px, transparent 1px 16px),
+    radial-gradient(circle at 30% 22%, rgba(215,191,134,0.12), transparent 19%),
+    radial-gradient(circle at 76% 70%, rgba(255,255,255,0.10), transparent 22%);
+}
+
+.image-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+.warm-wash {
+  background: linear-gradient(135deg, rgba(255,239,197,0.22), rgba(255,255,255,0.02) 42%, rgba(11,18,36,0.12));
+}
+
+.cold-wash {
+  background: linear-gradient(135deg, rgba(58,84,118,0.18), transparent 38%, rgba(0,0,0,0.22));
+}
+
+.parchment-wash {
+  background: linear-gradient(135deg, rgba(215,191,134,0.14), transparent 36%, rgba(28,18,12,0.20));
+}
+
+.vow-wash {
+  background: radial-gradient(circle at 48% 42%, rgba(215,191,134,0.10), transparent 34%), linear-gradient(135deg, rgba(68,42,22,0.08), rgba(7,10,18,0.18));
+}
+
+.hook-wash {
+  background: linear-gradient(135deg, rgba(20,28,55,0.26), transparent 40%, rgba(80,0,0,0.22));
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.84),
+      rgba(0, 0, 0, 0.36) 36%,
+      rgba(0, 0, 0, 0.08) 62%,
+      rgba(0, 0, 0, 0.18)
+    ),
+    radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.34) 88%);
+}
+
+.overlay-soft {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.60),
+      rgba(0, 0, 0, 0.17) 38%,
+      rgba(255, 255, 255, 0.04) 68%,
+      rgba(0, 0, 0, 0.10)
+    ),
+    radial-gradient(circle at center, transparent 48%, rgba(0, 0, 0, 0.22) 90%);
+}
+
+.overlay-document {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.76), rgba(0,0,0,0.26) 42%, rgba(0,0,0,0.20)),
+    radial-gradient(circle at center, transparent 36%, rgba(0,0,0,0.44) 90%);
+}
+
+.overlay-final {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.90), rgba(0,0,0,0.44) 45%, rgba(0,0,0,0.22)),
+    radial-gradient(circle at center, transparent 32%, rgba(0,0,0,0.52) 92%);
+}
+
+.overlay-video {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.80), rgba(0,0,0,0.24) 45%, rgba(0,0,0,0.12)),
+    radial-gradient(circle at center, transparent 42%, rgba(0,0,0,0.34) 90%);
+}
+
+.overlay-hook {
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.42) 42%, rgba(0,0,0,0.12)),
+    linear-gradient(to left, rgba(0,0,0,0.58), transparent 50%),
+    radial-gradient(circle at 30% 40%, transparent 26%, rgba(0,0,0,0.46) 88%);
+}
+
+.caption {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: 84%;
+  z-index: 3;
+  text-align: center;
+  color: var(--text);
+  font-size: 88px;
+  line-height: 1.56;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+  text-shadow:
+    0 5px 20px var(--shadow),
+    0 0 36px rgba(0,0,0,0.74),
+    0 0 2px rgba(255,255,255,0.18);
+}
+
+.caption::before,
+.text-center::before,
+.caption-hook::before {
+  content: "";
+  display: block;
+  width: 148px;
+  height: 1px;
+  margin: 0 auto 34px;
+  background: linear-gradient(to right, transparent, rgba(215,191,134,0.82), transparent);
+  opacity: 0.74;
+}
+
+.caption-soft {
+  color: #fff3dd;
+}
+
+.caption-slightly-small {
+  font-size: 80px;
+  line-height: 1.64;
+}
+
+.caption-large {
+  font-size: 78px;
+  line-height: 1.59;
+}
+
+.caption-final {
+  bottom: 8.4%;
+  font-size: 76px;
+  line-height: 1.60;
+}
+
+.vow-caption {
+  bottom: 11%;
+}
+
+.text-panel {
+  background:
+    radial-gradient(circle at center, rgba(33, 40, 54, 0.16), transparent 54%),
+    linear-gradient(to bottom, #08090d, #111621 50%, #08090d);
+}
+
+.text-center {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 180px 220px;
+  text-align: center;
+  color: var(--text);
+  font-size: 98px;
+  line-height: 1.74;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+  text-shadow:
+    0 5px 20px var(--shadow),
+    0 0 34px rgba(0,0,0,0.70),
+    0 0 2px rgba(255,255,255,0.18);
+}
+
+/* 1번: 흰색/크림 인트로 패널 */
+.light-panel {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,1) 0%, rgba(250,247,240,0.98) 35%, rgba(236,230,218,0.96) 68%, rgba(215,205,188,0.98) 100%);
+}
+
+.light-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.60), rgba(255,255,255,0.12) 38%, rgba(0,0,0,0.08) 100%),
+    radial-gradient(circle at center, rgba(255,255,255,0.42), transparent 64%);
+}
+
+.text-dark {
+  color: var(--ink);
+  text-shadow:
+    0 2px 10px rgba(255,255,255,0.88),
+    0 1px 2px rgba(0,0,0,0.16);
+}
+
+.text-dark::before {
+  background: linear-gradient(to right, transparent, rgba(53,51,48,0.48), transparent);
+}
+
+.intro-text {
+  font-size: 116px;
+  line-height: 1.72;
+  letter-spacing: -0.048em;
+  padding: 220px 260px;
+}
+
+/* 3번: 편지/시간 경과 텍스트 패널 */
+.letter-panel {
+  background:
+    radial-gradient(circle at 50% 44%, rgba(244,229,204,0.10), transparent 42%),
+    linear-gradient(115deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 18px),
+    linear-gradient(to bottom, #06070b, #0b0e16 48%, #05060a);
+}
+
+.letter-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.34;
+  background:
+    radial-gradient(circle at 28% 24%, rgba(215,191,134,0.12), transparent 18%),
+    radial-gradient(circle at 74% 66%, rgba(255,255,255,0.08), transparent 20%);
+}
+
+.letter-text {
+  color: var(--text-soft);
+  font-size: 104px;
+}
+
+.stamp {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-shadow:
+    0 5px 20px rgba(0,0,0,0.96),
+    0 0 22px rgba(215, 191, 134, 0.26),
+    0 0 2px rgba(255,255,255,0.18);
+}
+
+/* 8번: 마지막 훅 이미지 */
+.final-hook-panel img {
+  object-position: center center;
+}
+
+.caption-hook {
+  position: absolute;
+  right: 8.5%;
+  bottom: 10%;
+  z-index: 3;
+  width: 62%;
+  text-align: right;
+  color: #f3eadb;
+  font-size: 84px;
+  line-height: 1.66;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+  text-shadow:
+    0 5px 22px rgba(0,0,0,0.98),
+    0 0 38px rgba(0,0,0,0.78),
+    0 0 2px rgba(255,255,255,0.20);
+}
+
+.caption-hook::before {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.caption-hook span {
+  color: var(--accent);
+  text-shadow:
+    0 5px 22px rgba(0,0,0,0.98),
+    0 0 24px rgba(215,191,134,0.30);
+}
+
+.preview-note {
+  position: absolute;
+  right: 48px;
+  top: 40px;
+  z-index: 6;
+  padding: 18px 24px;
+  border-radius: 999px;
+  font-size: 32px;
+  color: rgba(255,255,255,0.88);
+  background: rgba(0,0,0,0.48);
+  letter-spacing: -0.02em;
+}
+
+/* 렌더링용 모드 */
+body.export-mode .page {
+  zoom: 1;
+  width: var(--panel-width);
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+body.export-mode .export-bundle,
+body.export-mode .export-panel,
+body.export-mode .preview-panel {
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
