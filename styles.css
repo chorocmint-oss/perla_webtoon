@@ -394,27 +394,33 @@ body.export-mode .preview-panel {
   border-radius: 0 !important;
 }
 
-/* 1컷: 깔끔한 인트로 */
+/* 1컷 : 기록문 패널 */
 .intro-panel {
-  background: #f1ece3;
   position: relative;
+  background:
+    linear-gradient(
+      to bottom,
+      #f3efe7 0%,
+      #f0ebe2 100%
+    );
+  overflow: hidden;
 }
 
-/* 1컷 배경 질감/비네트 강화 */
+/* 배경 질감 + 아주 약한 비네트 */
 .intro-panel::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.34), transparent 42%),
-    radial-gradient(circle at 18% 22%, rgba(200,170,120,0.12), transparent 30%),
-    radial-gradient(circle at 82% 78%, rgba(125,105,75,0.10), transparent 36%),
-    linear-gradient(to bottom, rgba(255,255,255,0.16), rgba(0,0,0,0.045));
+    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.30), transparent 42%),
+    radial-gradient(circle at 20% 20%, rgba(189, 164, 118, 0.08), transparent 28%),
+    radial-gradient(circle at 82% 80%, rgba(120, 102, 74, 0.07), transparent 34%),
+    linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(0,0,0,0.03));
   pointer-events: none;
   z-index: 1;
 }
 
-
+/* 종이결 느낌 */
 .intro-panel::after {
   content: "";
   position: absolute;
@@ -422,21 +428,75 @@ body.export-mode .preview-panel {
   background:
     repeating-linear-gradient(
       0deg,
-      rgba(90,70,45,0.025) 0px,
-      rgba(90,70,45,0.025) 1px,
-      transparent 1px,
-      transparent 7px
-    ),
-    repeating-linear-gradient(
-      90deg,
       rgba(90,70,45,0.018) 0px,
       rgba(90,70,45,0.018) 1px,
       transparent 1px,
-      transparent 9px
+      transparent 8px
     );
-  opacity: 0.55;
+  opacity: 0.35;
   pointer-events: none;
   z-index: 1;
+}
+
+/* 안쪽 프레임 */
+.record-frame {
+  position: absolute;
+  inset: 120px;
+  border: 1.5px solid rgba(196, 173, 128, 0.38);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.18);
+  z-index: 2;
+}
+
+/* 1컷 텍스트 */
+.intro-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 120px 220px 60px;
+  text-align: center;
+  color: #4a433c;
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.035em;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.25),
+    0 2px 6px rgba(0,0,0,0.03);
+  z-index: 3;
+}
+
+/* 강조 문장 */
+.spring-line {
+  color: #8f7750;
+}
+
+/* 1-2컷 상단 연결 */
+.opening-lake-panel {
+  position: relative;
+}
+
+.opening-lake-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 300px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(243,239,231,1) 0%,
+      rgba(243,239,231,0.82) 20%,
+      rgba(243,239,231,0.46) 48%,
+      rgba(243,239,231,0.18) 72%,
+      rgba(243,239,231,0) 100%
+    );
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* 2컷 상단만 1컷 배경색으로 덮어서 연결 */
