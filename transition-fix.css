@@ -149,17 +149,17 @@
   left: 0 !important;
   right: 0 !important;
   top: 0 !important;
-  height: 460px !important;
+  height: 560px !important;
   z-index: 4 !important;
   pointer-events: none !important;
   background:
     linear-gradient(
       to bottom,
       #03060a 0%,
-      rgba(3, 6, 10, 0.98) 10%,
-      rgba(3, 6, 10, 0.78) 34%,
-      rgba(3, 6, 10, 0.42) 62%,
-      rgba(3, 6, 10, 0.12) 88%,
+      rgba(3, 6, 10, 1.00) 12%,
+      rgba(3, 6, 10, 0.88) 34%,
+      rgba(3, 6, 10, 0.58) 58%,
+      rgba(3, 6, 10, 0.24) 82%,
       transparent 100%
     ) !important;
 }
@@ -171,14 +171,14 @@
   inset: 0 !important;
   z-index: 5 !important;
   pointer-events: none !important;
-  opacity: 1 !important;
+  opacity: 0.82 !important;
   mix-blend-mode: normal !important;
   background-image:
-    radial-gradient(circle at 16% 18%, rgba(235,244,248,0.28) 0 1.2px, transparent 1.8px),
-    radial-gradient(circle at 72% 32%, rgba(235,244,248,0.20) 0 1px, transparent 1.7px),
-    radial-gradient(circle at 44% 72%, rgba(255,255,255,0.12) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 16% 18%, rgba(235,244,248,0.22) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 72% 32%, rgba(235,244,248,0.16) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 44% 72%, rgba(255,255,255,0.10) 0 1px, transparent 1.8px),
     linear-gradient(to bottom, transparent 0%, transparent 64%, rgba(0,0,0,0.24) 84%, rgba(0,0,0,0.46) 100%);
-  background-size: 96px 126px, 132px 168px, 78px 110px, 100% 100%;
+  background-size: 104px 136px, 146px 182px, 86px 120px, 100% 100%;
 }
 
 .carriage-panel .cold-wash {
@@ -212,11 +212,11 @@
   bottom: 16%;
   height: 34%;
   pointer-events: none;
-  opacity: 0.62;
+  opacity: 0.56;
   background:
-    radial-gradient(ellipse at 18% 72%, rgba(190,213,224,0.24) 0%, rgba(190,213,224,0.08) 35%, transparent 66%),
-    radial-gradient(ellipse at 58% 88%, rgba(230,238,240,0.12) 0%, rgba(230,238,240,0.04) 32%, transparent 64%),
-    linear-gradient(to bottom, transparent 0%, rgba(155,181,195,0.10) 48%, transparent 100%);
+    radial-gradient(ellipse at 18% 72%, rgba(190,213,224,0.22) 0%, rgba(190,213,224,0.07) 35%, transparent 66%),
+    radial-gradient(ellipse at 58% 88%, rgba(230,238,240,0.10) 0%, rgba(230,238,240,0.035) 32%, transparent 64%),
+    linear-gradient(to bottom, transparent 0%, rgba(155,181,195,0.08) 48%, transparent 100%);
   filter: blur(2px);
 }
 
@@ -229,40 +229,40 @@
   bottom: 0;
   height: 42%;
   pointer-events: none;
-  opacity: 0.78;
+  opacity: 0.72;
   background:
-    radial-gradient(ellipse at 50% 88%, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.36) 42%, transparent 72%);
+    radial-gradient(ellipse at 50% 88%, rgba(0,0,0,0.76) 0%, rgba(0,0,0,0.34) 42%, transparent 72%);
 }
 
 .carriage-panel .caption {
   left: 50% !important;
-  bottom: 8.2% !important;
+  bottom: 7.8% !important;
   transform: translateX(-50%) !important;
-  width: 68% !important;
+  width: 66% !important;
   z-index: 6 !important;
-  padding: 30px 70px 38px !important;
+  padding: 20px 58px 26px !important;
   font-size: 80px !important;
   line-height: 1.58 !important;
   letter-spacing: -0.04em !important;
   color: #f2eadf !important;
   background:
-    radial-gradient(ellipse at 50% 50%, rgba(2,5,8,0.54) 0%, rgba(2,5,8,0.32) 44%, rgba(2,5,8,0.00) 78%),
-    linear-gradient(to right, rgba(3,6,10,0.00) 0%, rgba(3,6,10,0.50) 22%, rgba(3,6,10,0.62) 50%, rgba(3,6,10,0.50) 78%, rgba(3,6,10,0.00) 100%) !important;
-  border-top: 1px solid rgba(235,226,210,0.12) !important;
-  border-bottom: 1px solid rgba(215,191,134,0.16) !important;
+    radial-gradient(ellipse at 50% 54%, rgba(2,5,8,0.36) 0%, rgba(2,5,8,0.22) 42%, rgba(2,5,8,0.00) 76%),
+    linear-gradient(to right, rgba(3,6,10,0.00) 0%, rgba(3,6,10,0.30) 24%, rgba(3,6,10,0.42) 50%, rgba(3,6,10,0.30) 76%, rgba(3,6,10,0.00) 100%) !important;
+  border-top: 1px solid rgba(235,226,210,0.055) !important;
+  border-bottom: 1px solid rgba(215,191,134,0.08) !important;
   text-shadow:
     0 6px 24px rgba(0,0,0,0.98),
     0 0 40px rgba(0,0,0,0.84),
     0 0 2px rgba(255,255,255,0.18) !important;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 9%, black 91%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .carriage-panel .caption::before {
-  width: 128px !important;
-  margin: 0 auto 26px !important;
-  opacity: 0.64 !important;
-  background: linear-gradient(to right, transparent, rgba(188,166,128,0.78), transparent) !important;
+  width: 118px !important;
+  margin: 0 auto 22px !important;
+  opacity: 0.50 !important;
+  background: linear-gradient(to right, transparent, rgba(188,166,128,0.64), transparent) !important;
 }
 
 .carriage-panel .caption-kicker {
@@ -277,4 +277,54 @@
 .carriage-panel .caption-main {
   display: inline-block;
   color: #f2eadf;
+}
+
+/* =========================================================
+   2 → 2-2 전환: 군화 아래 검은 바닥에서 닫힌 문으로 열림
+========================================================= */
+
+.export-panel.transition-panel.carriage-to-door-transition {
+  height: 560px !important;
+  min-height: 560px !important;
+  --rp-from: #03060a;
+  --rp-mid: #04080d;
+  --rp-to: #0b1012;
+  --rp-glow: rgba(120, 145, 155, 0.06);
+  --rp-top-opacity: 0.92;
+  --rp-bottom-opacity: 0.86;
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      #03060a 20%,
+      #04070c 52%,
+      #080d10 78%,
+      #0b1012 100%
+    ) !important;
+}
+
+.carriage-to-door-transition::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.62 !important;
+  mix-blend-mode: normal !important;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.54) 0%, rgba(0,0,0,0.22) 46%, transparent 72%),
+    radial-gradient(ellipse at 50% 100%, rgba(145,160,164,0.075) 0%, rgba(145,160,164,0.025) 34%, transparent 68%) !important;
+}
+
+.carriage-to-door-transition::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  opacity: 0.82 !important;
+  mix-blend-mode: normal !important;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.30) 0%, transparent 38%, rgba(150,160,160,0.055) 100%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 54px) !important;
 }
