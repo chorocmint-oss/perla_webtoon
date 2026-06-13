@@ -2045,3 +2045,60 @@ body.export-mode .preview-panel {
       rgba(0, 0, 0, 0.46) 100%
     ) !important;
 }
+
+/* =========================
+   FIX: 1-2컷 하단 전용 그라데이션
+   HTML의 .lake-bottom-fade에 실제 스타일 부여
+========================= */
+
+.opening-lake-panel .lake-bottom-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 42%;
+  z-index: 3;
+  pointer-events: none;
+
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 25, 31, 0.00) 0%,
+      rgba(5, 25, 31, 0.05) 24%,
+      rgba(5, 25, 31, 0.16) 44%,
+      rgba(5, 25, 31, 0.34) 64%,
+      rgba(5, 25, 31, 0.62) 84%,
+      #05191f 100%
+    );
+}
+
+/* 자막 패널은 하단 그라데이션 위로 유지 */
+.lyrical-panel .narration-box {
+  z-index: 4 !important;
+}
+
+/* 전환 패널 시작색을 1-2컷 하단 마지막 색과 맞춤 */
+.export-panel.transition-panel,
+.transition-panel,
+.lake-to-carriage-transition {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+
+  height: 340px !important;
+  min-height: 340px !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #05191f 0%,
+      #04141b 24%,
+      #041019 52%,
+      #030b12 78%,
+      #03060a 100%
+    ) !important;
+}
