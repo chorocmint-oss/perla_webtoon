@@ -1207,15 +1207,15 @@ body.export-mode .preview-panel {
     ) !important;
 }
 
-/* 1-2 → 2 전환 패널 세로 점 효과 */
+/* 1-2 → 2 전환 패널 세로 점 효과: 원본 2432px 기준 크게 */
 .lake-to-carriage-transition .vertical-dots {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 46%;
   z-index: 4;
 
-  width: 12px;
-  height: 760px;
+  width: 44px;
+  height: 980px;
 
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -1223,18 +1223,19 @@ body.export-mode .preview-panel {
   background:
     radial-gradient(
       circle,
-      rgba(215, 191, 134, 0.68) 0 4px,
-      transparent 5px
+      rgba(215, 191, 134, 0.72) 0 11px,
+      rgba(215, 191, 134, 0.18) 12px,
+      transparent 15px
     )
-    center top / 12px 72px repeat-y;
+    center top / 44px 118px repeat-y;
 
-  opacity: 0.46;
+  opacity: 0.58;
 
   -webkit-mask-image:
     linear-gradient(
       to bottom,
       transparent 0%,
-      black 16%,
+      black 14%,
       black 78%,
       transparent 100%
     );
@@ -1242,13 +1243,13 @@ body.export-mode .preview-panel {
     linear-gradient(
       to bottom,
       transparent 0%,
-      black 16%,
+      black 14%,
       black 78%,
       transparent 100%
     );
 
   filter:
-    drop-shadow(0 0 10px rgba(215, 191, 134, 0.22))
-    drop-shadow(0 0 24px rgba(215, 191, 134, 0.10))
-    drop-shadow(0 0 18px rgba(0, 0, 0, 0.50));
+    drop-shadow(0 0 16px rgba(215, 191, 134, 0.30))
+    drop-shadow(0 0 34px rgba(215, 191, 134, 0.16))
+    drop-shadow(0 0 22px rgba(0, 0, 0, 0.60));
 }
