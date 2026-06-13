@@ -8,8 +8,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="transition-fix.css?v=20260614-reset-simple-door" />
+  <link rel="stylesheet" href="transition-fix.css?v=20260614-intro-warm-mist2" />
   <style>
+    .export-panel.transition-panel.intro-to-lake-transition {
+      height: 600px !important;
+      min-height: 600px !important;
+      background: linear-gradient(
+        to bottom,
+        #f0ebe2 0%,
+        #f0ebe2 26%,
+        #eeeae1 56%,
+        #ece8df 82%,
+        #e9e6de 100%
+      ) !important;
+    }
+
+    .export-panel.transition-panel.intro-to-lake-transition::before,
+    .export-panel.transition-panel.intro-to-lake-transition::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    .opening-lake-panel::before {
+      height: 560px !important;
+      background: linear-gradient(
+        to bottom,
+        #e9e6de 0%,
+        rgba(233,230,222,0.98) 22%,
+        rgba(233,230,222,0.86) 46%,
+        rgba(233,230,222,0.56) 68%,
+        rgba(233,230,222,0.22) 88%,
+        rgba(233,230,222,0.00) 100%
+      ) !important;
+    }
+
     .export-panel.transition-panel.carriage-to-door-transition {
       height: 500px !important;
       min-height: 500px !important;
