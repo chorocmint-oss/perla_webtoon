@@ -665,8 +665,8 @@ body.export-mode .preview-panel {
 .export-panel.transition-panel,
 .transition-panel,
 .lake-to-carriage-transition {
-  height: 520px !important;
-  min-height: 520px !important;
+  height: 1200px !important;
+  min-height: 1200px !important;
 
   background:
     linear-gradient(
