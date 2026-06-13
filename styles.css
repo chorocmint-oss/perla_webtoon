@@ -1094,3 +1094,170 @@ body.export-mode .preview-panel {
     0 2px 9px rgba(0, 0, 0, 0.82),
     0 0 13px rgba(215, 191, 134, 0.20);
 }
+
+/* =========================
+   1-2컷 텍스트 패널 파인튜닝
+   위치 유지 / 그라데이션 유지 / 유리 기록패널 고급화
+========================= */
+
+.lyrical-panel .narration-box {
+  position: absolute !important;
+  left: 50% !important;
+  top: 55% !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: 64% !important;
+  height: auto !important;
+  padding: 28px 62px 32px !important;
+
+  display: block !important;
+  overflow: hidden;
+  isolation: isolate;
+
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 4px !important;
+
+  background:
+    /* 텍스트 뒤 중앙만 살짝 더 눌러서 가독성 보강 */
+    radial-gradient(
+      ellipse at 50% 54%,
+      rgba(2, 8, 11, 0.24) 0%,
+      rgba(2, 8, 11, 0.18) 34%,
+      rgba(2, 8, 11, 0.08) 58%,
+      transparent 78%
+    ),
+    /* 좌우는 살짝만 눌림 */
+    linear-gradient(
+      to right,
+      rgba(7, 16, 21, 0) 0%,
+      rgba(7, 16, 21, 0.10) 16%,
+      rgba(7, 16, 21, 0.18) 50%,
+      rgba(7, 16, 21, 0.10) 84%,
+      rgba(7, 16, 21, 0) 100%
+    ),
+    /* 패널 내부 미세 종이결 / 필름결 */
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.015) 0 1px,
+      transparent 1px 22px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.010) 0 1px,
+      transparent 1px 18px
+    ),
+    /* 기본 유리막 */
+    linear-gradient(
+      to bottom,
+      rgba(7, 18, 23, 0.34),
+      rgba(4, 10, 14, 0.46)
+    ) !important;
+
+  backdrop-filter: blur(6px) saturate(0.90);
+  -webkit-backdrop-filter: blur(6px) saturate(0.90);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 20px 54px rgba(0, 0, 0, 0.28),
+    0 2px 10px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(215, 191, 134, 0.08) !important;
+
+  z-index: 4 !important;
+}
+
+/* 위/아래 이중 기록선 */
+.lyrical-panel .narration-box::before,
+.lyrical-panel .narration-box::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08) 0,
+      rgba(255,255,255,0.08) 1px,
+      transparent 1px,
+      transparent 2px,
+      rgba(215,191,134,0.30) 2px,
+      rgba(215,191,134,0.30) 3px
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+}
+
+.lyrical-panel .narration-box::before {
+  top: 10px;
+}
+
+.lyrical-panel .narration-box::after {
+  bottom: 10px;
+  opacity: 0.72;
+}
+
+/* 글씨는 조금 덜 튀게 */
+.lyrical-panel .narration-text {
+  text-align: center;
+  color: #e6ddd0;
+
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Malgun Myeongjo", "Batang", serif;
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 1.64;
+  letter-spacing: -0.036em;
+  word-break: keep-all;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.80),
+    0 0 18px rgba(0, 0, 0, 0.40);
+}
+
+/* 이전 장식선 제거 */
+.lyrical-panel .narration-text::before {
+  display: none !important;
+}
+
+/* 금색 강조 약화 */
+.lyrical-panel .gold-word {
+  color: #c1a77a;
+  font-weight: 500;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.76),
+    0 0 10px rgba(215, 191, 134, 0.14);
+}
