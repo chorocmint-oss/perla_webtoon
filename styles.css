@@ -886,3 +886,96 @@ body.export-mode .preview-panel {
     0 0 18px rgba(215, 191, 134, 0.28),
     0 1px 1px rgba(255, 255, 255, 0.12);
 }
+
+/* =========================
+   1-2컷 텍스트: 사각 그림자 패널식
+   위치 유지 / 그라데이션 유지
+========================= */
+
+.lyrical-panel .narration-box {
+  position: absolute !important;
+  left: 50% !important;
+  top: 55% !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: 58% !important;
+  height: auto !important;
+  padding: 34px 56px 38px !important;
+
+  display: block !important;
+
+  border-radius: 8px !important;
+  border: 1px solid rgba(215, 191, 134, 0.22) !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 12, 16, 0.46),
+      rgba(3, 8, 12, 0.56)
+    ) !important;
+
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(215, 191, 134, 0.10) !important;
+
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+
+  z-index: 4 !important;
+}
+
+/* 패널 위아래 얇은 기록문 느낌 */
+.lyrical-panel .narration-box::before,
+.lyrical-panel .narration-box::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(215, 191, 134, 0.32),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.lyrical-panel .narration-box::before {
+  top: 12px;
+}
+
+.lyrical-panel .narration-box::after {
+  bottom: 12px;
+}
+
+.lyrical-panel .narration-text {
+  text-align: center;
+  color: #eadfce;
+
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Malgun Myeongjo", "Batang", serif;
+  font-size: 66px;
+  font-weight: 400;
+  line-height: 1.62;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.78),
+    0 0 24px rgba(0, 0, 0, 0.46);
+}
+
+/* 이전 장식선 제거 */
+.lyrical-panel .narration-text::before {
+  display: none !important;
+}
+
+.lyrical-panel .gold-word {
+  color: #c7aa72;
+  font-weight: 500;
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.78),
+    0 0 14px rgba(215, 191, 134, 0.22);
+}
