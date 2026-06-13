@@ -624,114 +624,167 @@ body.export-mode .preview-panel {
 }
 
 /* =========================
-   1-2컷 복원: 두 번째 캡처 기준
-   상단 그라데이션은 짧고 자연스럽게,
-   자막은 하단 서정 박스로 복원
+   1-2컷 재설계:
+   하단 박스 삭제 / 중앙 하단 기록문 밴드 / 1컷 색상 맞춤
 ========================= */
 
 .opening-lake-panel {
   position: relative;
-  background: #f1ece3;
+  background: #e9e5dc;
 }
 
-/* 이미지 보정 과하게 먹은 것 제거 */
 .opening-lake-panel img {
   filter: none;
 }
 
-/* 1컷 하단 크림색에서 1-2컷 이미지로 짧게 녹아드는 상단 페이드 */
+/* 1컷 하단 실제 색에 맞춘 상단 연결 그라데이션 */
 .opening-lake-panel::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  height: 330px;
+  height: 380px;
   z-index: 2;
   pointer-events: none;
   background:
     linear-gradient(
       to bottom,
-      #f1ece3 0%,
-      rgba(241, 236, 227, 0.94) 16%,
-      rgba(241, 236, 227, 0.70) 34%,
-      rgba(241, 236, 227, 0.38) 58%,
-      rgba(241, 236, 227, 0.14) 80%,
-      rgba(241, 236, 227, 0) 100%
+      #e9e5dc 0%,
+      #e9e5dc 10%,
+      rgba(233, 229, 220, 0.94) 22%,
+      rgba(233, 229, 220, 0.72) 42%,
+      rgba(233, 229, 220, 0.38) 66%,
+      rgba(233, 229, 220, 0.12) 86%,
+      rgba(233, 229, 220, 0) 100%
     );
 }
 
-/* 하단만 다음 검은 마차 컷으로 넘어갈 수 있게 살짝 눌러줌 */
+/* 아래쪽은 다음 검은 마차 컷으로 넘어가게만 살짝 눌림 */
 .opening-lake-panel::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 42%;
+  inset: 0;
   z-index: 2;
   pointer-events: none;
   background:
     linear-gradient(
-      to top,
-      rgba(3, 8, 15, 0.58) 0%,
-      rgba(3, 8, 15, 0.32) 38%,
-      rgba(3, 8, 15, 0.08) 76%,
-      rgba(3, 8, 15, 0) 100%
+      to bottom,
+      transparent 0%,
+      transparent 54%,
+      rgba(3, 8, 15, 0.08) 74%,
+      rgba(3, 8, 15, 0.38) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 62%,
+      transparent 46%,
+      rgba(0, 0, 0, 0.18) 94%
     );
 }
 
-/* 혹시 남아 있는 중앙 내레이션 실험안 숨김 */
+/* 혹시 이전 중앙 실험용 요소가 남아 있으면 숨김 */
 .opening-lake-panel .lake-narration {
-  display: none;
+  display: none !important;
 }
 
-/* 하단 서정 내레이션 박스 */
+/* 기존 하단 박스를 중앙 하단 기록문 밴드로 재사용 */
 .lyrical-panel .narration-box {
-  position: absolute;
-  left: 50%;
-  bottom: 6.8%;
-  transform: translateX(-50%);
-  width: 62%;
-  padding: 34px 44px;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 55% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
 
-  border-radius: 20px;
+  width: 100% !important;
+  height: 360px;
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
   background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(238, 232, 220, 0.74) 0%,
+      rgba(238, 232, 220, 0.56) 34%,
+      rgba(238, 232, 220, 0.28) 58%,
+      transparent 78%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(238, 232, 220, 0.26) 18%,
+      rgba(238, 232, 220, 0.48) 50%,
+      rgba(238, 232, 220, 0.26) 82%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
     linear-gradient(
       to bottom,
-      rgba(8, 12, 18, 0.42),
-      rgba(5, 8, 13, 0.54)
+      transparent 0%,
+      black 22%,
+      black 76%,
+      transparent 100%
     );
-  border: 1px solid rgba(222, 199, 153, 0.24);
-
-  box-shadow:
-    0 14px 38px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 22%,
+      black 76%,
+      transparent 100%
+    );
 
   z-index: 4;
 }
 
-/* 내레이션 글씨 */
+/* 1컷과 같은 계열의 글씨. 떠 보이지 않게 어둡고 얇게 */
 .lyrical-panel .narration-text {
   text-align: center;
-  color: #f4ede1;
+  color: #403a32;
+
   font-family: "Noto Serif KR", "Nanum Myeongjo", "Malgun Myeongjo", "Batang", serif;
-  font-size: 64px;
+  font-size: 76px;
   font-weight: 400;
-  line-height: 1.62;
-  letter-spacing: -0.03em;
+  line-height: 1.72;
+  letter-spacing: -0.035em;
   word-break: keep-all;
 
   text-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.72),
-    0 0 16px rgba(0, 0, 0, 0.28);
+    0 1px 0 rgba(255, 255, 255, 0.52),
+    0 3px 14px rgba(238, 232, 220, 0.72),
+    0 2px 5px rgba(0, 0, 0, 0.14);
 }
 
-/* 강조어: 너무 튀지 않게, 어둠 속 샴페인골드 */
+/* 기록문 느낌의 얇은 선 */
+.lyrical-panel .narration-text::before {
+  content: "";
+  display: block;
+  width: 124px;
+  height: 1px;
+  margin: 0 auto 28px;
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(143, 119, 80, 0.46),
+      transparent
+    );
+}
+
+/* 1컷 '봄은 있었다.'와 같은 톤 */
 .lyrical-panel .gold-word {
-  color: #d7bf86;
+  color: #8f7750;
   font-weight: 500;
   text-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.72),
-    0 0 14px rgba(215, 191, 134, 0.24);
+    0 1px 0 rgba(255, 255, 255, 0.48),
+    0 2px 8px rgba(238, 232, 220, 0.62),
+    0 1px 4px rgba(0, 0, 0, 0.10);
 }
