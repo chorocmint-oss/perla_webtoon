@@ -1,11 +1,11 @@
 /* =========================================================
-   Intro → Lake transition fix
-   - Loaded after styles.css.
-   - Only touches 1 → 1-2 transition and 1-2 top fade.
-   - Keeps lake → carriage, vertical dots, and carriage-panel::before intact.
+   1컷 하단 경계 전용 보정
+   - 목표: 1컷 마지막 줄과 intro-to-lake-transition 상단을 같은 크림색으로 맞춤.
+   - 그 색을 1컷 안쪽으로만 위로 번지게 해서 컷/패널 경계선을 지움.
+   - 1-2컷 내부, lake-to-carriage, vertical-dots, carriage-panel::before는 건드리지 않음.
 ========================================================= */
 
-/* 1컷 → 1-2컷 사이 실제 여백: 600px 유지 */
+/* 1컷 바로 아래 전환 패널의 시작색. 1컷 마지막 픽셀과 같은 색이어야 함. */
 .export-panel.transition-panel.intro-to-lake-transition {
   height: 600px !important;
   min-height: 600px !important;
@@ -17,121 +17,42 @@
   box-shadow: none !important;
   isolation: isolate !important;
 
-  /* 청록/민트 띠가 뜨지 않도록 채도 낮은 종이-미스트 계열만 사용 */
-  --rp-from: #f0ebe2;
-  --rp-mid: #ece8df;
-  --rp-to: #e9e5dc;
-  --rp-glow: rgba(255, 250, 240, 0.20);
-  --rp-top-opacity: 1;
-  --rp-bottom-opacity: 1;
+  --intro-edge: #f0ebe2;
+  --lake-mist: #e9e5dc;
 
   background:
     linear-gradient(
       to bottom,
-      #f0ebe2 0%,
-      #eeeae1 12%,
-      #ece8df 30%,
-      #e9e8e1 54%,
-      #e7e7df 76%,
-      #e8e5dc 90%,
-      #e9e5dc 100%
+      var(--intro-edge) 0%,
+      var(--intro-edge) 18%,
+      #eee9df 42%,
+      #ebe7de 68%,
+      var(--lake-mist) 100%
     ) !important;
 }
 
-/* 위쪽 경계: 1컷 종이색을 바로 잇되, 너무 평평하지 않게 살짝 풀어줌 */
-.export-panel.transition-panel.intro-to-lake-transition::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 1 !important;
-  pointer-events: none !important;
-  mix-blend-mode: normal !important;
-  opacity: 1 !important;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(240, 235, 226, 0.96) 0%,
-      rgba(240, 235, 226, 0.70) 22%,
-      rgba(240, 235, 226, 0.28) 48%,
-      rgba(240, 235, 226, 0.00) 72%
-    ),
-    radial-gradient(
-      ellipse at 50% 0%,
-      rgba(255, 250, 240, 0.28) 0%,
-      rgba(255, 250, 240, 0.08) 44%,
-      rgba(255, 250, 240, 0.00) 74%
-    ) !important;
-}
-
-/* 아래쪽 경계: 민트/청록 색띠 제거, 1-2컷 상단의 밝은 미스트색으로 연결 */
+/* 전환 패널 자체에 생기던 덧그라데이션은 끔. 경계는 1컷 안에서 처리함. */
+.export-panel.transition-panel.intro-to-lake-transition::before,
 .export-panel.transition-panel.intro-to-lake-transition::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-  mix-blend-mode: normal !important;
-  opacity: 1 !important;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.00) 0%,
-      rgba(0, 0, 0, 0.00) 44%,
-      rgba(238, 234, 224, 0.14) 62%,
-      rgba(235, 231, 221, 0.40) 78%,
-      rgba(233, 229, 220, 0.82) 93%,
-      rgba(233, 229, 220, 1.00) 100%
-    ),
-    radial-gradient(
-      ellipse at 50% 100%,
-      rgba(255, 250, 240, 0.30) 0%,
-      rgba(233, 229, 220, 0.20) 42%,
-      rgba(233, 229, 220, 0.00) 74%
-    ) !important;
+  content: none !important;
+  display: none !important;
 }
 
-/* 1-2컷 내부 상단 페이드는 너무 커지지 않게 380px 고정 */
-.opening-lake-panel::before {
-  content: "" !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  height: 380px !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #e9e5dc 0%,
-      rgba(233, 229, 220, 0.94) 22%,
-      rgba(233, 229, 220, 0.72) 42%,
-      rgba(233, 229, 220, 0.38) 66%,
-      rgba(233, 229, 220, 0.12) 86%,
-      rgba(233, 229, 220, 0.00) 100%
-    ) !important;
-}
-
-/* =========================================================
-   1컷 하단 페이드
-   전환 패널이 아니라 1컷 내부 아래쪽부터 종이색이 미스트로 풀리게 함.
-========================================================= */
-
+/* 1컷 마지막부분이 전환 패널 첫 색과 완전히 같게 닿도록 함. */
 .intro-panel {
   background:
     linear-gradient(
       to bottom,
       #f3efe7 0%,
-      #f2eee6 48%,
-      #f0ebe2 70%,
-      #ece8df 86%,
-      #e9e5dc 100%
+      #f2eee6 42%,
+      #f1ede4 64%,
+      #f0ebe2 82%,
+      #f0ebe2 100%
     ) !important;
+  overflow: hidden !important;
 }
 
+/* 1컷 안쪽에서만 아래 색을 위로 끌어올리는 페이드. */
 .intro-panel::before {
   content: "" !important;
   position: absolute !important;
@@ -148,29 +69,57 @@
     linear-gradient(
       to bottom,
       rgba(255,255,255,0.08) 0%,
-      rgba(255,255,255,0.02) 50%,
-      rgba(238,234,224,0.22) 70%,
-      rgba(233,229,220,0.62) 88%,
-      rgba(233,229,220,0.96) 100%
+      rgba(255,255,255,0.03) 48%,
+      rgba(240,235,226,0.00) 62%,
+      rgba(240,235,226,0.34) 78%,
+      rgba(240,235,226,0.76) 91%,
+      rgba(240,235,226,1.00) 100%
     ) !important;
 }
 
-/* 프레임 안쪽도 아래로 갈수록 아주 약하게 빠져야 컷 경계가 덜 딱딱함 */
+/* 기존 종이결은 유지하되, 아래쪽만 같은 크림색으로 한 번 더 덮음. */
+.intro-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.42 !important;
+  mix-blend-mode: normal !important;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(240,235,226,0.00) 0%,
+      rgba(240,235,226,0.00) 62%,
+      rgba(240,235,226,0.20) 78%,
+      rgba(240,235,226,0.58) 91%,
+      rgba(240,235,226,0.92) 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(90,70,45,0.018) 0px,
+      rgba(90,70,45,0.018) 1px,
+      transparent 1px,
+      transparent 8px
+    ) !important;
+}
+
+/* 프레임 안쪽 아래도 같은 색으로 살짝만 받아서 프레임 아래가 따로 끊겨 보이지 않게 함. */
 .record-frame::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 360px;
+  height: 300px;
   z-index: 1;
   pointer-events: none;
   background:
     linear-gradient(
       to bottom,
       rgba(240,235,226,0.00) 0%,
-      rgba(240,235,226,0.18) 46%,
-      rgba(233,229,220,0.58) 100%
+      rgba(240,235,226,0.16) 48%,
+      rgba(240,235,226,0.46) 100%
     );
 }
 
