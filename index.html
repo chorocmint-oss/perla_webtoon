@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="transition-fix.css?v=20260614-explicit-carriage-bottom" />
+  <link rel="stylesheet" href="transition-fix.css?v=20260614-reset-simple-door" />
   <style>
     .export-panel.transition-panel.carriage-to-door-transition {
       height: 500px !important;
@@ -34,28 +34,31 @@
       mask-image: none !important;
     }
 
-    .carriage-bottom-fade {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -2px;
-      height: 720px;
-      z-index: 6;
-      pointer-events: none;
-      background:
+    .carriage-panel::after {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 5 !important;
+      pointer-events: none !important;
+      opacity: 1 !important;
+      background-image:
+        radial-gradient(circle at 16% 18%, rgba(235,244,248,0.055) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 72% 32%, rgba(235,244,248,0.038) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 44% 72%, rgba(255,255,255,0.028) 0 1px, transparent 1.8px),
         linear-gradient(
           to bottom,
-          rgba(3,6,10,0.00) 0%,
-          rgba(3,6,10,0.10) 18%,
-          rgba(3,6,10,0.32) 42%,
-          rgba(3,6,10,0.66) 68%,
-          rgba(3,6,10,0.92) 88%,
+          transparent 0%,
+          transparent 58%,
+          rgba(0,0,0,0.14) 72%,
+          rgba(2,5,8,0.42) 84%,
+          rgba(3,6,10,0.82) 94%,
           #03060a 100%
-        );
+        ) !important;
+      background-size: 104px 136px, 146px 182px, 86px 120px, 100% 100% !important;
     }
 
     .carriage-panel .caption {
-      z-index: 7 !important;
+      z-index: 6 !important;
     }
 
     .door-panel {
@@ -67,7 +70,6 @@
       object-fit: cover !important;
       object-position: center top !important;
       transform: none !important;
-      transform-origin: center top !important;
       filter: saturate(0.62) contrast(1.08) brightness(0.78) !important;
     }
 
@@ -167,7 +169,6 @@
   <img src="assets/03_black_carriage_palace.png" alt="검은 마차와 황궁 문" />
   <div class="image-wash cold-wash"></div>
   <div class="overlay"></div>
-  <div class="carriage-bottom-fade" aria-hidden="true"></div>
   <div class="caption">
     <span class="caption-kicker">그해,</span><br>
     <span class="caption-main">봄은 검은 마차에 실려 떠났다.</span>
