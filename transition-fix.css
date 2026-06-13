@@ -3,8 +3,8 @@
    임시 보정 파일. 최종 확정 후 styles.css로 합칠 것.
 ========================================================= */
 
-/* 1 → 1-2: 기록문 크림색에서 호수 안개로 넘어가는 부분
-   하늘색/민트 띠가 생기지 않게 웜그레이 계열로 고정 */
+/* 1 → 1-2: 1컷 바로 아래 중간 패널만 보정.
+   1-2컷 내부(opening-lake-panel)는 건드리지 않는다. */
 .export-panel.transition-panel.intro-to-lake-transition {
   height: 600px !important;
   min-height: 600px !important;
@@ -18,9 +18,9 @@
   background: linear-gradient(
     to bottom,
     #f0ebe2 0%,
-    #f0ebe2 24%,
-    #eee9df 52%,
-    #ece8df 78%,
+    #f0ebe2 30%,
+    #eee9df 58%,
+    #ece8df 82%,
     #e9e6de 100%
   ) !important;
 }
@@ -31,7 +31,7 @@
   display: none !important;
 }
 
-/* 1컷 하단도 전환 패널 시작색과 맞춤 */
+/* 1컷 하단만 전환 패널 시작색과 맞춤 */
 .intro-panel {
   background: linear-gradient(
     to bottom,
@@ -86,26 +86,6 @@
 
 .intro-text {
   z-index: 3 !important;
-}
-
-/* 1-2컷 상단: 호수 이미지의 푸른 하늘빛을 웜그레이 안개로 눌러서 띠 제거 */
-.opening-lake-panel::before {
-  height: 520px !important;
-  z-index: 2 !important;
-  background: linear-gradient(
-    to bottom,
-    #e9e6de 0%,
-    rgba(233,230,222,0.98) 18%,
-    rgba(233,230,222,0.84) 42%,
-    rgba(233,230,222,0.52) 66%,
-    rgba(233,230,222,0.20) 86%,
-    rgba(233,230,222,0.00) 100%
-  ) !important;
-}
-
-/* 1-2 하단은 기존 어둠 전환 유지 */
-.opening-lake-panel > .lake-bottom-fade {
-  display: block !important;
 }
 
 /* 2컷: reset-simple-door 상태 유지. 점 효과는 약하게. */
