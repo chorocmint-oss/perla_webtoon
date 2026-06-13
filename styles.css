@@ -405,8 +405,22 @@ body.export-mode .preview-panel {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.28), transparent 48%),
-    radial-gradient(circle at center, rgba(0,0,0,0.035), transparent 78%);
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.32), transparent 45%),
+    radial-gradient(circle at 20% 20%, rgba(210,190,150,0.08), transparent 34%),
+    radial-gradient(circle at 82% 78%, rgba(150,130,95,0.07), transparent 38%),
+    linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(0,0,0,0.025));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(80,65,45,0.045) 0.8px, transparent 0.8px);
+  background-size: 22px 22px;
+  opacity: 0.22;
   pointer-events: none;
   z-index: 1;
 }
