@@ -69,3 +69,252 @@
       rgba(0,0,0,0.00) 52%
     ) !important;
 }
+
+/* =========================================================
+   rollback: 2컷 하단 복구 + 2-2 상단 그라데이션만 수정
+   이 블록은 transition-fix.css 맨 아래에 추가
+========================================================= */
+
+/* -------------------------
+   2컷(검은 마차) 하단 원복
+------------------------- */
+html body .page .carriage-panel {
+  background: #03060a !important;
+}
+
+html body .page .carriage-panel img {
+  object-position: center center !important;
+  transform: none !important;
+  filter: saturate(0.72) contrast(1.12) brightness(0.88) !important;
+}
+
+html body .page .carriage-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 560px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      rgba(3,6,10,1.00) 12%,
+      rgba(3,6,10,0.88) 34%,
+      rgba(3,6,10,0.58) 58%,
+      rgba(3,6,10,0.24) 82%,
+      rgba(3,6,10,0.00) 100%
+    ) !important;
+}
+
+html body .page .carriage-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  opacity: 0.82 !important;
+  background-image:
+    radial-gradient(circle at 16% 18%, rgba(235,244,248,0.22) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 72% 32%, rgba(235,244,248,0.16) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 44% 72%, rgba(255,255,255,0.10) 0 1px, transparent 1.8px),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 64%,
+      rgba(0,0,0,0.24) 84%,
+      rgba(0,0,0,0.46) 100%
+    );
+  background-size: 104px 136px, 146px 182px, 86px 120px, 100% 100%;
+}
+
+html body .page .carriage-panel .cold-wash {
+  opacity: 1 !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(125,154,178,0.13),
+      transparent 36%,
+      rgba(0,0,0,0.28)
+    ) !important;
+}
+
+html body .page .carriage-panel .overlay {
+  z-index: 2 !important;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.92) 0%,
+      rgba(0,0,0,0.68) 16%,
+      rgba(0,0,0,0.30) 42%,
+      rgba(0,0,0,0.18) 68%,
+      rgba(0,0,0,0.46) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.54) 0%,
+      transparent 38%,
+      rgba(0,0,0,0.34) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 84%,
+      transparent 0%,
+      transparent 28%,
+      rgba(0,0,0,0.46) 86%
+    ) !important;
+}
+
+html body .page .carriage-panel .caption {
+  left: 50% !important;
+  bottom: 7.4% !important;
+  transform: translateX(-50%) !important;
+  width: 66% !important;
+  z-index: 6 !important;
+  padding: 18px 58px 22px !important;
+  font-size: 80px !important;
+  line-height: 1.58 !important;
+  letter-spacing: -0.04em !important;
+  color: #f2eadf !important;
+  background:
+    radial-gradient(
+      ellipse at 50% 54%,
+      rgba(2,5,8,0.28) 0%,
+      rgba(2,5,8,0.16) 42%,
+      rgba(2,5,8,0.00) 76%
+    ),
+    linear-gradient(
+      to right,
+      rgba(3,6,10,0.00) 0%,
+      rgba(3,6,10,0.22) 24%,
+      rgba(3,6,10,0.30) 50%,
+      rgba(3,6,10,0.22) 76%,
+      rgba(3,6,10,0.00) 100%
+    ) !important;
+  border-top: 1px solid rgba(235,226,210,0.04) !important;
+  border-bottom: 1px solid rgba(215,191,134,0.04) !important;
+  text-shadow:
+    0 6px 24px rgba(0,0,0,0.98),
+    0 0 40px rgba(0,0,0,0.84),
+    0 0 2px rgba(255,255,255,0.18) !important;
+}
+
+html body .page .carriage-panel .caption-kicker {
+  display: inline-block !important;
+  margin-bottom: 2px !important;
+  color: #c7ad7d !important;
+  font-size: 0.82em !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.035em !important;
+}
+
+html body .page .carriage-panel .caption-main {
+  display: inline-block !important;
+  color: #f2eadf !important;
+}
+
+/* -------------------------
+   2컷 → 2-2 사이 검은 패널
+------------------------- */
+html body .page .export-panel.transition-panel.carriage-to-door-transition {
+  height: 500px !important;
+  min-height: 500px !important;
+  background: #03060a !important;
+}
+
+html body .page .carriage-to-door-transition::before,
+html body .page .carriage-to-door-transition::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* -------------------------
+   2-2(닫힌 문) 상단만 수정
+   윗패널과 같은 색에서 아래로 그라데이션
+------------------------- */
+html body .page .door-panel {
+  background: #03060a !important;
+  overflow: hidden !important;
+}
+
+html body .page .door-panel img {
+  object-fit: cover !important;
+  object-position: center top !important;
+  transform: none !important;
+  filter: saturate(0.62) contrast(1.08) brightness(0.78) !important;
+}
+
+/* 상단 색 틀어지는 워시 제거 */
+html body .page .door-panel .cold-wash {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* 핵심: 윗패널과 같은 색에서 시작해서 아래로만 풀기 */
+html body .page .door-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 560px !important;
+  z-index: 6 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      #03060a 20%,
+      rgba(3,6,10,0.92) 38%,
+      rgba(3,6,10,0.62) 62%,
+      rgba(3,6,10,0.24) 82%,
+      rgba(3,6,10,0.00) 100%
+    ) !important;
+}
+
+/* 좌우/하단 눌림은 약하게만 유지 */
+html body .page .door-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.42) 0%,
+      rgba(0,0,0,0.10) 22%,
+      transparent 50%,
+      rgba(0,0,0,0.12) 78%,
+      rgba(0,0,0,0.44) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.60) 0%,
+      rgba(0,0,0,0.22) 22%,
+      rgba(0,0,0,0.00) 52%
+    ) !important;
+}
+
+html body .page .door-panel .overlay {
+  z-index: 2 !important;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.56) 0%,
+      rgba(0,0,0,0.18) 24%,
+      rgba(0,0,0,0.00) 52%
+    ) !important;
+}
+
+html body .page .door-panel .caption-slightly-small {
+  z-index: 7 !important;
+  bottom: 9.5% !important;
+  width: 74% !important;
+  font-size: 78px !important;
+  line-height: 1.66 !important;
+  text-shadow:
+    0 6px 26px rgba(0,0,0,0.98),
+    0 0 38px rgba(0,0,0,0.82) !important;
+}
