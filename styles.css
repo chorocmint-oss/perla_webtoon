@@ -979,3 +979,118 @@ body.export-mode .preview-panel {
     0 3px 12px rgba(0, 0, 0, 0.78),
     0 0 14px rgba(215, 191, 134, 0.22);
 }
+
+/* =========================
+   1-2컷 텍스트 패널 고급화
+   위치 유지 / 상단 그라데이션 유지 / 유리 기록패널
+========================= */
+
+.lyrical-panel .narration-box {
+  position: absolute !important;
+  left: 50% !important;
+  top: 55% !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: 63% !important;
+  height: auto !important;
+  padding: 30px 62px 34px !important;
+
+  display: block !important;
+
+  border: 0 !important;
+  border-radius: 3px !important;
+  box-shadow:
+    0 22px 58px rgba(0, 0, 0, 0.30),
+    0 2px 10px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.075),
+    inset 0 -1px 0 rgba(215, 191, 134, 0.13) !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(7, 18, 23, 0.32),
+      rgba(4, 10, 14, 0.43)
+    ) !important;
+
+  backdrop-filter: blur(5px) saturate(0.92);
+  -webkit-backdrop-filter: blur(5px) saturate(0.92);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+
+  z-index: 4 !important;
+}
+
+/* 위아래만 얇게 빛나는 기록선 */
+.lyrical-panel .narration-box::before,
+.lyrical-panel .narration-box::after {
+  content: "";
+  position: absolute;
+  left: 11%;
+  right: 11%;
+  height: 1px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(215, 191, 134, 0.38),
+      rgba(255, 244, 218, 0.20),
+      rgba(215, 191, 134, 0.38),
+      transparent
+    );
+}
+
+.lyrical-panel .narration-box::before {
+  top: 10px;
+}
+
+.lyrical-panel .narration-box::after {
+  bottom: 10px;
+  opacity: 0.62;
+}
+
+/* 글씨를 덜 튀게, 더 고급스럽게 */
+.lyrical-panel .narration-text {
+  text-align: center;
+  color: #e7ddcc;
+
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Malgun Myeongjo", "Batang", serif;
+  font-size: 63px;
+  font-weight: 400;
+  line-height: 1.64;
+  letter-spacing: -0.036em;
+  word-break: keep-all;
+
+  text-shadow:
+    0 2px 9px rgba(0, 0, 0, 0.82),
+    0 0 22px rgba(0, 0, 0, 0.48);
+}
+
+.lyrical-panel .narration-text::before {
+  display: none !important;
+}
+
+/* 금색도 덜 튀게 죽임 */
+.lyrical-panel .gold-word {
+  color: #c1a36c;
+  font-weight: 500;
+  text-shadow:
+    0 2px 9px rgba(0, 0, 0, 0.82),
+    0 0 13px rgba(215, 191, 134, 0.20);
+}
