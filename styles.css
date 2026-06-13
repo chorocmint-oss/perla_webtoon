@@ -622,3 +622,116 @@ body.export-mode .preview-panel {
     0 2px 8px rgba(255, 255, 255, 0.86),
     0 0 18px rgba(215, 191, 134, 0.22);
 }
+
+/* =========================
+   1-2컷 최종 조정: 크림 페이드 + 중앙권 내레이션
+   기존 1-2 관련 CSS보다 반드시 아래에 둘 것
+========================= */
+
+.opening-lake-panel {
+  position: relative;
+  background: #f0ebe2;
+}
+
+/* 이미지 자체는 너무 푸르게 뜨지 않게 살짝만 정리 */
+.opening-lake-panel img {
+  filter:
+    saturate(0.94)
+    contrast(0.97)
+    brightness(1.01);
+}
+
+/* 상단: 1컷 하단 배경색을 그대로 받아서 시작한 뒤 길게 풀기 */
+.opening-lake-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      #f0ebe2 0%,
+      #f0ebe2 14%,
+      rgba(240, 235, 226, 0.96) 21%,
+      rgba(240, 235, 226, 0.82) 31%,
+      rgba(240, 235, 226, 0.58) 43%,
+      rgba(240, 235, 226, 0.32) 55%,
+      rgba(240, 235, 226, 0.13) 66%,
+      rgba(240, 235, 226, 0) 76%
+    );
+}
+
+/* 하단: 다음 검은 마차 컷으로 넘어갈 준비만 살짝 */
+.opening-lake-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 54%,
+      rgba(4, 9, 15, 0.10) 72%,
+      rgba(4, 9, 15, 0.42) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 56%,
+      transparent 42%,
+      rgba(0, 0, 0, 0.18) 94%
+    );
+}
+
+/* 박스 없는 내레이션: 1컷 글씨 느낌에 맞춤 */
+.lake-narration {
+  position: absolute;
+  left: 50%;
+  top: 51.5%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  width: 78%;
+  padding: 0;
+
+  text-align: center;
+  color: #4a433c;
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Malgun Myeongjo", "Batang", serif;
+  font-size: 78px;
+  font-weight: 400;
+  line-height: 1.76;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+
+  background: none;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.38),
+    0 2px 7px rgba(0,0,0,0.08);
+}
+
+/* 위 장식선도 1컷 기록문 느낌으로 얇게 */
+.lake-narration::before {
+  content: "";
+  display: block;
+  width: 126px;
+  height: 1px;
+  margin: 0 auto 32px;
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(143, 119, 80, 0.46),
+      transparent
+    );
+  opacity: 0.74;
+}
+
+/* 1컷의 '봄은 있었다.'와 톤 맞춤 */
+.gold-word {
+  color: #8f7750;
+  font-weight: 500;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.34),
+    0 2px 7px rgba(0,0,0,0.06);
+}
