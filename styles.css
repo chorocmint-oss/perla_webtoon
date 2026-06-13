@@ -1587,3 +1587,114 @@ body.export-mode .preview-panel {
       transparent 100%
     ) !important;
 }
+
+/* =========================
+   FINAL: 1-2 → 전환 여백 → 2컷 연결 재정리
+   검은 띠 단절 제거 / 호수색에서 흑청색으로 천천히 침잠
+========================= */
+
+/* 1-2컷 하단: 호수색을 남긴 채 전환 패널 시작색으로 가라앉힘 */
+.opening-lake-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 48%,
+      rgba(5, 41, 47, 0.06) 62%,
+      rgba(5, 35, 42, 0.22) 76%,
+      rgba(5, 28, 35, 0.48) 90%,
+      rgba(5, 25, 31, 0.78) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 78%,
+      transparent 34%,
+      rgba(0, 0, 0, 0.18) 92%
+    ) !important;
+}
+
+/* 전환 패널 자체: 시작을 검정으로 하지 말고 1-2컷 하단 수면색으로 맞춤 */
+.export-panel.transition-panel,
+.transition-panel,
+.lake-to-carriage-transition {
+  height: 340px !important;
+  min-height: 340px !important;
+  background:
+    linear-gradient(
+      to bottom,
+      #05191f 0%,
+      #05171e 18%,
+      #04121a 46%,
+      #030b12 74%,
+      #03060a 100%
+    ) !important;
+}
+
+/* 전환부 위쪽: 호수의 잔광이 아주 조금 남아 있다가 사라짐 */
+.lake-to-carriage-transition::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(48, 116, 122, 0.16) 0%,
+      rgba(48, 116, 122, 0.08) 30%,
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(215, 191, 134, 0.075) 0%,
+      rgba(215, 191, 134, 0.030) 26%,
+      transparent 58%
+    ) !important;
+
+  opacity: 0.85 !important;
+}
+
+/* 전환부 아래쪽: 2컷 들어가기 전 확실히 잠김 */
+.lake-to-carriage-transition::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 38%,
+      rgba(0, 0, 0, 0.24) 70%,
+      rgba(0, 0, 0, 0.46) 100%
+    ) !important;
+}
+
+/* 2컷 상단: 전환부의 끝색이 이미지로 녹아들게 */
+.carriage-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 340px !important;
+  z-index: 4;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #03060a 0%,
+      rgba(3, 6, 10, 0.98) 10%,
+      rgba(3, 6, 10, 0.82) 32%,
+      rgba(3, 6, 10, 0.50) 58%,
+      rgba(3, 6, 10, 0.20) 82%,
+      transparent 100%
+    ) !important;
+}
