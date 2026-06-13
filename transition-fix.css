@@ -1,1 +1,71 @@
 .intro-to-lake-transition{height:600px!important;min-height:600px!important;background:linear-gradient(to bottom,#f0ebe2 0%,#f0ebe2 18%,#eee9df 42%,#ebe7de 68%,#e9e5dc 100%)!important}.intro-to-lake-transition:before,.intro-to-lake-transition:after{content:none!important;display:none!important}.intro-panel{background:linear-gradient(to bottom,#f3efe7 0%,#f2eee6 42%,#f1ede4 64%,#f0ebe2 82%,#f0ebe2 100%)!important;overflow:hidden!important}.intro-panel:before{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.3),transparent 42%),radial-gradient(circle at 20% 20%,rgba(189,164,118,.08),transparent 28%),radial-gradient(circle at 82% 80%,rgba(120,102,74,.055),transparent 34%),linear-gradient(to bottom,rgba(255,255,255,.08) 0%,rgba(255,255,255,.03) 48%,rgba(240,235,226,0) 62%,rgba(240,235,226,.34) 78%,rgba(240,235,226,.76) 91%,rgba(240,235,226,1) 100%)!important}.intro-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;opacity:.42!important;background:linear-gradient(to bottom,rgba(240,235,226,0) 0%,rgba(240,235,226,0) 62%,rgba(240,235,226,.2) 78%,rgba(240,235,226,.58) 91%,rgba(240,235,226,.92) 100%),repeating-linear-gradient(0deg,rgba(90,70,45,.018) 0 1px,transparent 1px 8px)!important}.record-frame:after{content:"";position:absolute;left:0;right:0;bottom:0;height:300px;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(240,235,226,0) 0%,rgba(240,235,226,.16) 48%,rgba(240,235,226,.46) 100%)}.intro-text{z-index:3!important}.opening-lake-panel:before{height:380px!important;background:linear-gradient(to bottom,#e9e5dc 0%,rgba(233,229,220,.94) 22%,rgba(233,229,220,.72) 42%,rgba(233,229,220,.38) 66%,rgba(233,229,220,.12) 86%,rgba(233,229,220,0) 100%)!important}.carriage-panel{background:#03060a!important}.carriage-panel img{object-position:center center!important;filter:saturate(.72) contrast(1.12) brightness(.88)!important}.carriage-panel:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:560px!important;z-index:4!important;pointer-events:none!important;background:linear-gradient(to bottom,#03060a 0%,rgba(3,6,10,1) 12%,rgba(3,6,10,.88) 34%,rgba(3,6,10,.58) 58%,rgba(3,6,10,.24) 82%,transparent 100%)!important}.carriage-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important;opacity:.82!important;background-image:radial-gradient(circle at 16% 18%,rgba(235,244,248,.22) 0 1.1px,transparent 1.8px),radial-gradient(circle at 72% 32%,rgba(235,244,248,.16) 0 1px,transparent 1.7px),radial-gradient(circle at 44% 72%,rgba(255,255,255,.10) 0 1px,transparent 1.8px),linear-gradient(to bottom,transparent 0%,transparent 64%,rgba(0,0,0,.24) 84%,rgba(0,0,0,.46) 100%);background-size:104px 136px,146px 182px,86px 120px,100% 100%}.carriage-panel .cold-wash{opacity:1!important;background:linear-gradient(135deg,rgba(125,154,178,.13),transparent 36%,rgba(0,0,0,.28))!important}.carriage-panel .overlay{z-index:2!important;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.68) 16%,rgba(0,0,0,.30) 42%,rgba(0,0,0,.18) 68%,rgba(0,0,0,.46) 100%),linear-gradient(to right,rgba(0,0,0,.54) 0%,transparent 38%,rgba(0,0,0,.34) 100%),radial-gradient(ellipse at 50% 84%,transparent 0%,transparent 28%,rgba(0,0,0,.46) 86%)!important}.carriage-panel .caption{left:50%!important;bottom:7.4%!important;transform:translateX(-50%)!important;width:66%!important;z-index:6!important;padding:18px 58px 22px!important;font-size:80px!important;line-height:1.58!important;letter-spacing:-.04em!important;color:#f2eadf!important;background:radial-gradient(ellipse at 50% 54%,rgba(2,5,8,.28) 0%,rgba(2,5,8,.16) 42%,rgba(2,5,8,0) 76%),linear-gradient(to right,rgba(3,6,10,0) 0%,rgba(3,6,10,.22) 24%,rgba(3,6,10,.30) 50%,rgba(3,6,10,.22) 76%,rgba(3,6,10,0) 100%)!important;border-top:1px solid rgba(235,226,210,.04)!important;border-bottom:1px solid rgba(215,191,134,.04)!important;text-shadow:0 6px 24px rgba(0,0,0,.98),0 0 40px rgba(0,0,0,.84),0 0 2px rgba(255,255,255,.18)!important}.carriage-panel .caption-kicker{display:inline-block;margin-bottom:2px;color:#c7ad7d;font-size:.82em;font-weight:500;letter-spacing:.035em}.carriage-panel .caption-main{display:inline-block;color:#f2eadf}.export-panel.transition-panel.carriage-to-door-transition{height:500px!important;min-height:500px!important;background:#03060a!important}.carriage-to-door-transition:before,.carriage-to-door-transition:after{content:none!important;display:none!important}html body .page .door-panel{background:#03060a!important;overflow:hidden!important}html body .page .door-panel img{object-fit:cover!important;object-position:center top!important;transform:translateY(190px) scale(1.055)!important;transform-origin:center top!important;filter:saturate(.50) contrast(1.14) brightness(.68)!important}html body .page .door-panel .cold-wash{display:none!important;opacity:0!important}html body .page .door-panel:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:900px!important;z-index:6!important;pointer-events:none!important;background:linear-gradient(to bottom,#03060a 0%,#03060a 36%,rgba(3,6,10,.96) 48%,rgba(3,6,10,.78) 62%,rgba(3,6,10,.46) 78%,rgba(3,6,10,.16) 92%,rgba(3,6,10,0) 100%)!important}html body .page .door-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important;background:linear-gradient(to right,rgba(0,0,0,.58) 0%,rgba(0,0,0,.16) 22%,transparent 50%,rgba(0,0,0,.18) 78%,rgba(0,0,0,.60) 100%),linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.30) 24%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.14) 100%)!important}html body .page .door-panel .overlay{z-index:2!important;background:linear-gradient(to top,rgba(0,0,0,.64) 0%,rgba(0,0,0,.24) 24%,rgba(0,0,0,.06) 50%,rgba(0,0,0,.10) 100%)!important}html body .page .door-panel .caption-slightly-small{z-index:7!important;bottom:9.5%!important;width:74%!important;font-size:78px!important;line-height:1.66!important;text-shadow:0 6px 26px rgba(0,0,0,.98),0 0 38px rgba(0,0,0,.82)!important}
+/* ===== fix: 검은 패널 -> 문컷 상단 진입부 ===== */
+
+/* 검은 전환 패널 끝색 고정 */
+.export-panel.transition-panel.carriage-to-door-transition {
+  background: #03060a !important;
+}
+
+/* 문컷 시작도 같은 색으로 */
+.door-panel {
+  background: #03060a !important;
+  overflow: hidden !important;
+}
+
+/* 이미지 자체는 너무 많이 안 건드리고, 아주 조금만 아래로 */
+.door-panel img {
+  object-fit: cover !important;
+  object-position: center top !important;
+  transform: translateY(70px) scale(1.02) !important;
+  transform-origin: center top !important;
+}
+
+/* 핵심: 상단에서 같은 색으로 시작해서 아래로만 풀기 */
+.door-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 520px !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+  background: linear-gradient(
+    to bottom,
+    #03060a 0%,
+    #03060a 20%,
+    rgba(3, 6, 10, 0.92) 38%,
+    rgba(3, 6, 10, 0.62) 62%,
+    rgba(3, 6, 10, 0.24) 82%,
+    rgba(3, 6, 10, 0.00) 100%
+  ) !important;
+}
+
+/* 기존 차가운 워시는 상단색 틀어지게 해서 꺼버림 */
+.door-panel .cold-wash {
+  display: none !important;
+}
+
+/* 옆/아래 눌림은 약하게만 유지 */
+.door-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 9 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.42) 0%,
+      rgba(0,0,0,0.10) 22%,
+      transparent 50%,
+      rgba(0,0,0,0.12) 78%,
+      rgba(0,0,0,0.44) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.60) 0%,
+      rgba(0,0,0,0.22) 22%,
+      rgba(0,0,0,0.00) 52%
+    ) !important;
+}
