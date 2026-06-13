@@ -1255,7 +1255,7 @@ body.export-mode .preview-panel {
     drop-shadow(0 0 24px rgba(0, 0, 0, 0.62));
 }
 
-/* 1 → 1-2 연결부 확대: 새 패널 추가 X, 1-2컷 상단 페이드만 키움 */
+/* 1 → 1-2 연결부 더 크게: 크림 종이에서 호수로 길게 침투 */
 .opening-lake-panel::before {
   content: "";
   position: absolute;
@@ -1263,7 +1263,7 @@ body.export-mode .preview-panel {
   right: 0;
   top: 0;
 
-  height: 680px !important;
+  height: 980px !important;
   z-index: 2;
   pointer-events: none;
 
@@ -1271,11 +1271,12 @@ body.export-mode .preview-panel {
     linear-gradient(
       to bottom,
       #e9e5dc 0%,
-      rgba(233, 229, 220, 0.98) 8%,
-      rgba(233, 229, 220, 0.88) 20%,
-      rgba(233, 229, 220, 0.66) 38%,
-      rgba(233, 229, 220, 0.38) 58%,
-      rgba(233, 229, 220, 0.15) 78%,
+      rgba(233, 229, 220, 0.98) 7%,
+      rgba(233, 229, 220, 0.90) 18%,
+      rgba(233, 229, 220, 0.72) 34%,
+      rgba(233, 229, 220, 0.48) 52%,
+      rgba(233, 229, 220, 0.26) 70%,
+      rgba(233, 229, 220, 0.10) 86%,
       rgba(233, 229, 220, 0.00) 100%
     ) !important;
 }
