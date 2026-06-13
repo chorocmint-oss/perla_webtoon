@@ -788,3 +788,101 @@ body.export-mode .preview-panel {
     0 2px 8px rgba(238, 232, 220, 0.62),
     0 1px 4px rgba(0, 0, 0, 0.10);
 }
+
+/* =========================
+   1-2컷 텍스트 재디자인
+   위치 유지 / 흰 안개띠 제거 / 어두운 수면 베일
+========================= */
+
+/* 위치는 현재 그대로: 중앙보다 살짝 아래 */
+.lyrical-panel .narration-box {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 55% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+
+  width: 100% !important;
+  height: 300px;
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  /* 흰 안개 대신 수면에 잠긴 어두운 베일 */
+  background:
+    radial-gradient(
+      ellipse at 50% 54%,
+      rgba(3, 8, 12, 0.46) 0%,
+      rgba(3, 8, 12, 0.34) 30%,
+      rgba(3, 8, 12, 0.18) 52%,
+      rgba(3, 8, 12, 0.06) 70%,
+      transparent 84%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(4, 10, 15, 0.10) 18%,
+      rgba(4, 10, 15, 0.24) 50%,
+      rgba(4, 10, 15, 0.10) 82%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 24%,
+      black 74%,
+      transparent 100%
+    );
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 24%,
+      black 74%,
+      transparent 100%
+    );
+
+  z-index: 4;
+}
+
+/* 글씨: 이미지 위에서는 갈색 버리고 크림화이트 */
+.lyrical-panel .narration-text {
+  text-align: center;
+  color: #f4ede1;
+
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Malgun Myeongjo", "Batang", serif;
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 1.62;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.88),
+    0 0 28px rgba(0, 0, 0, 0.62),
+    0 1px 1px rgba(255, 255, 255, 0.14);
+}
+
+/* 장식선은 제거. 지금 컷에서는 선이 오히려 싸구려 같음 */
+.lyrical-panel .narration-text::before {
+  display: none !important;
+}
+
+/* 강조어: 과한 금색 말고, 수면 반사처럼 은은하게 */
+.lyrical-panel .gold-word {
+  color: #d7bf86;
+  font-weight: 600;
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.88),
+    0 0 18px rgba(215, 191, 134, 0.28),
+    0 1px 1px rgba(255, 255, 255, 0.12);
+}
