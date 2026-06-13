@@ -400,48 +400,43 @@ body.export-mode .preview-panel {
   position: relative;
 }
 
+/* 1컷 배경 질감/비네트 강화 */
 .intro-panel::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.32), transparent 45%),
-    radial-gradient(circle at 20% 20%, rgba(210,190,150,0.08), transparent 34%),
-    radial-gradient(circle at 82% 78%, rgba(150,130,95,0.07), transparent 38%),
-    linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(0,0,0,0.025));
+    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.34), transparent 42%),
+    radial-gradient(circle at 18% 22%, rgba(200,170,120,0.12), transparent 30%),
+    radial-gradient(circle at 82% 78%, rgba(125,105,75,0.10), transparent 36%),
+    linear-gradient(to bottom, rgba(255,255,255,0.16), rgba(0,0,0,0.045));
   pointer-events: none;
   z-index: 1;
 }
+
 
 .intro-panel::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(rgba(80,65,45,0.045) 0.8px, transparent 0.8px);
-  background-size: 22px 22px;
-  opacity: 0.22;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(90,70,45,0.025) 0px,
+      rgba(90,70,45,0.025) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(90,70,45,0.018) 0px,
+      rgba(90,70,45,0.018) 1px,
+      transparent 1px,
+      transparent 9px
+    );
+  opacity: 0.55;
   pointer-events: none;
   z-index: 1;
-}
-
-.intro-text {
-  color: #4a433b;
-  font-size: 82px;
-  font-weight: 400;
-  line-height: 1.82;
-  letter-spacing: -0.035em;
-  padding: 300px 260px 210px;
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.32),
-    0 2px 8px rgba(0,0,0,0.04);
-}
-
-.spring-line {
-  color: #8a7452;
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.22),
-    0 2px 8px rgba(0,0,0,0.03);
 }
 
 /* 2컷 상단만 1컷 배경색으로 덮어서 연결 */
