@@ -1206,3 +1206,44 @@ body.export-mode .preview-panel {
       transparent 100%
     ) !important;
 }
+
+/* 1-2 → 2 전환 패널 세로 점 효과 */
+.lake-to-carriage-transition .vertical-dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 4;
+
+  width: 8px;
+  height: 520px;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle, rgba(215, 191, 134, 0.58) 0 3px, transparent 4px)
+    center top / 8px 58px repeat-y;
+
+  opacity: 0.42;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 78%,
+      transparent 100%
+    );
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 78%,
+      transparent 100%
+    );
+
+  filter:
+    drop-shadow(0 0 8px rgba(215, 191, 134, 0.18))
+    drop-shadow(0 0 18px rgba(0, 0, 0, 0.42));
+}
