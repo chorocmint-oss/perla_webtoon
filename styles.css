@@ -394,17 +394,10 @@ body.export-mode .preview-panel {
   border-radius: 0 !important;
 }
 
-/* 1컷 인트로 */
+/* 1컷: 깔끔한 인트로 */
 .intro-panel {
-  background:
-    linear-gradient(
-      to bottom,
-      #f3efe8 0%,
-      #efe8dd 42%,
-      #e3d6bf 66%,
-      #d1bd98 84%,
-      #cdbb98 100%
-    );
+  background: #f1ece3;
+  position: relative;
 }
 
 .intro-panel::before {
@@ -412,88 +405,51 @@ body.export-mode .preview-panel {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 34%, rgba(255,255,255,0.30), transparent 46%),
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.24) 0%,
-      rgba(255,255,255,0.08) 36%,
-      rgba(120,96,60,0.08) 72%,
-      rgba(36,35,28,0.18) 100%
-    );
+    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.28), transparent 48%),
+    radial-gradient(circle at center, rgba(0,0,0,0.035), transparent 78%);
   pointer-events: none;
   z-index: 1;
 }
 
 .intro-text {
-  color: #433d36;
-  font-size: 86px;
+  color: #4a433b;
+  font-size: 82px;
   font-weight: 400;
-  line-height: 1.78;
-  letter-spacing: -0.03em;
-  padding: 310px 260px 210px;
+  line-height: 1.82;
+  letter-spacing: -0.035em;
+  padding: 300px 260px 210px;
   text-shadow:
-    0 1px 0 rgba(255,255,255,0.28),
-    0 2px 7px rgba(0,0,0,0.05);
+    0 1px 0 rgba(255,255,255,0.32),
+    0 2px 8px rgba(0,0,0,0.04);
 }
 
 .spring-line {
-  color: #6f6048;
+  color: #8a7452;
   text-shadow:
     0 1px 0 rgba(255,255,255,0.22),
-    0 2px 7px rgba(0,0,0,0.04);
+    0 2px 8px rgba(0,0,0,0.03);
 }
 
-/* 1컷-2컷 사이 연결 여백 */
-.bundle-seam {
-  width: var(--panel-width);
-  height: 115px;
+/* 2컷 상단만 1컷 배경색으로 덮어서 연결 */
+.opening-lake-panel {
   position: relative;
-  overflow: hidden;
-  background: #272c28;
 }
 
-/* 크림 배경에서 2컷 수면 그림자색으로 자연스럽게 내려감 */
-.cream-to-lake {
-  background:
-    linear-gradient(
-      to bottom,
-      #cdbb98 0%,
-      #b9a782 22%,
-      #8d8066 46%,
-      #57564b 68%,
-      #29302d 100%
-    );
-}
-
-.cream-to-lake::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      ellipse at 50% 0%,
-      rgba(255,255,255,0.16) 0%,
-      rgba(255,255,255,0.05) 42%,
-      rgba(255,255,255,0) 100%
-    );
-  pointer-events: none;
-}
-
-/* 1-2컷 상단에 1컷 마지막 색을 아주 얇게 덮어서 경계 숨기기 */
 .opening-lake-panel::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  height: 210px;
+  height: 300px;
   background:
     linear-gradient(
       to bottom,
-      rgba(41, 48, 45, 0.72) 0%,
-      rgba(84, 78, 61, 0.38) 26%,
-      rgba(165, 143, 96, 0.14) 55%,
-      rgba(255,255,255,0) 100%
+      rgba(241,236,227,1) 0%,
+      rgba(241,236,227,0.82) 20%,
+      rgba(241,236,227,0.46) 48%,
+      rgba(241,236,227,0.18) 72%,
+      rgba(241,236,227,0) 100%
     );
   pointer-events: none;
   z-index: 2;
@@ -501,4 +457,7 @@ body.export-mode .preview-panel {
 
 .opening-lake-panel .caption {
   z-index: 3;
+  bottom: 8%;
+  font-size: 74px;
+  line-height: 1.55;
 }
