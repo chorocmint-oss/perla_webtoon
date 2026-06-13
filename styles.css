@@ -1263,7 +1263,7 @@ body.export-mode .preview-panel {
   right: 0;
   top: 0;
 
-  height: 980px !important;
+  height: 1200px !important;
   z-index: 2;
   pointer-events: none;
 
