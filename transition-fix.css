@@ -406,38 +406,6 @@ html body .page .goodbye-panel .goodbye-lie:before{
   box-shadow:0 0 8px rgba(215,191,134,.14),0 0 18px rgba(215,191,134,.06)!important;
 }
 
-/* assets/04_carriage_wheel_door.png: .door-panel / 닫힌 황궁 문 컷 / 대사 사이 금색 분리선 */
-/* "지켜본 아이는 무너졌다."와 "남겨진 두 아이는, 너무 작았다." 사이의 빈 줄에만 짧은 금색선을 넣는다. */
-html body .page .door-panel .caption-slightly-small{
-  position:absolute!important;
-}
-
-/* letter-panel의 border-line과 별개. 이 컷은 HTML에 별도 span이 없으므로 caption:after로 중간선을 만든다. */
-html body .page .door-panel .caption-slightly-small:after{
-  content:""!important;
-  position:absolute!important;
-  left:50%!important;
-  top:61.5%!important;
-  transform:translateX(-50%)!important;
-  width:150px!important;
-  height:2px!important;
-  border-radius:999px!important;
-  opacity:.74!important;
-  pointer-events:none!important;
-  background:
-    linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(215,191,134,.26) 18%,
-      rgba(232,214,176,.82) 50%,
-      rgba(215,191,134,.26) 82%,
-      transparent 100%
-    )!important;
-  box-shadow:
-    0 0 8px rgba(215,191,134,.12),
-    0 0 18px rgba(215,191,134,.055)!important;
-}
-
 /* assets/06_refusal_request.png: .document-panel / 귀환 요청 거절 문서 컷 / 중앙 판결문형 자막 보정 */
 /* 전환 패널은 건드리지 않고, 06_refusal_request 이미지 컷 내부의 조명, 비네트, 중앙 자막, 붉은 관인 효과만 조정한다. */
 html body .page .document-panel{
@@ -518,9 +486,9 @@ html body .page .document-panel .caption{
   line-height:1.54!important;
   letter-spacing:-.038em!important;
   word-break:keep-all!important;
-  background:
-    radial-gradient(ellipse at 50% 52%,rgba(12,9,7,.42) 0%,rgba(12,9,7,.26) 38%,rgba(12,9,7,.10) 66%,rgba(12,9,7,0) 84%),
-    linear-gradient(to right,rgba(9,7,6,0) 0%,rgba(9,7,6,.10) 16%,rgba(9,7,6,.20) 50%,rgba(9,7,6,.10) 84%,rgba(9,7,6,0) 100%)!important;
+    background:
+    radial-gradient(ellipse at 50% 50%,rgba(10,7,5,.46) 0%,rgba(10,7,5,.26) 34%,rgba(10,7,5,.08) 62%,rgba(10,7,5,0) 82%),
+    radial-gradient(ellipse at 50% 52%,rgba(238,220,184,.055) 0%,rgba(238,220,184,.025) 36%,rgba(238,220,184,0) 68%)!important;
   border:0!important;
   box-shadow:none!important;
   text-shadow:
@@ -563,14 +531,14 @@ html body .page .document-panel .caption:after{
 html body .page .document-panel .stamp{
   display:inline-block!important;
   position:relative!important;
-  margin:18px 0 14px!important;
+  margin:28px 0 28px!important;
   padding:2px 20px 8px!important;
   color:#8f2d26!important;
-  font-size:104px!important;
+  font-size:116px!important;
   font-weight:700!important;
   line-height:1.04!important;
-  letter-spacing:.10em!important;
-  transform:rotate(-2.2deg)!important;
+  letter-spacing:.12em!important;
+  transform:rotate(-2.4deg)!important;
   text-shadow:
     0 2px 0 rgba(255,230,205,.10),
     0 5px 16px rgba(0,0,0,.76),
@@ -585,16 +553,17 @@ html body .page .document-panel .stamp:before{
   position:absolute!important;
   left:50%!important;
   top:50%!important;
-  width:112%!important;
-  height:82%!important;
-  transform:translate(-50%,-47%) rotate(1.4deg)!important;
+  width:122%!important;
+  height:88%!important;
+  transform:translate(-50%,-48%) rotate(1.2deg)!important;
   z-index:-1!important;
-  opacity:.34!important;
-  border:3px solid rgba(126,32,26,.46)!important;
-  border-radius:4px!important;
+  opacity:.48!important;
+  border:4px solid rgba(116,26,22,.52)!important;
+  border-radius:5px!important;
   background:
-    radial-gradient(ellipse at 50% 50%,rgba(126,32,26,.13) 0%,rgba(126,32,26,.055) 48%,rgba(126,32,26,0) 72%)!important;
-  filter:blur(.2px)!important;
+    radial-gradient(ellipse at 38% 42%,rgba(126,32,26,.18) 0%,rgba(126,32,26,.06) 38%,rgba(126,32,26,0) 70%),
+    radial-gradient(ellipse at 66% 58%,rgba(126,32,26,.15) 0%,rgba(126,32,26,.045) 34%,rgba(126,32,26,0) 68%)!important;
+  filter:blur(.35px)!important;
 }
 
 /* 인주가 종이에 번진 듯한 후광. */
