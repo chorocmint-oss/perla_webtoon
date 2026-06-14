@@ -529,21 +529,22 @@ html body .page .document-panel .caption:after{
 
 /* ―불가―: 금색 강조가 아니라, 문서에 찍힌 마른 피빛 관인처럼 보이게 한다. */
 html body .page .document-panel .stamp{
-  display:inline-block!important;
+  display:block!important;
+  width:fit-content!important;
   position:relative!important;
-  margin:28px 0 28px!important;
-  padding:2px 20px 8px!important;
-  color:#8f2d26!important;
-  font-size:116px!important;
+  margin:34px auto 18px!important;
+  padding:0 18px 6px!important;
+  color:#c73228!important;
+  font-size:120px!important;
   font-weight:700!important;
-  line-height:1.04!important;
-  letter-spacing:.12em!important;
-  transform:rotate(-2.4deg)!important;
+  line-height:1!important;
+  letter-spacing:.11em!important;
+  transform:rotate(-2.2deg)!important;
   text-shadow:
-    0 2px 0 rgba(255,230,205,.10),
-    0 5px 16px rgba(0,0,0,.76),
-    0 0 18px rgba(127,34,28,.34),
-    0 0 2px rgba(255,255,255,.12)!important;
+    0 2px 0 rgba(255,235,225,.14),
+    0 6px 18px rgba(0,0,0,.72),
+    0 0 22px rgba(199,50,40,.34),
+    0 0 3px rgba(255,255,255,.10)!important;
   mix-blend-mode:normal!important;
 }
 
@@ -557,12 +558,12 @@ html body .page .document-panel .stamp:before{
   height:88%!important;
   transform:translate(-50%,-48%) rotate(1.2deg)!important;
   z-index:-1!important;
-  opacity:.48!important;
-  border:4px solid rgba(116,26,22,.52)!important;
+  opacity:.56!important;
+  border:4px solid rgba(167,34,28,.58)!important;
   border-radius:5px!important;
   background:
-    radial-gradient(ellipse at 38% 42%,rgba(126,32,26,.18) 0%,rgba(126,32,26,.06) 38%,rgba(126,32,26,0) 70%),
-    radial-gradient(ellipse at 66% 58%,rgba(126,32,26,.15) 0%,rgba(126,32,26,.045) 34%,rgba(126,32,26,0) 68%)!important;
+    radial-gradient(ellipse at 38% 42%,rgba(167,34,28,.20) 0%,rgba(167,34,28,.07) 38%,rgba(167,34,28,0) 70%),
+    radial-gradient(ellipse at 66% 58%,rgba(167,34,28,.17) 0%,rgba(167,34,28,.05) 34%,rgba(167,34,28,0) 68%)!important;
   filter:blur(.35px)!important;
 }
 
@@ -572,12 +573,12 @@ html body .page .document-panel .stamp:after{
   position:absolute!important;
   left:50%!important;
   top:55%!important;
-  width:132%!important;
-  height:120%!important;
+  width:138%!important;
+  height:124%!important;
   transform:translate(-50%,-50%) rotate(-.8deg)!important;
   z-index:-2!important;
-  opacity:.22!important;
+  opacity:.28!important;
   background:
-    radial-gradient(ellipse at 50% 50%,rgba(126,32,26,.34) 0%,rgba(126,32,26,.10) 36%,rgba(126,32,26,0) 72%)!important;
-  filter:blur(8px)!important;
+    radial-gradient(ellipse at 50% 50%,rgba(183,36,28,.42) 0%,rgba(183,36,28,.14) 36%,rgba(183,36,28,0) 72%)!important;
+  filter:blur(9px)!important;
 }
