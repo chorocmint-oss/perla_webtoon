@@ -13,6 +13,7 @@
   - 1-2컷: .opening-lake-panel / assets/02_white_lily_closeup.png
   - 2컷: .carriage-panel / assets/03_black_carriage_palace.png / "그해,"
   - 2-2컷: .door-panel / assets/04_carriage_wheel_door.png / "막아선 아이는..."
+  - 3컷: .letter-panel / 텍스트 패널 / "편지는 국경을 넘었다..."
 */
 
 /* 1컷 하단 → 1-2 전 중간 패널 */
@@ -100,3 +101,23 @@ html body .page .door-panel .caption-kicker,html body .page .door-panel .caption
 html body .page .door-panel .caption-slightly-small{left:50%!important;bottom:9.2%!important;transform:translateX(-50%)!important;width:72%!important;z-index:7!important;position:absolute!important;padding:20px 52px 22px!important;font-size:74px!important;line-height:1.60!important;letter-spacing:-.045em!important;color:#eee6d8!important;background:transparent!important;border-top:none!important;border-bottom:none!important;box-shadow:none!important;text-shadow:0 7px 28px rgba(0,0,0,1),0 0 48px rgba(0,0,0,.96),0 0 2px rgba(255,255,255,.16)!important;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 11%,black 89%,transparent 100%)!important;mask-image:linear-gradient(to right,transparent 0%,black 11%,black 89%,transparent 100%)!important;}
 /* 자막 뒤 안개: 글자가 뜨지 않도록 아주 흐린 흑청 받침만 남긴다. */
 html body .page .door-panel .caption-slightly-small:after{content:""!important;position:absolute!important;left:-3%!important;right:-3%!important;top:-8%!important;bottom:-10%!important;z-index:-1!important;pointer-events:none!important;background:radial-gradient(ellipse at 50% 52%,rgba(2,7,14,.36) 0%,rgba(2,7,14,.20) 28%,rgba(2,7,14,.09) 54%,rgba(2,7,14,.02) 78%,rgba(2,7,14,0) 100%),linear-gradient(to right,rgba(2,7,14,0) 0%,rgba(2,7,14,.04) 18%,rgba(2,7,14,.07) 50%,rgba(2,7,14,.04) 82%,rgba(2,7,14,0) 100%)!important;filter:blur(2px)!important;}
+
+/* 3컷 진입: .door-to-letter-transition / 문 컷의 검은 끝을 편지 문장 패널의 청흑 잔광으로 넘긴다. */
+html body .page .export-panel.transition-panel.door-to-letter-transition{height:720px!important;min-height:720px!important;background:linear-gradient(to bottom,#02060d 0%,#02060d 18%,#050914 46%,#070c17 72%,#080d18 100%)!important;position:relative!important;overflow:hidden!important;z-index:10!important;}
+html body .page .door-to-letter-transition:before{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;background:radial-gradient(ellipse at 50% 82%,rgba(224,220,207,.10) 0%,rgba(224,220,207,.04) 28%,rgba(224,220,207,0) 64%),linear-gradient(to bottom,rgba(2,6,13,.72) 0%,rgba(2,6,13,.24) 44%,rgba(8,13,24,0) 100%)!important;}
+html body .page .door-to-letter-transition:after{content:""!important;position:absolute!important;left:0!important;right:0!important;bottom:0!important;height:46%!important;z-index:2!important;pointer-events:none!important;background:linear-gradient(to bottom,rgba(8,13,24,0) 0%,rgba(8,13,24,.34) 48%,#080d18 100%)!important;}
+
+/* 3컷: .letter-panel / 텍스트 패널 / 어둠 속 잔광에서 다음 밝은 눈 배경으로 풀리는 브릿지. */
+html body .page .letter-panel{background:#080d18!important;overflow:hidden!important;position:relative!important;}
+/* 뒤쪽 원형광: 예쁜 보케가 아니라 멀리 번진 기억의 잔광처럼 흐리게 둔다. */
+html body .page .letter-panel:before{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;opacity:1!important;background:radial-gradient(circle at 30% 30%,rgba(238,230,214,.16) 0%,rgba(238,230,214,.075) 12%,rgba(238,230,214,0) 30%),radial-gradient(circle at 67% 36%,rgba(223,230,232,.13) 0%,rgba(223,230,232,.055) 14%,rgba(223,230,232,0) 34%),radial-gradient(circle at 48% 54%,rgba(236,223,196,.10) 0%,rgba(236,223,196,.035) 18%,rgba(236,223,196,0) 42%),linear-gradient(to bottom,#050912 0%,#070d19 24%,#0b101b 52%,rgba(225,226,222,.24) 78%,#e8e5dc 100%)!important;}
+/* 하단: 업로드될 밝은 눈 배경 webp와 바로 이어지도록 눈빛 아이보리로 끝낸다. */
+html body .page .letter-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:2!important;pointer-events:none!important;background:linear-gradient(to top,#ebe8df 0%,rgba(232,230,224,.90) 10%,rgba(226,229,229,.58) 25%,rgba(197,205,211,.22) 45%,rgba(8,13,24,0) 68%),radial-gradient(ellipse at 50% 92%,rgba(255,250,238,.42) 0%,rgba(255,250,238,.16) 28%,rgba(255,250,238,0) 58%)!important;}
+html body .page .letter-panel .paper-grain{position:absolute!important;inset:0!important;z-index:3!important;pointer-events:none!important;opacity:.22!important;background:radial-gradient(circle at 18% 76%,rgba(255,255,255,.10) 0 1px,transparent 1.8px),radial-gradient(circle at 72% 66%,rgba(255,255,255,.075) 0 1px,transparent 1.7px),repeating-linear-gradient(105deg,rgba(255,255,255,.018) 0 1px,transparent 1px 24px)!important;mix-blend-mode:soft-light!important;}
+html body .page .letter-panel .letter-text{z-index:4!important;color:#f2eadf!important;font-size:96px!important;line-height:1.78!important;letter-spacing:-.04em!important;transform:translateY(-7%)!important;text-shadow:0 7px 26px rgba(0,0,0,.94),0 0 46px rgba(0,0,0,.72),0 0 2px rgba(255,255,255,.16)!important;}
+html body .page .letter-panel .letter-text:before{content:none!important;display:none!important;}
+
+/* 3컷 하단 전환: .letter-to-goodbye-transition / 문장 패널의 눈빛 아이보리를 다음 밝은 눈 webp 시작색으로 연결한다. */
+html body .page .export-panel.transition-panel.letter-to-goodbye-transition{height:520px!important;min-height:520px!important;background:linear-gradient(to bottom,#ebe8df 0%,#ece9e2 26%,#e8eaeb 62%,#edf0f1 100%)!important;position:relative!important;overflow:hidden!important;}
+html body .page .letter-to-goodbye-transition:before{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;background:radial-gradient(ellipse at 50% 0%,rgba(8,13,24,.13) 0%,rgba(8,13,24,.04) 34%,rgba(8,13,24,0) 70%),radial-gradient(circle at 28% 64%,rgba(255,255,255,.30) 0%,rgba(255,255,255,.10) 18%,rgba(255,255,255,0) 42%),radial-gradient(circle at 70% 48%,rgba(255,255,255,.24) 0%,rgba(255,255,255,.08) 16%,rgba(255,255,255,0) 38%)!important;}
+html body .page .letter-to-goodbye-transition:after{content:none!important;display:none!important;}
