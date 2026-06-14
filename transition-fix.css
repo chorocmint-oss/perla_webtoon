@@ -48,13 +48,13 @@ html body .page .carriage-to-door-transition:before{content:""!important;display
 html body .page .carriage-to-door-transition:after{content:none!important;display:none!important;}
 
 /* 2컷 자막 장식: .carriage-panel / assets/03_black_carriage_palace.png / "그해," 위에만 들어가는 금색 선 */
-/* 원본 패널 폭 2432px, preview zoom 0.32 기준. 1px 선은 미리보기에서 거의 안 보이므로 3px로 잡는다. */
+/* 원본 패널 폭 2432px, preview zoom 0.32 기준. 크랙 업로드용 캡처에서도 보이되 과하지 않도록 조정. */
 /* 주의: 이 블록은 2-2컷(.door-panel)에는 적용되면 안 된다. */
 html body .page .carriage-panel .caption-kicker{
   position: relative !important;
   display: inline-block !important;
   margin-bottom: 2px !important;
-  padding-top: 26px !important;
+  padding-top: 22px !important;
   color: #c7ad7d !important;
   font-size: .82em !important;
   font-weight: 500 !important;
@@ -67,19 +67,19 @@ html body .page .carriage-panel .caption-kicker::before{
   left: 50% !important;
   top: 0 !important;
   transform: translateX(-50%) !important;
-  width: 220px !important;
+  width: 250px !important;
   height: 3px !important;
   border-radius: 999px !important;
-  opacity: 1 !important;
+  opacity: .96 !important;
   background: linear-gradient(
     to right,
     rgba(199,173,125,0) 0%,
-    rgba(199,173,125,.62) 14%,
-    rgba(226,204,154,.98) 50%,
-    rgba(199,173,125,.62) 86%,
+    rgba(199,173,125,.54) 14%,
+    rgba(226,204,154,.94) 50%,
+    rgba(199,173,125,.54) 86%,
     rgba(199,173,125,0) 100%
   ) !important;
-  box-shadow: 0 0 10px rgba(199,173,125,.24), 0 1px 2px rgba(0,0,0,.28) !important;
+  box-shadow: 0 0 7px rgba(199,173,125,.18), 0 1px 1px rgba(0,0,0,.24) !important;
 }
 
 /* 2-2컷: .door-panel / assets/04_carriage_wheel_door.png / 상단 진입과 자막. 2컷 금선이 여기로 번지지 않게 차단. */
