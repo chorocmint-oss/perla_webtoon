@@ -88,10 +88,10 @@ html body .page .door-panel img{object-fit:cover!important;object-position:cente
 html body .page .door-panel .cold-wash{display:none!important;opacity:0!important;}
 /* 상단: 직전 assets/03_black_carriage_palace.png의 검은 정서가 이어지도록 흑청색으로 길게 덮는다. */
 html body .page .door-panel:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:680px!important;z-index:6!important;pointer-events:none!important;background:linear-gradient(to bottom,#02060d 0%,#02060d 16%,rgba(2,8,17,.96) 30%,rgba(3,12,24,.78) 50%,rgba(4,16,30,.46) 72%,rgba(4,16,30,.12) 92%,rgba(4,16,30,0) 100%)!important;}
-/* 좌우: 벽이 안쪽으로 닫히는 세로 압박형 비네트. 하단: 다음 패널로 자연스럽게 어둠에 닫히는 페이드. */
-html body .page .door-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(1,5,10,.52) 11%,rgba(2,7,14,.20) 24%,rgba(0,0,0,0) 50%,rgba(2,7,14,.22) 76%,rgba(1,5,10,.54) 89%,rgba(0,0,0,.80) 100%),radial-gradient(ellipse at 50% 38%,rgba(190,173,120,.075) 0%,rgba(190,173,120,.030) 24%,rgba(0,0,0,0) 48%),linear-gradient(to top,#02060d 0%,rgba(2,6,13,.94) 10%,rgba(2,6,13,.76) 23%,rgba(2,6,13,.42) 38%,rgba(2,6,13,.12) 57%,rgba(2,6,13,0) 72%)!important;}
-/* 하단 자막판 뒤쪽 바닥만 받쳐 글자와 다음 어둠의 연결을 안정시킨다. */
-html body .page .door-panel .overlay{z-index:2!important;background:linear-gradient(to top,rgba(2,6,13,.92) 0%,rgba(2,6,13,.64) 16%,rgba(2,6,13,.30) 34%,rgba(2,6,13,.06) 58%,rgba(2,6,13,0) 76%)!important;}
+/* 좌우: 벽이 안쪽으로 닫히는 세로 압박형 비네트. 하단: 다음 패널로 이어지도록 이미지 하단에서 어둠이 더 길게 닫힌다. */
+html body .page .door-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(1,5,10,.52) 11%,rgba(2,7,14,.20) 24%,rgba(0,0,0,0) 50%,rgba(2,7,14,.22) 76%,rgba(1,5,10,.54) 89%,rgba(0,0,0,.80) 100%),radial-gradient(ellipse at 50% 38%,rgba(190,173,120,.075) 0%,rgba(190,173,120,.030) 24%,rgba(0,0,0,0) 48%),linear-gradient(to top,#02060d 0%,#02060d 9%,rgba(2,6,13,.98) 18%,rgba(2,6,13,.84) 30%,rgba(2,6,13,.54) 46%,rgba(2,6,13,.22) 66%,rgba(2,6,13,0) 84%)!important;}
+/* 하단: 자막 뒤 바닥과 다음 패널 진입부가 끊기지 않도록 아래쪽 어둠을 더 깊게 깐다. */
+html body .page .door-panel .overlay{z-index:2!important;background:linear-gradient(to top,#02060d 0%,rgba(2,6,13,.94) 12%,rgba(2,6,13,.70) 24%,rgba(2,6,13,.36) 42%,rgba(2,6,13,.10) 66%,rgba(2,6,13,0) 82%)!important;}
 /* 2컷 금색선 장식이 2-2컷으로 반복되지 않도록 caption 장식 요소는 차단한다. */
 html body .page .door-panel .caption:before{content:none!important;display:none!important;}
 html body .page .door-panel .caption-kicker,html body .page .door-panel .caption-kicker:before,html body .page .door-panel .caption-kicker:after{content:none!important;display:none!important;}
