@@ -405,3 +405,210 @@ html body .page .goodbye-panel .goodbye-lie:before{
   background:linear-gradient(to right,transparent 0%,rgba(215,191,134,.70) 22%,rgba(232,214,176,.92) 50%,rgba(215,191,134,.70) 78%,transparent 100%)!important;
   box-shadow:0 0 8px rgba(215,191,134,.14),0 0 18px rgba(215,191,134,.06)!important;
 }
+
+/* assets/04_carriage_wheel_door.png: .door-panel / 닫힌 황궁 문 컷 / 대사 사이 금색 분리선 */
+/* "지켜본 아이는 무너졌다."와 "남겨진 두 아이는, 너무 작았다." 사이의 빈 줄에만 짧은 금색선을 넣는다. */
+html body .page .door-panel .caption-slightly-small{
+  position:absolute!important;
+}
+
+/* letter-panel의 border-line과 별개. 이 컷은 HTML에 별도 span이 없으므로 caption:after로 중간선을 만든다. */
+html body .page .door-panel .caption-slightly-small:after{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;
+  top:61.5%!important;
+  transform:translateX(-50%)!important;
+  width:150px!important;
+  height:2px!important;
+  border-radius:999px!important;
+  opacity:.74!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(215,191,134,.26) 18%,
+      rgba(232,214,176,.82) 50%,
+      rgba(215,191,134,.26) 82%,
+      transparent 100%
+    )!important;
+  box-shadow:
+    0 0 8px rgba(215,191,134,.12),
+    0 0 18px rgba(215,191,134,.055)!important;
+}
+
+/* assets/06_refusal_request.png: .document-panel / 귀환 요청 거절 문서 컷 / 중앙 판결문형 자막 보정 */
+/* 전환 패널은 건드리지 않고, 06_refusal_request 이미지 컷 내부의 조명, 비네트, 중앙 자막, 붉은 관인 효과만 조정한다. */
+html body .page .document-panel{
+  background:#15100c!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+
+/* 배경 이미지는 장식이 아니라 황실 문서 무대로 보이게: 약간 선명하고 차갑게 눌러준다. */
+html body .page .document-panel img{
+  object-fit:cover!important;
+  object-position:center center!important;
+  filter:saturate(.92) brightness(.94) contrast(1.08)!important;
+}
+
+/* 문서 질감 워시: 금색 장식은 죽이고, 오래된 종이/대리석의 차가운 공기만 남긴다. */
+html body .page .document-panel .parchment-wash,
+html body .page .document-panel .image-wash{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  pointer-events:none!important;
+  opacity:.84!important;
+  mix-blend-mode:soft-light!important;
+  background:
+    radial-gradient(ellipse at 50% 44%,rgba(255,238,204,.18) 0%,rgba(255,238,204,.07) 28%,rgba(255,238,204,0) 58%),
+    radial-gradient(ellipse at 48% 58%,rgba(128,42,30,.10) 0%,rgba(128,42,30,.035) 22%,rgba(128,42,30,0) 52%),
+    repeating-linear-gradient(0deg,rgba(86,61,38,.028) 0 1px,transparent 1px 13px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 19px),
+    linear-gradient(135deg,rgba(255,246,226,.08) 0%,rgba(0,0,0,0) 40%,rgba(26,17,12,.18) 100%)!important;
+}
+
+/* 컷 내부 비네트: 패널 연결용 그라데이션이 아니라, 문서 중앙으로 시선을 모으는 조명이다. */
+html body .page .document-panel .overlay-document,
+html body .page .document-panel .overlay{
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(ellipse at 50% 48%,rgba(255,244,220,.10) 0%,rgba(255,244,220,.035) 25%,rgba(0,0,0,0) 48%),
+    radial-gradient(ellipse at center,rgba(0,0,0,0) 34%,rgba(0,0,0,.20) 72%,rgba(0,0,0,.48) 100%),
+    linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.04) 34%,rgba(0,0,0,.24) 100%)!important;
+}
+
+/* 종이 먼지와 황실 기록물 질감. 너무 튀지 않게 낮은 투명도로만 얹는다. */
+html body .page .document-panel:before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:3!important;
+  pointer-events:none!important;
+  opacity:.34!important;
+  mix-blend-mode:screen!important;
+  background:
+    radial-gradient(circle at 18% 20%,rgba(255,246,220,.34) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 72% 26%,rgba(255,246,220,.24) 0 1px,transparent 1.7px),
+    radial-gradient(circle at 38% 68%,rgba(255,246,220,.20) 0 1px,transparent 1.7px),
+    radial-gradient(circle at 84% 76%,rgba(255,246,220,.18) 0 1px,transparent 1.6px),
+    repeating-linear-gradient(115deg,rgba(255,255,255,.022) 0 1px,transparent 1px 24px)!important;
+  background-size:260px 260px,310px 310px,280px 280px,340px 340px,100% 100%!important;
+}
+
+/* 중앙 판결문형 자막: 하단 설명 박스를 버리고, 이미지 중앙의 문서 위에 판결이 떠오르게 한다. */
+html body .page .document-panel .document-caption,
+html body .page .document-panel .caption{
+  left:50%!important;
+  top:51%!important;
+  bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+  width:62%!important;
+  z-index:6!important;
+  padding:42px 72px 52px!important;
+  text-align:center!important;
+  color:#f4ead8!important;
+  font-size:70px!important;
+  font-weight:400!important;
+  line-height:1.54!important;
+  letter-spacing:-.038em!important;
+  word-break:keep-all!important;
+  background:
+    radial-gradient(ellipse at 50% 52%,rgba(12,9,7,.42) 0%,rgba(12,9,7,.26) 38%,rgba(12,9,7,.10) 66%,rgba(12,9,7,0) 84%),
+    linear-gradient(to right,rgba(9,7,6,0) 0%,rgba(9,7,6,.10) 16%,rgba(9,7,6,.20) 50%,rgba(9,7,6,.10) 84%,rgba(9,7,6,0) 100%)!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-shadow:
+    0 5px 18px rgba(0,0,0,.92),
+    0 0 32px rgba(0,0,0,.64),
+    0 0 2px rgba(255,255,255,.18)!important;
+  -webkit-backdrop-filter:blur(2.4px) saturate(.88)!important;
+  backdrop-filter:blur(2.4px) saturate(.88)!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 9%,black 91%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,black 9%,black 91%,transparent 100%)!important;
+}
+
+/* 기존 공통 자막 장식선은 끄고, 판결문처럼 얇은 파손선만 따로 넣는다. */
+html body .page .document-panel .document-caption:before,
+html body .page .document-panel .caption:before{
+  content:""!important;
+  display:block!important;
+  width:240px!important;
+  height:2px!important;
+  margin:0 auto 34px!important;
+  opacity:.62!important;
+  background:
+    linear-gradient(to right,transparent 0%,rgba(228,211,176,.18) 12%,rgba(228,211,176,.72) 42%,rgba(228,211,176,.30) 50%,rgba(228,211,176,.72) 58%,rgba(228,211,176,.18) 88%,transparent 100%)!important;
+  box-shadow:0 0 12px rgba(215,191,134,.08)!important;
+}
+
+/* 마지막 문장 뒤쪽에 아주 짧은 닫힘선. 과한 장식이 아니라, 문서가 봉인되는 느낌만 준다. */
+html body .page .document-panel .document-caption:after,
+html body .page .document-panel .caption:after{
+  content:""!important;
+  display:block!important;
+  width:180px!important;
+  height:1px!important;
+  margin:36px auto 0!important;
+  opacity:.44!important;
+  background:linear-gradient(to right,transparent 0%,rgba(228,211,176,.60) 50%,transparent 100%)!important;
+}
+
+/* ―불가―: 금색 강조가 아니라, 문서에 찍힌 마른 피빛 관인처럼 보이게 한다. */
+html body .page .document-panel .stamp{
+  display:inline-block!important;
+  position:relative!important;
+  margin:18px 0 14px!important;
+  padding:2px 20px 8px!important;
+  color:#8f2d26!important;
+  font-size:104px!important;
+  font-weight:700!important;
+  line-height:1.04!important;
+  letter-spacing:.10em!important;
+  transform:rotate(-2.2deg)!important;
+  text-shadow:
+    0 2px 0 rgba(255,230,205,.10),
+    0 5px 16px rgba(0,0,0,.76),
+    0 0 18px rgba(127,34,28,.34),
+    0 0 2px rgba(255,255,255,.12)!important;
+  mix-blend-mode:normal!important;
+}
+
+/* 붉은 도장 번짐. 실제 박스처럼 보이면 촌스러우니까 흐린 인주 흔적만 둔다. */
+html body .page .document-panel .stamp:before{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  width:112%!important;
+  height:82%!important;
+  transform:translate(-50%,-47%) rotate(1.4deg)!important;
+  z-index:-1!important;
+  opacity:.34!important;
+  border:3px solid rgba(126,32,26,.46)!important;
+  border-radius:4px!important;
+  background:
+    radial-gradient(ellipse at 50% 50%,rgba(126,32,26,.13) 0%,rgba(126,32,26,.055) 48%,rgba(126,32,26,0) 72%)!important;
+  filter:blur(.2px)!important;
+}
+
+/* 인주가 종이에 번진 듯한 후광. */
+html body .page .document-panel .stamp:after{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;
+  top:55%!important;
+  width:132%!important;
+  height:120%!important;
+  transform:translate(-50%,-50%) rotate(-.8deg)!important;
+  z-index:-2!important;
+  opacity:.22!important;
+  background:
+    radial-gradient(ellipse at 50% 50%,rgba(126,32,26,.34) 0%,rgba(126,32,26,.10) 36%,rgba(126,32,26,0) 72%)!important;
+  filter:blur(8px)!important;
+}
