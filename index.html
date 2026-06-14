@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="transition-fix.css?v=letter-map-3d1" />
+  <link rel="stylesheet" href="transition-fix.css?v=letter-broken-goodbye-1" />
+  <link rel="stylesheet" href="goodbye-fix.css?v=goodbye-panel-3" />
 </head>
 <body>
   <main class="page">
@@ -76,16 +77,16 @@
       <section class="export-panel transition-panel letter-to-goodbye-transition" aria-hidden="true"></section>
     </section>
 
-    <section class="preview-panel video-panel skip-export">
-      <img src="assets/10_lilia_goodbye.webp" alt="릴리아 작별 webp 미리보기" />
-      <div class="overlay overlay-video"></div>
-      <div class="caption preview-caption">
-        릴리아의 편지는 언제나<br>
-        같은 문장으로 끝났다.<br><br>
-        나는 괜찮아. 정말이야.
-      </div>
-      <div class="preview-note">webp 별도 업로드용 · PNG 렌더 제외</div>
-    </section>
+<section class="export-panel image-panel goodbye-panel">
+  <img src="assets/10_lilia_goodbye.png" alt="릴리아 작별" />
+  <div class="goodbye-wash"></div>
+  <div class="overlay overlay-goodbye"></div>
+  <div class="caption goodbye-caption">
+    릴리아의 편지는 언제나<br>
+    같은 문장으로 끝났다.<br><br>
+    <span class="goodbye-lie">나는 괜찮아. 정말이야.</span>
+  </div>
+</section>
 
     <section class="export-bundle" data-export-name="part_02_after_goodbye">
       <section class="export-panel transition-panel goodbye-to-refusal-transition" aria-hidden="true"></section>
