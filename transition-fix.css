@@ -112,18 +112,23 @@ html body .page .letter-panel{
   isolation: isolate !important;
 }
 
-/* 훼손된 기록 화면: 디지털 글리치가 아니라 깨진 유리/낡은 필름처럼 보이는 얇은 균열과 스크래치만 남긴다. */
+/* 훼손된 기록 화면: 메인 X 균열은 유지하고, 우상향 보조 균열을 추가해 화면 손상감을 더 또렷하게 만든다. */
 html body .page .letter-panel:before{
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
   z-index: 2 !important;
   pointer-events: none !important;
-  opacity: .86 !important;
+  opacity: .90 !important;
   background:
     linear-gradient(103deg,transparent 0%,transparent 48.05%,rgba(232,220,194,.145) 48.16%,rgba(232,220,194,.070) 48.30%,transparent 48.62%,transparent 100%),
     linear-gradient(77deg,transparent 0%,transparent 55.92%,rgba(232,220,194,.095) 56.10%,transparent 56.48%,transparent 100%),
+    /* 사용자가 표시한 방향의 우상향 보조 균열 */
+    linear-gradient(57deg,transparent 0%,transparent 58.88%,rgba(232,220,194,.120) 59.02%,rgba(232,220,194,.064) 59.18%,transparent 59.42%,transparent 100%),
     linear-gradient(14deg,transparent 0%,transparent 62.05%,rgba(232,220,194,.052) 62.13%,transparent 62.31%,transparent 100%),
+    linear-gradient(168deg,transparent 0%,transparent 36.20%,rgba(232,220,194,.055) 36.28%,transparent 36.42%,transparent 100%),
+    linear-gradient(92deg,transparent 0%,transparent 47.72%,rgba(255,255,255,.040) 47.78%,transparent 47.90%,transparent 100%),
+    linear-gradient(84deg,transparent 0%,transparent 16.90%,rgba(232,220,194,.038) 16.97%,transparent 17.08%,transparent 100%),
     repeating-linear-gradient(90deg,rgba(255,255,255,.014) 0 1px,transparent 1px 92px),
     repeating-linear-gradient(0deg,rgba(255,255,255,.010) 0 1px,transparent 1px 112px) !important;
   mix-blend-mode: screen !important;
@@ -169,7 +174,7 @@ html body .page .letter-panel .letter-text{
   justify-content: center !important;
   transform: translateY(48px) !important;
   color: #eee3cf !important;
-  font-size: 96px !important;
+  font-size: 98px !important;
   font-weight: 400 !important;
   line-height: 1.42 !important;
   letter-spacing: -.045em !important;
@@ -192,7 +197,7 @@ html body .page .letter-panel .letter-text:before{
   display: none !important;
 }
 
-/* 첫 문장: 본문 자막과 같은 톤을 유지하되, 차갑게 떠 있게 한다. */
+/* 첫 문장: 처음 의도했던 크기로 복구해, 최근 축소된 느낌을 없앤다. */
 html body .page .letter-panel .letter-line{
   display: block !important;
   position: relative !important;
@@ -204,7 +209,7 @@ html body .page .letter-panel .letter-line{
 
 html body .page .letter-panel .letter-line-crossed{
   color: rgba(238,230,214,.90) !important;
-  font-size: 94px !important;
+  font-size: 96px !important;
   font-weight: 400 !important;
   line-height: 1.36 !important;
   text-shadow:
@@ -259,12 +264,12 @@ html body .page .letter-panel .border-line:after{
   box-shadow: 0 0 20px rgba(226,214,188,.28) !important;
 }
 
-/* 둘째 문장: 크기로 튀게 하지 않고, 깨진 선 아래에 조용히 떨어뜨린다. */
+/* 둘째 문장: 첫 줄과 밸런스를 유지하면서도 결론 느낌만 남기게 살짝만 크게 둔다. */
 html body .page .letter-panel .letter-line-stopped{
   position: relative !important;
   z-index: 2 !important;
   color: #f0e5d4 !important;
-  font-size: 98px !important;
+  font-size: 100px !important;
   font-weight: 500 !important;
   line-height: 1.34 !important;
   transform: translateY(6px) !important;
