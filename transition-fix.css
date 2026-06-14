@@ -82,13 +82,18 @@ html body .page .carriage-panel .caption-kicker::before{
   box-shadow: 0 0 4px rgba(199,173,125,.12), 0 1px 1px rgba(0,0,0,.18) !important;
 }
 
-/* 2-2컷: .door-panel / assets/04_carriage_wheel_door.png / 상단 진입과 자막. 2컷 금선이 여기로 번지지 않게 차단. */
-html body .page .door-panel{background:#03060a!important;overflow:hidden!important;}
-html body .page .door-panel img{object-fit:cover!important;object-position:center top!important;transform:none!important;filter:saturate(.62) contrast(1.08) brightness(.78)!important;}
+/* 2-2컷: .door-panel / assets/04_carriage_wheel_door.png / 찬란한 황궁 문을 봉인된 사건 기록처럼 냉각한다. */
+html body .page .door-panel{background:#02060d!important;overflow:hidden!important;position:relative!important;}
+html body .page .door-panel img{object-fit:cover!important;object-position:center top!important;transform:none!important;filter:saturate(.56) contrast(1.12) brightness(.74)!important;}
 html body .page .door-panel .cold-wash{display:none!important;opacity:0!important;}
-html body .page .door-panel:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:620px!important;z-index:6!important;pointer-events:none!important;background:linear-gradient(to bottom,#03060a 0%,#03060a 24%,rgba(3,6,10,.92) 42%,rgba(3,6,10,.62) 64%,rgba(3,6,10,.24) 84%,rgba(3,6,10,0) 100%)!important;}
-html body .page .door-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important;background:linear-gradient(to right,rgba(0,0,0,.42) 0%,rgba(0,0,0,.10) 22%,transparent 50%,rgba(0,0,0,.12) 78%,rgba(0,0,0,.44) 100%),linear-gradient(to top,rgba(0,0,0,.60) 0%,rgba(0,0,0,.22) 22%,rgba(0,0,0,0) 52%)!important;}
-html body .page .door-panel .overlay{z-index:2!important;background:linear-gradient(to top,rgba(0,0,0,.56) 0%,rgba(0,0,0,.18) 24%,rgba(0,0,0,0) 52%)!important;}
+/* 상단: 직전 assets/03_black_carriage_palace.png의 검은 정서가 이어지도록 흑청색으로 길게 덮는다. */
+html body .page .door-panel:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:680px!important;z-index:6!important;pointer-events:none!important;background:linear-gradient(to bottom,#02060d 0%,#02060d 16%,rgba(2,8,17,.96) 30%,rgba(3,12,24,.78) 50%,rgba(4,16,30,.46) 72%,rgba(4,16,30,.12) 92%,rgba(4,16,30,0) 100%)!important;}
+/* 좌우: 벽이 안쪽으로 닫히는 세로 압박형 비네트. 하단: 다음 패널로 자연스럽게 어둠에 닫히는 페이드. */
+html body .page .door-panel:after{content:""!important;position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(1,5,10,.52) 11%,rgba(2,7,14,.20) 24%,rgba(0,0,0,0) 50%,rgba(2,7,14,.22) 76%,rgba(1,5,10,.54) 89%,rgba(0,0,0,.80) 100%),radial-gradient(ellipse at 50% 38%,rgba(190,173,120,.075) 0%,rgba(190,173,120,.030) 24%,rgba(0,0,0,0) 48%),linear-gradient(to top,#02060d 0%,rgba(2,6,13,.94) 10%,rgba(2,6,13,.76) 23%,rgba(2,6,13,.42) 38%,rgba(2,6,13,.12) 57%,rgba(2,6,13,0) 72%)!important;}
+/* 하단 자막판 뒤쪽 바닥만 받쳐 글자와 다음 어둠의 연결을 안정시킨다. */
+html body .page .door-panel .overlay{z-index:2!important;background:linear-gradient(to top,rgba(2,6,13,.92) 0%,rgba(2,6,13,.64) 16%,rgba(2,6,13,.30) 34%,rgba(2,6,13,.06) 58%,rgba(2,6,13,0) 76%)!important;}
+/* 2컷 금색선 장식이 2-2컷으로 반복되지 않도록 caption 장식 요소는 차단한다. */
 html body .page .door-panel .caption:before,html body .page .door-panel .caption-slightly-small:before{content:none!important;display:none!important;}
 html body .page .door-panel .caption-kicker,html body .page .door-panel .caption-kicker:before,html body .page .door-panel .caption-kicker:after{content:none!important;display:none!important;}
-html body .page .door-panel .caption-slightly-small{z-index:7!important;bottom:9.5%!important;width:74%!important;font-size:78px!important;line-height:1.66!important;text-shadow:0 6px 26px rgba(0,0,0,.98),0 0 38px rgba(0,0,0,.82)!important;}
+/* 자막: 하단 중앙 기록물형 박스. 청흑 반투명 밴드와 금회색 상하 프레임만 사용하고, 좌우는 마스크로 사라지게 한다. */
+html body .page .door-panel .caption-slightly-small{left:50%!important;bottom:9.2%!important;transform:translateX(-50%)!important;width:72%!important;z-index:7!important;padding:22px 52px 24px!important;font-size:74px!important;line-height:1.64!important;letter-spacing:-.045em!important;color:#eee6d8!important;background:linear-gradient(to right,rgba(3,10,18,0) 0%,rgba(4,13,24,.58) 12%,rgba(4,13,24,.76) 50%,rgba(4,13,24,.58) 88%,rgba(3,10,18,0) 100%)!important;border-top:1px solid rgba(194,187,169,.32)!important;border-bottom:1px solid rgba(194,187,169,.26)!important;box-shadow:0 18px 54px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.045),inset 0 -1px 0 rgba(0,0,0,.38)!important;text-shadow:0 7px 26px rgba(0,0,0,1),0 0 42px rgba(0,0,0,.88),0 0 2px rgba(255,255,255,.16)!important;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 9%,black 91%,transparent 100%)!important;mask-image:linear-gradient(to right,transparent 0%,black 9%,black 91%,transparent 100%)!important;}
