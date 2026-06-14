@@ -1,4 +1,19 @@
-/* Perla transition overrides - restored working state */
+/*
+  Perla transition-fix.css
+
+  작업 원칙
+  - styles.css는 원본/기본 구조로 최대한 유지한다.
+  - 실제 시각 보정은 이 파일에서만 한다.
+  - 수정 블록마다 반드시 컷 번호, class, 이미지 파일명, 목적을 주석으로 남긴다.
+  - 다른 컷에 영향이 가지 않도록 선택자는 최대한 구체적으로 쓴다.
+  - 이 파일을 수정하면 index.html의 transition-fix.css 캐시 키도 함께 바꾼다.
+
+  컷 매핑
+  - 1컷: .intro-panel / 텍스트 기록문
+  - 1-2컷: .opening-lake-panel / assets/02_white_lily_closeup.png
+  - 2컷: .carriage-panel / assets/03_black_carriage_palace.png / "그해,"
+  - 2-2컷: .door-panel / assets/04_carriage_wheel_door.png / "막아선 아이는..."
+*/
 
 /* 1컷 하단 → 1-2 전 중간 패널 */
 html body .page .intro-panel{background:linear-gradient(to bottom,#f3efe7 0%,#f2eee6 42%,#f1ede4 62%,#f0ebe2 78%,#f0ebe2 100%)!important;overflow:hidden!important;}
@@ -13,7 +28,7 @@ html body .page .export-panel.transition-panel.intro-to-lake-transition:before,h
 html body .page .opening-lake-panel:before{height:380px!important;background:linear-gradient(to bottom,#e9e5dc 0%,#e9e5dc 10%,rgba(233,229,220,.94) 22%,rgba(233,229,220,.72) 42%,rgba(233,229,220,.38) 66%,rgba(233,229,220,.12) 86%,rgba(233,229,220,0) 100%)!important;}
 html body .page .opening-lake-panel>.lake-bottom-fade{display:block!important;}
 
-/* 2컷: 상단 진입, 하단 닫힘, 자막 디자인 복구 */
+/* 2컷: .carriage-panel / assets/03_black_carriage_palace.png / 전체 톤, 상단 진입, 하단 닫힘, 자막 박스 */
 html body .page .carriage-panel{background:#03060a!important;overflow:hidden!important;position:relative!important;}
 html body .page .carriage-panel img{object-position:center center!important;transform:none!important;filter:saturate(.72) contrast(1.12) brightness(.88)!important;-webkit-mask-image:none!important;mask-image:none!important;}
 html body .page .carriage-panel:before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:760px!important;z-index:4!important;pointer-events:none!important;background:linear-gradient(to bottom,#03060a 0%,#03060a 14%,rgba(3,6,10,.94) 30%,rgba(3,6,10,.70) 52%,rgba(3,6,10,.36) 76%,rgba(3,6,10,0) 100%)!important;}
@@ -32,7 +47,8 @@ html body .page .export-panel.transition-panel.carriage-to-door-transition{heigh
 html body .page .carriage-to-door-transition:before{content:""!important;display:block!important;position:absolute!important;left:0!important;right:0!important;top:-520px!important;height:520px!important;z-index:30!important;pointer-events:none!important;background:linear-gradient(to bottom,rgba(3,6,10,0) 0%,rgba(3,6,10,.10) 22%,rgba(3,6,10,.34) 48%,rgba(3,6,10,.72) 76%,#03060a 100%)!important;}
 html body .page .carriage-to-door-transition:after{content:none!important;display:none!important;}
 
-/* 2컷 텍스트(그해) 상단 금색 라인 */
+/* 2컷 자막 장식: .carriage-panel / assets/03_black_carriage_palace.png / "그해," 위에만 들어가는 얇은 금색 선 */
+/* 주의: 이 블록은 2-2컷(.door-panel)에는 적용되면 안 된다. */
 html body .page .carriage-panel .caption-kicker{
   position: relative !important;
   display: inline-block !important;
@@ -63,7 +79,7 @@ html body .page .carriage-panel .caption-kicker::before{
   box-shadow: 0 0 6px rgba(199,173,125,.14) !important;
 }
 
-/* 2-2 상단 */
+/* 2-2컷: .door-panel / assets/04_carriage_wheel_door.png / 상단 진입과 자막. 2컷 금선이 여기로 번지지 않게 차단. */
 html body .page .door-panel{background:#03060a!important;overflow:hidden!important;}
 html body .page .door-panel img{object-fit:cover!important;object-position:center top!important;transform:none!important;filter:saturate(.62) contrast(1.08) brightness(.78)!important;}
 html body .page .door-panel .cold-wash{display:none!important;opacity:0!important;}
