@@ -102,33 +102,34 @@ html body .page .door-panel .caption-slightly-small{left:50%!important;bottom:9.
 /* 자막 뒤 안개: 글자가 뜨지 않도록 아주 흐린 흑청 받침만 남긴다. */
 html body .page .door-panel .caption-slightly-small:after{content:""!important;position:absolute!important;left:-3%!important;right:-3%!important;top:-8%!important;bottom:-10%!important;z-index:-1!important;pointer-events:none!important;background:radial-gradient(ellipse at 50% 52%,rgba(2,7,14,.36) 0%,rgba(2,7,14,.20) 28%,rgba(2,7,14,.09) 54%,rgba(2,7,14,.02) 78%,rgba(2,7,14,0) 100%),linear-gradient(to right,rgba(2,7,14,0) 0%,rgba(2,7,14,.04) 18%,rgba(2,7,14,.07) 50%,rgba(2,7,14,.04) 82%,rgba(2,7,14,0) 100%)!important;filter:blur(2px)!important;}
 
-/* 3컷: .letter-panel / 텍스트 패널 / 이미지 없음 / 네모 문서 박스 대신 지도 국경선 잔상과 여백으로 읽히게 한다. */
+/* 3컷: .letter-panel / 텍스트 패널 / 이미지 없음 / 깔끔한 흑청 배경 위에 중앙 안개와 차단선만 남긴다. */
 html body .page .letter-panel{
   background:
-    radial-gradient(ellipse at 50% 47%,rgba(215,191,134,.070) 0%,rgba(215,191,134,.024) 34%,rgba(215,191,134,0) 64%),
-    linear-gradient(to bottom,#03060a 0%,#05070b 28%,#071019 50%,#05070b 76%,#03060a 100%) !important;
+    radial-gradient(ellipse at 50% 50%,rgba(62,83,91,.080) 0%,rgba(35,54,64,.040) 32%,rgba(6,16,24,.016) 56%,rgba(6,16,24,0) 76%),
+    linear-gradient(to bottom,#03060a 0%,#05070b 30%,#071019 50%,#05070b 76%,#03060a 100%) !important;
   overflow: hidden !important;
   position: relative !important;
   isolation: isolate !important;
 }
 
-/* 지도/국경선 잔상: 박스형 문서 실루엣을 완전히 제거하고, 화면 전체에 아주 흐린 경계선만 남긴다. */
+/* 중앙 안개: 텍스트 묶음 뒤에서 시작해 바깥으로 아주 약하게 번지는 타원형 그라데이션. */
 html body .page .letter-panel:before{
   content: "" !important;
   position: absolute !important;
-  inset: -8% !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 1440px !important;
+  height: 720px !important;
+  transform: translate(-50%,-50%) translateY(26px) !important;
   z-index: 2 !important;
   pointer-events: none !important;
-  opacity: .42 !important;
+  opacity: .92 !important;
   background:
-    repeating-linear-gradient(118deg,rgba(215,191,134,.028) 0 1px,transparent 1px 78px),
-    repeating-linear-gradient(62deg,rgba(238,230,214,.018) 0 1px,transparent 1px 96px),
-    radial-gradient(ellipse at 50% 50%,rgba(215,191,134,.060) 0%,rgba(215,191,134,.022) 30%,transparent 58%),
-    linear-gradient(to right,rgba(0,0,0,.42),transparent 25%,transparent 75%,rgba(0,0,0,.42)) !important;
-  transform: rotate(-.18deg) !important;
+    radial-gradient(ellipse at 50% 50%,rgba(122,139,139,.105) 0%,rgba(74,94,101,.064) 24%,rgba(21,37,47,.036) 48%,rgba(5,12,18,.014) 66%,rgba(5,12,18,0) 100%) !important;
+  filter: blur(10px) !important;
 }
 
-/* 전체 비네트와 기록 입자: 문장 주변 먼지를 보이게 하되, 네모난 카드 윤곽은 만들지 않는다. */
+/* 전체 비네트와 기록 입자: 배경은 깔끔하게 두고, 먼지는 거의 보일 듯 말 듯만 남긴다. */
 html body .page .letter-panel:after{
   content: "" !important;
   position: absolute !important;
@@ -137,32 +138,31 @@ html body .page .letter-panel:after{
   pointer-events: none !important;
   opacity: 1 !important;
   background:
-    radial-gradient(circle at 18% 26%,rgba(238,230,214,.078) 0 1.2px,transparent 2.3px),
-    radial-gradient(circle at 78% 34%,rgba(215,191,134,.064) 0 1.1px,transparent 2.2px),
-    radial-gradient(circle at 30% 76%,rgba(238,230,214,.056) 0 1.1px,transparent 2.1px),
-    radial-gradient(circle at 70% 78%,rgba(215,191,134,.054) 0 1.1px,transparent 2.1px),
-    radial-gradient(ellipse at 50% 60%,rgba(1,4,9,.44) 0%,rgba(1,4,9,.18) 34%,rgba(1,4,9,0) 62%),
-    linear-gradient(to right,rgba(0,0,0,.84) 0%,rgba(1,5,10,.46) 14%,rgba(0,0,0,0) 50%,rgba(1,5,10,.48) 86%,rgba(0,0,0,.86) 100%),
-    linear-gradient(to bottom,#03060a 0%,rgba(3,6,10,.54) 13%,rgba(3,6,10,0) 30%,rgba(3,6,10,0) 64%,rgba(3,6,10,.50) 86%,#03060a 100%) !important;
-  background-size: 164px 210px,198px 230px,138px 188px,180px 220px,100% 100%,100% 100%,100% 100% !important;
+    radial-gradient(circle at 18% 26%,rgba(238,230,214,.060) 0 1px,transparent 2.1px),
+    radial-gradient(circle at 78% 34%,rgba(215,191,134,.048) 0 1px,transparent 2px),
+    radial-gradient(circle at 30% 76%,rgba(238,230,214,.044) 0 1px,transparent 2px),
+    radial-gradient(circle at 70% 78%,rgba(215,191,134,.042) 0 1px,transparent 2px),
+    linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(1,5,10,.40) 14%,rgba(0,0,0,0) 50%,rgba(1,5,10,.42) 86%,rgba(0,0,0,.84) 100%),
+    linear-gradient(to bottom,#03060a 0%,rgba(3,6,10,.50) 13%,rgba(3,6,10,0) 30%,rgba(3,6,10,0) 64%,rgba(3,6,10,.48) 86%,#03060a 100%) !important;
+  background-size: 164px 210px,198px 230px,138px 188px,180px 220px,100% 100%,100% 100% !important;
 }
 
-/* 기존 .paper-grain이 남아 있을 경우에만, 3컷 전용 먼지/지도 섬유로 재사용한다. */
+/* 기존 .paper-grain이 남아 있을 경우에만, 3컷 전용 먼지/섬유로 약하게 재사용한다. */
 html body .page .letter-panel .paper-grain{
   display: block !important;
   position: absolute !important;
   inset: 0 !important;
   z-index: 3 !important;
   pointer-events: none !important;
-  opacity: .34 !important;
+  opacity: .26 !important;
   mix-blend-mode: screen !important;
   background:
-    repeating-linear-gradient(0deg,rgba(238,230,214,.016) 0 1px,transparent 1px 11px),
-    repeating-linear-gradient(90deg,rgba(215,191,134,.010) 0 1px,transparent 1px 17px),
-    radial-gradient(ellipse at 50% 50%,rgba(215,191,134,.050) 0%,rgba(215,191,134,.018) 34%,transparent 68%) !important;
+    repeating-linear-gradient(0deg,rgba(238,230,214,.014) 0 1px,transparent 1px 11px),
+    repeating-linear-gradient(90deg,rgba(215,191,134,.008) 0 1px,transparent 1px 17px),
+    radial-gradient(ellipse at 50% 50%,rgba(215,191,134,.040) 0%,rgba(215,191,134,.014) 34%,transparent 68%) !important;
 }
 
-/* 텍스트: 크기보다 여백과 조명으로 강조한다. 전체는 웹툰 자막처럼 같은 결 안에 묶는다. */
+/* 텍스트: 크기보다 여백, 안개, 선으로 강조한다. */
 html body .page .letter-panel .letter-text{
   z-index: 7 !important;
   padding: 0 220px !important;
@@ -173,10 +173,27 @@ html body .page .letter-panel .letter-text{
   font-weight: 400 !important;
   line-height: 1.42 !important;
   letter-spacing: -.045em !important;
+  isolation: isolate !important;
   text-shadow:
     0 7px 30px rgba(0,0,0,1),
     0 0 54px rgba(0,0,0,.90),
     0 0 2px rgba(255,255,255,.16) !important;
+}
+
+/* 텍스트 묶음 바로 뒤 안개: 중앙에서 시작해 약하게 퍼지는 웹툰식 받침. */
+html body .page .letter-panel .letter-text:after{
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 1120px !important;
+  height: 430px !important;
+  transform: translate(-50%,-50%) translateY(14px) !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  opacity: .76 !important;
+  background: radial-gradient(ellipse at 50% 50%,rgba(8,18,26,.72) 0%,rgba(12,26,34,.44) 34%,rgba(12,26,34,.16) 62%,rgba(12,26,34,0) 100%) !important;
+  filter: blur(8px) !important;
 }
 
 /* styles.css의 공통 장식선을 끄고, 실제 국경선 span만 쓰도록 정리한다. */
@@ -188,6 +205,8 @@ html body .page .letter-panel .letter-text:before{
 /* 첫 문장: 본문 자막과 같은 톤을 유지하되, 차갑게 떠 있게 한다. */
 html body .page .letter-panel .letter-line{
   display: block !important;
+  position: relative !important;
+  z-index: 2 !important;
   width: 100% !important;
   text-align: center !important;
   word-break: keep-all !important;
@@ -204,18 +223,20 @@ html body .page .letter-panel .letter-line-crossed{
     0 0 2px rgba(255,255,255,.14) !important;
 }
 
-/* 국경선: 장식 밑줄이 아니라, 두 문장 사이를 조용히 막는 얇은 문턱으로 둔다. */
+/* 국경선: 중앙에서 확실히 보이되, 장식 밑줄이 아니라 두 문장 사이의 얇은 문턱처럼 둔다. */
 html body .page .letter-panel .border-line{
   display: block !important;
   position: relative !important;
-  width: 420px !important;
-  height: 1px !important;
-  margin: 72px auto 66px !important;
+  z-index: 2 !important;
+  width: 520px !important;
+  height: 2px !important;
+  margin: 70px auto 64px !important;
   border-radius: 999px !important;
-  opacity: .72 !important;
-  background: linear-gradient(to right,rgba(215,191,134,0) 0%,rgba(215,191,134,.16) 18%,rgba(231,211,164,.58) 50%,rgba(215,191,134,.16) 82%,rgba(215,191,134,0) 100%) !important;
+  opacity: .95 !important;
+  background: linear-gradient(to right,rgba(215,191,134,0) 0%,rgba(215,191,134,.28) 20%,rgba(231,211,164,.88) 50%,rgba(215,191,134,.28) 80%,rgba(215,191,134,0) 100%) !important;
   box-shadow:
-    0 0 18px rgba(215,191,134,.12),
+    0 0 18px rgba(215,191,134,.22),
+    0 0 42px rgba(215,191,134,.10),
     0 22px 68px rgba(0,0,0,.64) !important;
 }
 
@@ -228,8 +249,8 @@ html body .page .letter-panel .border-line:before{
   width: 1px !important;
   height: 64px !important;
   transform: translateX(-50%) !important;
-  opacity: .25 !important;
-  background: linear-gradient(to bottom,rgba(215,191,134,0),rgba(215,191,134,.36),rgba(215,191,134,0)) !important;
+  opacity: .32 !important;
+  background: linear-gradient(to bottom,rgba(215,191,134,0),rgba(215,191,134,.48),rgba(215,191,134,0)) !important;
 }
 
 html body .page .letter-panel .border-line:after{
@@ -237,19 +258,19 @@ html body .page .letter-panel .border-line:after{
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
-  width: 5px !important;
-  height: 5px !important;
+  width: 6px !important;
+  height: 6px !important;
   transform: translate(-50%,-50%) !important;
   border-radius: 50% !important;
-  opacity: .46 !important;
-  background: rgba(235,220,180,.62) !important;
-  box-shadow: 0 0 14px rgba(215,191,134,.16) !important;
+  opacity: .62 !important;
+  background: rgba(235,220,180,.78) !important;
+  box-shadow: 0 0 18px rgba(215,191,134,.24) !important;
 }
 
-/* 둘째 문장: 크기로 튀게 하지 않고, 아래로 떨어진 여백과 뒤의 흑청 안개로만 결론을 강조한다. */
+/* 둘째 문장: 크기로 튀게 하지 않고, 아래로 떨어진 여백과 뒤의 안개로만 결론을 강조한다. */
 html body .page .letter-panel .letter-line-stopped{
   position: relative !important;
-  z-index: 1 !important;
+  z-index: 2 !important;
   color: #f0e5d4 !important;
   font-size: 98px !important;
   font-weight: 500 !important;
@@ -268,12 +289,12 @@ html body .page .letter-panel .letter-line-stopped:before{
   position: absolute !important;
   left: 50% !important;
   top: 54% !important;
-  width: 760px !important;
-  height: 170px !important;
+  width: 700px !important;
+  height: 150px !important;
   transform: translate(-50%,-50%) !important;
   z-index: -1 !important;
   pointer-events: none !important;
-  opacity: .72 !important;
-  background: radial-gradient(ellipse at 50% 50%,rgba(1,4,9,.62) 0%,rgba(1,4,9,.32) 38%,rgba(1,4,9,.08) 66%,rgba(1,4,9,0) 100%) !important;
+  opacity: .58 !important;
+  background: radial-gradient(ellipse at 50% 50%,rgba(1,4,9,.52) 0%,rgba(1,4,9,.26) 38%,rgba(1,4,9,.08) 66%,rgba(1,4,9,0) 100%) !important;
   filter: blur(6px) !important;
 }
