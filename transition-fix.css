@@ -31,6 +31,37 @@ html body .page .export-panel.transition-panel.carriage-to-door-transition{heigh
 html body .page .carriage-to-door-transition:before{content:""!important;display:block!important;position:absolute!important;left:0!important;right:0!important;top:-520px!important;height:520px!important;z-index:30!important;pointer-events:none!important;background:linear-gradient(to bottom,rgba(3,6,10,0) 0%,rgba(3,6,10,.10) 22%,rgba(3,6,10,.34) 48%,rgba(3,6,10,.72) 76%,#03060a 100%)!important;}
 html body .page .carriage-to-door-transition:after{content:none!important;display:none!important;}
 
+/* 2컷 텍스트(그해) 상단 금색 라인 */
+html body .page .carriage-panel .caption-kicker{
+  position: relative !important;
+  display: inline-block !important;
+  margin-bottom: 2px !important;
+  padding-top: 14px !important;
+  color: #c7ad7d !important;
+  font-size: .82em !important;
+  font-weight: 500 !important;
+  letter-spacing: .035em !important;
+}
+
+html body .page .carriage-panel .caption-kicker::before{
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  transform: translateX(-50%) !important;
+  width: 112px !important;
+  height: 1px !important;
+  background: linear-gradient(
+    to right,
+    rgba(199,173,125,0) 0%,
+    rgba(199,173,125,.48) 14%,
+    rgba(214,190,139,.92) 50%,
+    rgba(199,173,125,.48) 86%,
+    rgba(199,173,125,0) 100%
+  ) !important;
+  box-shadow: 0 0 6px rgba(199,173,125,.14) !important;
+}
+
 /* 2-2 상단 */
 html body .page .door-panel{background:#03060a!important;overflow:hidden!important;}
 html body .page .door-panel img{object-fit:cover!important;object-position:center top!important;transform:none!important;filter:saturate(.62) contrast(1.08) brightness(.78)!important;}
