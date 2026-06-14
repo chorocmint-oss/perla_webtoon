@@ -47,13 +47,14 @@ html body .page .export-panel.transition-panel.carriage-to-door-transition{heigh
 html body .page .carriage-to-door-transition:before{content:""!important;display:block!important;position:absolute!important;left:0!important;right:0!important;top:-520px!important;height:520px!important;z-index:30!important;pointer-events:none!important;background:linear-gradient(to bottom,rgba(3,6,10,0) 0%,rgba(3,6,10,.10) 22%,rgba(3,6,10,.34) 48%,rgba(3,6,10,.72) 76%,#03060a 100%)!important;}
 html body .page .carriage-to-door-transition:after{content:none!important;display:none!important;}
 
-/* 2컷 자막 장식: .carriage-panel / assets/03_black_carriage_palace.png / "그해," 위에만 들어가는 얇은 금색 선 */
+/* 2컷 자막 장식: .carriage-panel / assets/03_black_carriage_palace.png / "그해," 위에만 들어가는 금색 선 */
+/* 원본 패널 폭 2432px, preview zoom 0.32 기준. 1px 선은 미리보기에서 거의 안 보이므로 3px로 잡는다. */
 /* 주의: 이 블록은 2-2컷(.door-panel)에는 적용되면 안 된다. */
 html body .page .carriage-panel .caption-kicker{
   position: relative !important;
   display: inline-block !important;
   margin-bottom: 2px !important;
-  padding-top: 14px !important;
+  padding-top: 26px !important;
   color: #c7ad7d !important;
   font-size: .82em !important;
   font-weight: 500 !important;
@@ -66,17 +67,19 @@ html body .page .carriage-panel .caption-kicker::before{
   left: 50% !important;
   top: 0 !important;
   transform: translateX(-50%) !important;
-  width: 112px !important;
-  height: 1px !important;
+  width: 220px !important;
+  height: 3px !important;
+  border-radius: 999px !important;
+  opacity: 1 !important;
   background: linear-gradient(
     to right,
     rgba(199,173,125,0) 0%,
-    rgba(199,173,125,.48) 14%,
-    rgba(214,190,139,.92) 50%,
-    rgba(199,173,125,.48) 86%,
+    rgba(199,173,125,.62) 14%,
+    rgba(226,204,154,.98) 50%,
+    rgba(199,173,125,.62) 86%,
     rgba(199,173,125,0) 100%
   ) !important;
-  box-shadow: 0 0 6px rgba(199,173,125,.14) !important;
+  box-shadow: 0 0 10px rgba(199,173,125,.24), 0 1px 2px rgba(0,0,0,.28) !important;
 }
 
 /* 2-2컷: .door-panel / assets/04_carriage_wheel_door.png / 상단 진입과 자막. 2컷 금선이 여기로 번지지 않게 차단. */
