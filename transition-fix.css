@@ -112,7 +112,7 @@ html body .page .letter-panel{
   isolation: isolate !important;
 }
 
-/* 중앙 문서 잔상: 실제 편지 이미지를 반복하지 않고, 국경을 지나간 기록의 흔적만 희미하게 둔다. */
+/* 중앙 문서 잔상: 카드처럼 보이지 않도록 낮추고, 국경을 지나간 기록의 흔적만 희미하게 둔다. */
 html body .page .letter-panel:before{
   content: "" !important;
   position: absolute !important;
@@ -123,7 +123,7 @@ html body .page .letter-panel:before{
   transform: translateX(-50%) rotate(-.28deg) !important;
   z-index: 2 !important;
   pointer-events: none !important;
-  opacity: .72 !important;
+  opacity: .42 !important;
   clip-path: polygon(3% 0%,97% 2%,100% 91%,94% 100%,5% 97%,0 8%) !important;
   border: 1px solid rgba(215,191,134,.12) !important;
   background:
@@ -136,7 +136,7 @@ html body .page .letter-panel:before{
     0 36px 120px rgba(0,0,0,.40) !important;
 }
 
-/* 전체 비네트와 기록 입자: 위의 닫힌 문에서 이어지는 흑청 공기, 아래는 다음 작별 패널로 잠기게 한다. */
+/* 전체 비네트와 기록 입자: 문장 주변 먼지를 더 보이게 하되, 화면 전체 필터처럼 퍼지지 않게 둔다. */
 html body .page .letter-panel:after{
   content: "" !important;
   position: absolute !important;
@@ -145,10 +145,10 @@ html body .page .letter-panel:after{
   pointer-events: none !important;
   opacity: 1 !important;
   background:
-    radial-gradient(circle at 18% 26%,rgba(238,230,214,.040) 0 1px,transparent 1.9px),
-    radial-gradient(circle at 78% 34%,rgba(215,191,134,.034) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 30% 76%,rgba(238,230,214,.028) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 70% 78%,rgba(215,191,134,.030) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 18% 26%,rgba(238,230,214,.075) 0 1.2px,transparent 2.3px),
+    radial-gradient(circle at 78% 34%,rgba(215,191,134,.062) 0 1.1px,transparent 2.2px),
+    radial-gradient(circle at 30% 76%,rgba(238,230,214,.054) 0 1.1px,transparent 2.1px),
+    radial-gradient(circle at 70% 78%,rgba(215,191,134,.052) 0 1.1px,transparent 2.1px),
     linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(1,5,10,.44) 14%,rgba(0,0,0,0) 50%,rgba(1,5,10,.46) 86%,rgba(0,0,0,.84) 100%),
     linear-gradient(to bottom,#03060a 0%,rgba(3,6,10,.54) 13%,rgba(3,6,10,0) 30%,rgba(3,6,10,0) 64%,rgba(3,6,10,.48) 86%,#03060a 100%) !important;
   background-size: 164px 210px,198px 230px,138px 188px,180px 220px,100% 100%,100% 100% !important;
@@ -161,7 +161,7 @@ html body .page .letter-panel .paper-grain{
   inset: 0 !important;
   z-index: 3 !important;
   pointer-events: none !important;
-  opacity: .26 !important;
+  opacity: .38 !important;
   mix-blend-mode: screen !important;
   background:
     repeating-linear-gradient(0deg,rgba(238,230,214,.018) 0 1px,transparent 1px 11px),
@@ -192,7 +192,7 @@ html body .page .letter-panel .letter-text:before{
   display: none !important;
 }
 
-/* 첫 문장: 편지는 지나갔으므로 조금 더 얇고 차갑게 뜬다. */
+/* 첫 문장: 편지와 '사람만이,'가 같은 줄에 있을 때도 눌리지 않도록 조금 더 작고 차갑게 둔다. */
 html body .page .letter-panel .letter-line{
   display: block !important;
   width: 100% !important;
@@ -202,25 +202,27 @@ html body .page .letter-panel .letter-line{
 
 html body .page .letter-panel .letter-line-crossed{
   color: rgba(238,230,214,.88) !important;
+  font-size: 90px !important;
   font-weight: 400 !important;
+  line-height: 1.36 !important;
   text-shadow:
     0 7px 30px rgba(0,0,0,1),
     0 0 34px rgba(215,191,134,.08),
     0 0 2px rgba(255,255,255,.14) !important;
 }
 
-/* 국경선: 선 하나로 패널의 의미를 잡는다. 중앙만 금빛이고 양끝은 완전히 사라진다. */
+/* 국경선: 긴 밑줄처럼 보이지 않게 짧은 금색 균열로 낮춘다. */
 html body .page .letter-panel .border-line{
   display: block !important;
   position: relative !important;
-  width: 900px !important;
+  width: 560px !important;
   height: 2px !important;
-  margin: 72px auto 66px !important;
+  margin: 58px auto 54px !important;
   border-radius: 999px !important;
-  opacity: .86 !important;
-  background: linear-gradient(to right,rgba(215,191,134,0) 0%,rgba(215,191,134,.18) 18%,rgba(231,211,164,.62) 50%,rgba(215,191,134,.18) 82%,rgba(215,191,134,0) 100%) !important;
+  opacity: .95 !important;
+  background: linear-gradient(to right,rgba(215,191,134,0) 0%,rgba(215,191,134,.20) 18%,rgba(231,211,164,.70) 50%,rgba(215,191,134,.20) 82%,rgba(215,191,134,0) 100%) !important;
   box-shadow:
-    0 0 18px rgba(215,191,134,.12),
+    0 0 22px rgba(215,191,134,.16),
     0 22px 70px rgba(0,0,0,.62) !important;
 }
 
@@ -251,10 +253,12 @@ html body .page .letter-panel .border-line:after{
   box-shadow: 0 0 16px rgba(215,191,134,.20) !important;
 }
 
-/* 둘째 문장: 편지와 달리 사람이 막힌 쪽이라 조금 더 무겁고 선명하게 닫는다. */
+/* 둘째 문장: 혼자 남은 "넘지 못했다."가 컷의 결론처럼 박히도록 더 크고 무겁게 닫는다. */
 html body .page .letter-panel .letter-line-stopped{
   color: #f0e5d4 !important;
-  font-weight: 500 !important;
+  font-size: 112px !important;
+  font-weight: 600 !important;
+  line-height: 1.20 !important;
   text-shadow:
     0 8px 34px rgba(0,0,0,1),
     0 0 58px rgba(0,0,0,.96),
