@@ -532,14 +532,14 @@ html body .page .document-panel .stamp{
   display:block!important;
   width:fit-content!important;
   position:relative!important;
-  margin:34px auto 18px!important;
+  margin:28px auto 24px!important;
   padding:0 18px 6px!important;
   color:#c73228!important;
   font-size:120px!important;
   font-weight:700!important;
   line-height:1!important;
   letter-spacing:.11em!important;
-  transform:rotate(-2.2deg)!important;
+  transform:translateY(12px) rotate(-2.2deg)!important;
   text-shadow:
     0 2px 0 rgba(255,235,225,.14),
     0 6px 18px rgba(0,0,0,.72),
