@@ -583,174 +583,139 @@ html body .page .document-panel .stamp:after{
   filter:blur(9px)!important;
 }
 
-/* 5컷: .carmin-panel / assets/07_carmin_age20.png / 스무 살의 카민, 우측 기록 카드형 2단 자막 테스트 */
-/* 목적: 얼굴과 군복 중심부는 가리지 않고, 오른쪽 빈 공간에 황실 기록 카드 두 장이 이어진 것처럼 자막을 배치한다. */
+/* 5컷: .carmin-panel / assets/07_carmin_age20.png / 스무 살의 카민, 우측 단일 기록문 박스 */
+/* 목적: 2단 카드 연출을 버리고, 오른쪽 빈 공간에 얇은 기록문 박스 하나만 두어 차갑고 고급스러운 비극 톤으로 정리한다. */
 /* 주의: 이 블록은 07_carmin_age20.png 전용이다. 다른 .dark-scene-panel 컷에 영향이 가지 않도록 .carmin-panel로만 제한한다. */
 html body .page .carmin-panel{
-  background:#03060a!important;
+  background:#02050a!important;
   position:relative!important;
   overflow:hidden!important;
 }
 
-/* 이미지: 카민 얼굴과 금장 디테일은 살리되, 전체 채도와 밝기를 눌러 무력한 가면 같은 인상을 만든다. */
+/* 이미지: 얼굴 디테일은 살리고, 전체 톤만 차갑게 눌러 무력한 가면 같은 분위기를 만든다. */
 html body .page .carmin-panel img{
   object-fit:cover!important;
   object-position:center center!important;
   transform:none!important;
-  filter:saturate(.72) brightness(.82) contrast(1.10)!important;
+  filter:saturate(.78) brightness(.88) contrast(1.08)!important;
 }
 
-/* 차가운 워시: 붉은 피부톤과 금장을 조금 죽이고, 흑청색 황실 기록물 톤으로 묶는다. */
+/* 차가운 워시: 얼굴을 너무 죽이지 않는 선에서만 얇게 덮는다. */
 html body .page .carmin-panel .cold-wash{
   display:block!important;
-  opacity:.92!important;
+  opacity:.66!important;
   mix-blend-mode:normal!important;
   background:
-    linear-gradient(135deg,rgba(60,84,116,.18) 0%,rgba(60,84,116,.06) 34%,rgba(0,0,0,.30) 100%),
-    radial-gradient(ellipse at 28% 32%,rgba(235,226,210,.055) 0%,rgba(235,226,210,0) 38%)!important;
+    radial-gradient(ellipse at 30% 30%,rgba(235,226,210,.065) 0%,rgba(235,226,210,.018) 30%,rgba(235,226,210,0) 54%),
+    linear-gradient(135deg,rgba(62,82,112,.12) 0%,rgba(62,82,112,.04) 36%,rgba(0,0,0,.22) 100%)!important;
 }
 
-/* 전체 오버레이: 하단 공통 자막용 어둠 대신, 오른쪽 빈 공간을 자막 자리로 읽히게 만드는 세로 비네트. */
+/* 전체 오버레이: 하단용 공통 자막 느낌을 줄이고, 오른쪽 자막 박스 뒤에만 어둠을 모아준다. */
 html body .page .carmin-panel .overlay{
   z-index:2!important;
   background:
-    linear-gradient(to right,rgba(0,0,0,.30) 0%,rgba(0,0,0,.08) 30%,rgba(2,6,12,.22) 58%,rgba(2,6,12,.64) 100%),
-    radial-gradient(ellipse at 30% 34%,rgba(0,0,0,0) 0%,rgba(0,0,0,.10) 48%,rgba(0,0,0,.46) 100%),
-    linear-gradient(to top,#03060a 0%,rgba(3,6,10,.72) 9%,rgba(3,6,10,.30) 24%,rgba(3,6,10,.08) 58%,rgba(3,6,10,.38) 100%)!important;
+    radial-gradient(ellipse at 28% 30%,rgba(0,0,0,0) 0%,rgba(0,0,0,.08) 44%,rgba(0,0,0,.34) 100%),
+    linear-gradient(to right,rgba(0,0,0,.18) 0%,rgba(0,0,0,.04) 36%,rgba(2,6,12,.26) 62%,rgba(2,6,12,.72) 100%),
+    linear-gradient(to top,#02050a 0%,rgba(2,5,10,.60) 10%,rgba(2,5,10,.16) 30%,rgba(2,5,10,.05) 62%,rgba(2,5,10,.28) 100%)!important;
 }
 
-/* 우측 기록 영역: 박스가 허공에 뜨지 않도록 아주 흐린 세로 장막을 깐다. */
+/* 우측 자막 무대: 박스가 허공에 뜨지 않도록, 뒤에 아주 흐린 기록 영역만 깐다. */
 html body .page .carmin-panel:before{
   content:""!important;
   position:absolute!important;
-  top:0!important;
-  right:0!important;
-  bottom:0!important;
-  width:42%!important;
+  top:19%!important;
+  right:6.5%!important;
+  width:35%!important;
+  height:50%!important;
   z-index:3!important;
   pointer-events:none!important;
+  opacity:1!important;
   background:
-    linear-gradient(to right,rgba(3,6,10,0) 0%,rgba(3,6,10,.18) 20%,rgba(3,6,10,.42) 62%,rgba(3,6,10,.64) 100%),
-    repeating-linear-gradient(0deg,rgba(238,230,214,.018) 0 1px,transparent 1px 18px),
-    repeating-linear-gradient(90deg,rgba(215,191,134,.012) 0 1px,transparent 1px 28px)!important;
+    radial-gradient(ellipse at 50% 50%,rgba(4,8,15,.50) 0%,rgba(4,8,15,.28) 46%,rgba(4,8,15,.08) 76%,rgba(4,8,15,0) 100%),
+    repeating-linear-gradient(0deg,rgba(238,230,214,.014) 0 1px,transparent 1px 20px)!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 12%,black 88%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,black 12%,black 88%,transparent 100%)!important;
 }
 
-/* 기록 입자와 가장자리 잠금. 얼굴 쪽에는 강하게 얹지 않는다. */
+/* 기록 입자와 화면 닫힘. 얼굴 쪽은 덜 건드리고 오른쪽 중심으로만 정리한다. */
 html body .page .carmin-panel:after{
   content:""!important;
   position:absolute!important;
   inset:0!important;
   z-index:5!important;
   pointer-events:none!important;
-  opacity:1!important;
+  opacity:.84!important;
   background:
-    radial-gradient(circle at 72% 25%,rgba(238,230,214,.052) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 88% 46%,rgba(215,191,134,.045) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 76% 72%,rgba(238,230,214,.040) 0 1px,transparent 1.7px),
-    linear-gradient(to bottom,#03060a 0%,rgba(3,6,10,.28) 14%,rgba(3,6,10,0) 34%,rgba(3,6,10,0) 62%,rgba(3,6,10,.42) 88%,#03060a 100%)!important;
-  background-size:220px 240px,260px 280px,210px 260px,100% 100%!important;
+    radial-gradient(circle at 70% 32%,rgba(238,230,214,.055) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 84% 50%,rgba(215,191,134,.046) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 76% 70%,rgba(238,230,214,.036) 0 1px,transparent 1.7px),
+    linear-gradient(to bottom,#02050a 0%,rgba(2,5,10,.18) 15%,rgba(2,5,10,0) 35%,rgba(2,5,10,0) 62%,rgba(2,5,10,.34) 88%,#02050a 100%)!important;
+  background-size:250px 260px,290px 300px,230px 280px,100% 100%!important;
 }
 
-/* 자막 묶음: 오른쪽 빈 공간에 2개의 기록 카드가 이어진 형태. 공통 .caption 위치값은 전부 덮어쓴다. */
+/* 단일 기록문 박스: 너무 화려하지 않게, 오른쪽 중단에 안정적으로 배치한다. */
 html body .page .carmin-panel .carmin-caption{
   left:auto!important;
-  right:8.4%!important;
-  top:28.5%!important;
+  right:7.4%!important;
+  top:38.2%!important;
   bottom:auto!important;
   transform:none!important;
   width:620px!important;
   z-index:8!important;
-  padding:0!important;
+  padding:28px 38px 30px!important;
   display:flex!important;
   flex-direction:column!important;
-  align-items:stretch!important;
-  gap:0!important;
+  align-items:flex-start!important;
+  gap:14px!important;
   text-align:left!important;
-  color:#f1e8d8!important;
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
-  -webkit-mask-image:none!important;
-  mask-image:none!important;
-}
-
-/* 공통 자막 금색선은 07컷 카드 구조와 충돌하므로 끈다. */
-html body .page .carmin-panel .carmin-caption:before{
-  content:none!important;
-  display:none!important;
-}
-
-/* 카드 공통: 사각 말풍선이 아니라, 위아래 금선만 남긴 황실 기록 조각처럼 처리한다. */
-html body .page .carmin-panel .carmin-card{
-  position:relative!important;
-  z-index:2!important;
-  padding:34px 42px 38px!important;
-  color:#efe5d4!important;
   background:
-    radial-gradient(ellipse at 50% 50%,rgba(7,12,22,.50) 0%,rgba(7,12,22,.30) 46%,rgba(7,12,22,.08) 78%,rgba(7,12,22,0) 100%),
-    linear-gradient(to right,rgba(3,6,10,.20) 0%,rgba(3,6,10,.38) 50%,rgba(3,6,10,.20) 100%)!important;
+    linear-gradient(to right,rgba(5,9,17,.16) 0%,rgba(5,9,17,.46) 50%,rgba(5,9,17,.16) 100%),
+    radial-gradient(ellipse at 50% 50%,rgba(5,9,17,.32) 0%,rgba(5,9,17,.14) 60%,rgba(5,9,17,0) 100%)!important;
   border-top:1px solid rgba(215,191,134,.22)!important;
-  border-bottom:1px solid rgba(215,191,134,.13)!important;
+  border-bottom:1px solid rgba(215,191,134,.14)!important;
   box-shadow:
-    0 20px 54px rgba(0,0,0,.34),
-    inset 0 1px 0 rgba(255,255,255,.035)!important;
-  -webkit-backdrop-filter:blur(3px) saturate(.88)!important;
-  backdrop-filter:blur(3px) saturate(.88)!important;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)!important;
-  mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)!important;
+    0 14px 38px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.028)!important;
+  -webkit-backdrop-filter:blur(2px) saturate(.90)!important;
+  backdrop-filter:blur(2px) saturate(.90)!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 7%,black 93%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,black 7%,black 93%,transparent 100%)!important;
 }
 
-/* 첫 카드: 상황 기록처럼 작고 탁한 금색으로 둔다. */
-html body .page .carmin-panel .carmin-card-small{
-  width:86%!important;
-  align-self:flex-start!important;
-  color:#c9b27f!important;
-  font-size:48px!important;
+/* 공통 caption 장식선은 끄고, 07컷은 박스 안의 작은 윗선만 쓴다. */
+html body .page .carmin-panel .carmin-caption:before{
+  content:""!important;
+  display:block!important;
+  width:128px!important;
+  height:1px!important;
+  margin:0 0 6px 0!important;
+  opacity:.72!important;
+  background:linear-gradient(to right,rgba(215,191,134,.68),rgba(215,191,134,.18),rgba(215,191,134,0))!important;
+}
+
+/* 첫 문장: 너무 작지 않게, 하지만 메인 문장보다 한 단계만 낮게 둔다. */
+html body .page .carmin-panel .carmin-kicker{
+  display:block!important;
+  color:#ccb27c!important;
+  font-size:56px!important;
   font-weight:500!important;
-  line-height:1.45!important;
-  letter-spacing:-.028em!important;
+  line-height:1.42!important;
+  letter-spacing:-.030em!important;
+  text-shadow:
+    0 4px 14px rgba(0,0,0,.92),
+    0 0 14px rgba(0,0,0,.64)!important;
+}
+
+/* 핵심 문장: 같은 명조체 톤 안에서만 조금 더 크게. 과한 굵기는 금지한다. */
+html body .page .carmin-panel .carmin-main{
+  display:block!important;
+  color:#f0e7d8!important;
+  font-size:64px!important;
+  font-weight:400!important;
+  line-height:1.54!important;
+  letter-spacing:-.040em!important;
   text-shadow:
     0 5px 18px rgba(0,0,0,.96),
-    0 0 20px rgba(0,0,0,.70),
-    0 0 8px rgba(215,191,134,.08)!important;
-}
-
-/* 연결선: 두 카드가 따로 노는 걸 막는 끊어진 금색 세로선. */
-html body .page .carmin-panel .carmin-card-connector{
-  position:relative!important;
-  width:2px!important;
-  height:74px!important;
-  margin:12px 0 12px 74px!important;
-  opacity:.70!important;
-  background:
-    linear-gradient(to bottom,rgba(215,191,134,0) 0%,rgba(215,191,134,.46) 18%,rgba(215,191,134,.10) 46%,rgba(215,191,134,.54) 72%,rgba(215,191,134,0) 100%)!important;
-  box-shadow:0 0 12px rgba(215,191,134,.12)!important;
-}
-
-/* 둘째 카드: 결론 문장. 1216px 축소에서도 읽히도록 크기와 행간을 확보한다. */
-html body .page .carmin-panel .carmin-card-main{
-  width:100%!important;
-  align-self:flex-end!important;
-  color:#f3eadb!important;
-  font-size:64px!important;
-  font-weight:500!important;
-  line-height:1.58!important;
-  letter-spacing:-.042em!important;
-  text-shadow:
-    0 7px 26px rgba(0,0,0,1),
-    0 0 44px rgba(0,0,0,.84),
-    0 0 2px rgba(255,255,255,.16)!important;
-}
-
-/* 둘째 카드 왼쪽의 짧은 금선: '숨긴 칼'을 직접 그리지 않고, 카드 가장자리의 절단감으로 암시한다. */
-html body .page .carmin-panel .carmin-card-main:before{
-  content:""!important;
-  position:absolute!important;
-  left:28px!important;
-  top:26px!important;
-  bottom:26px!important;
-  width:2px!important;
-  opacity:.62!important;
-  background:linear-gradient(to bottom,rgba(215,191,134,0),rgba(215,191,134,.58),rgba(215,191,134,.14),rgba(215,191,134,0))!important;
-  box-shadow:0 0 10px rgba(215,191,134,.12)!important;
+    0 0 22px rgba(0,0,0,.74),
+    0 0 2px rgba(255,255,255,.12)!important;
 }
