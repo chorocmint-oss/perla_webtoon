@@ -584,7 +584,7 @@ html body .page .document-panel .stamp:after{
 }
 
 /* 5컷: .carmin-panel / assets/07_carmin_age20.png / 스무 살의 카민, 우측 단일 기록문 박스 */
-/* 목적: 2박스/카드 연출을 제거하고, 오른쪽 빈 공간에 얇은 단일 기록문 자막만 둔다. */
+/* 목적: 2박스/카드 연출을 제거하고, 오른쪽 빈 공간에 단일 기록문 자막을 오른쪽 정렬로 배치한다. */
 /* 주의: 이 블록은 07_carmin_age20.png 전용이다. 다른 .dark-scene-panel 컷에 영향이 가지 않도록 .carmin-panel로만 제한한다. */
 html body .page .export-panel.image-panel.carmin-panel{
   background:#02050a!important;
@@ -592,90 +592,90 @@ html body .page .export-panel.image-panel.carmin-panel{
   overflow:hidden!important;
 }
 
-/* 이미지: 얼굴 디테일은 살리고, 전체만 차갑게 눌러준다. */
+/* 이미지: 얼굴과 군복 금장 디테일은 살리고, 전체 톤만 차갑게 눌러준다. */
 html body .page .export-panel.image-panel.carmin-panel > img{
   object-fit:cover!important;
   object-position:center center!important;
   transform:none!important;
-  filter:saturate(.82) brightness(.90) contrast(1.06)!important;
+  filter:saturate(.84) brightness(.91) contrast(1.06)!important;
 }
 
-/* 차가운 워시: 얼굴이 너무 죽지 않게 약하게만. */
+/* 차가운 워시: 얼굴이 죽어 보이지 않도록 약하게만 얹는다. */
 html body .page .export-panel.image-panel.carmin-panel > .image-wash.cold-wash{
   display:block!important;
-  opacity:.58!important;
+  opacity:.52!important;
   mix-blend-mode:normal!important;
   background:
-    radial-gradient(ellipse at 30% 30%,rgba(235,226,210,.055) 0%,rgba(235,226,210,.015) 30%,rgba(235,226,210,0) 54%),
-    linear-gradient(135deg,rgba(62,82,112,.10) 0%,rgba(62,82,112,.035) 38%,rgba(0,0,0,.20) 100%)!important;
+    radial-gradient(ellipse at 30% 30%,rgba(235,226,210,.050) 0%,rgba(235,226,210,.014) 30%,rgba(235,226,210,0) 54%),
+    linear-gradient(135deg,rgba(62,82,112,.09) 0%,rgba(62,82,112,.030) 38%,rgba(0,0,0,.18) 100%)!important;
 }
 
-/* 전체 오버레이: 공통 하단 자막용 어둠을 버리고, 오른쪽 자막 뒤쪽만 살짝 잠근다. */
+/* 전체 오버레이: 오른쪽 자막 뒤쪽만 살짝 잠그고, 얼굴 쪽은 과하게 어둡히지 않는다. */
 html body .page .export-panel.image-panel.carmin-panel > .overlay{
   z-index:2!important;
   background:
-    radial-gradient(ellipse at 28% 30%,rgba(0,0,0,0) 0%,rgba(0,0,0,.06) 46%,rgba(0,0,0,.30) 100%),
-    linear-gradient(to right,rgba(0,0,0,.14) 0%,rgba(0,0,0,.03) 38%,rgba(2,6,12,.22) 64%,rgba(2,6,12,.66) 100%),
-    linear-gradient(to top,#02050a 0%,rgba(2,5,10,.54) 9%,rgba(2,5,10,.14) 29%,rgba(2,5,10,.04) 64%,rgba(2,5,10,.24) 100%)!important;
+    radial-gradient(ellipse at 28% 30%,rgba(0,0,0,0) 0%,rgba(0,0,0,.05) 46%,rgba(0,0,0,.28) 100%),
+    linear-gradient(to right,rgba(0,0,0,.12) 0%,rgba(0,0,0,.025) 38%,rgba(2,6,12,.20) 64%,rgba(2,6,12,.62) 100%),
+    linear-gradient(to top,#02050a 0%,rgba(2,5,10,.50) 9%,rgba(2,5,10,.12) 29%,rgba(2,5,10,.035) 64%,rgba(2,5,10,.22) 100%)!important;
 }
 
-/* 우측 자막 무대: 박스가 허공에 뜨지 않게, 뒤에만 아주 흐린 기록 영역을 깐다. */
+/* 우측 자막 무대: 박스가 허공에 뜨지 않도록, 오른쪽 빈 공간에 아주 흐린 기록 영역만 깐다. */
 html body .page .export-panel.image-panel.carmin-panel:before{
   content:""!important;
   position:absolute!important;
-  top:23%!important;
-  right:5.6%!important;
-  width:37%!important;
-  height:44%!important;
+  top:22%!important;
+  right:4.2%!important;
+  width:43%!important;
+  height:45%!important;
   z-index:3!important;
   pointer-events:none!important;
   opacity:1!important;
   background:
-    radial-gradient(ellipse at 50% 50%,rgba(4,8,15,.46) 0%,rgba(4,8,15,.24) 48%,rgba(4,8,15,.07) 76%,rgba(4,8,15,0) 100%),
-    repeating-linear-gradient(0deg,rgba(238,230,214,.012) 0 1px,transparent 1px 22px)!important;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 14%,black 86%,transparent 100%)!important;
-  mask-image:linear-gradient(to right,transparent 0%,black 14%,black 86%,transparent 100%)!important;
+    radial-gradient(ellipse at 58% 50%,rgba(4,8,15,.42) 0%,rgba(4,8,15,.22) 48%,rgba(4,8,15,.065) 76%,rgba(4,8,15,0) 100%),
+    repeating-linear-gradient(0deg,rgba(238,230,214,.010) 0 1px,transparent 1px 22px)!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 14%,black 88%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,black 14%,black 88%,transparent 100%)!important;
 }
 
-/* 기록 입자와 화면 닫힘. 얼굴 쪽은 건드리지 않고 오른쪽 위주로만. */
+/* 기록 입자와 화면 닫힘. 얼굴 쪽은 덜 건드리고 오른쪽 중심으로만 정리한다. */
 html body .page .export-panel.image-panel.carmin-panel:after{
   content:""!important;
   position:absolute!important;
   inset:0!important;
   z-index:5!important;
   pointer-events:none!important;
-  opacity:.72!important;
+  opacity:.68!important;
   background:
-    radial-gradient(circle at 70% 32%,rgba(238,230,214,.045) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 84% 50%,rgba(215,191,134,.038) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 76% 70%,rgba(238,230,214,.030) 0 1px,transparent 1.7px),
-    linear-gradient(to bottom,#02050a 0%,rgba(2,5,10,.16) 15%,rgba(2,5,10,0) 35%,rgba(2,5,10,0) 62%,rgba(2,5,10,.30) 88%,#02050a 100%)!important;
+    radial-gradient(circle at 70% 32%,rgba(238,230,214,.040) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 84% 50%,rgba(215,191,134,.034) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 76% 70%,rgba(238,230,214,.028) 0 1px,transparent 1.7px),
+    linear-gradient(to bottom,#02050a 0%,rgba(2,5,10,.14) 15%,rgba(2,5,10,0) 35%,rgba(2,5,10,0) 62%,rgba(2,5,10,.28) 88%,#02050a 100%)!important;
   background-size:250px 260px,290px 300px,230px 280px,100% 100%!important;
 }
 
-/* 단일 기록문 박스: 공통 .caption의 큰 글씨/중앙정렬/하단위치를 전부 강제로 리셋한다. */
+/* 단일 기록문 박스: 오른쪽 정렬. 공통 .caption의 큰 글씨/중앙정렬/하단 위치를 전부 리셋한다. */
 html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption{
   position:absolute!important;
   left:auto!important;
-  right:7.2%!important;
-  top:36.6%!important;
+  right:3.6%!important;
+  top:37.0%!important;
   bottom:auto!important;
   transform:none!important;
 
-  width:720px!important;
-  min-width:720px!important;
-  max-width:720px!important;
+  width:1100px!important;
+  min-width:1100px!important;
+  max-width:1100px!important;
 
   z-index:8!important;
-  padding:26px 36px 30px!important;
+  padding:24px 34px 28px!important;
 
   display:flex!important;
   flex-direction:column!important;
-  align-items:flex-start!important;
+  align-items:flex-end!important;
   justify-content:flex-start!important;
-  gap:16px!important;
+  gap:10px!important;
 
-  text-align:left!important;
+  text-align:right!important;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
   white-space:normal!important;
@@ -686,34 +686,29 @@ html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption
   letter-spacing:0!important;
   font-weight:400!important;
 
-  color:#f0e7d8!important;
+  color:#efe6d8!important;
   background:
-    linear-gradient(to right,rgba(5,9,17,.12) 0%,rgba(5,9,17,.36) 50%,rgba(5,9,17,.12) 100%),
-    radial-gradient(ellipse at 50% 50%,rgba(5,9,17,.26) 0%,rgba(5,9,17,.12) 62%,rgba(5,9,17,0) 100%)!important;
-  border-top:1px solid rgba(215,191,134,.18)!important;
-  border-bottom:1px solid rgba(215,191,134,.10)!important;
+    linear-gradient(to right,rgba(5,9,17,.05) 0%,rgba(5,9,17,.20) 54%,rgba(5,9,17,.08) 100%),
+    radial-gradient(ellipse at 70% 50%,rgba(5,9,17,.15) 0%,rgba(5,9,17,.07) 62%,rgba(5,9,17,0) 100%)!important;
+  border-top:1px solid rgba(215,191,134,.08)!important;
+  border-bottom:1px solid rgba(215,191,134,.045)!important;
   border-left:0!important;
   border-right:0!important;
   box-shadow:
-    0 12px 32px rgba(0,0,0,.24),
-    inset 0 1px 0 rgba(255,255,255,.022)!important;
+    0 10px 24px rgba(0,0,0,.14),
+    inset 0 1px 0 rgba(255,255,255,.014)!important;
 
   text-shadow:none!important;
-  -webkit-backdrop-filter:blur(1.8px) saturate(.90)!important;
-  backdrop-filter:blur(1.8px) saturate(.90)!important;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 7%,black 93%,transparent 100%)!important;
-  mask-image:linear-gradient(to right,transparent 0%,black 7%,black 93%,transparent 100%)!important;
+  -webkit-backdrop-filter:blur(1px) saturate(.92)!important;
+  backdrop-filter:blur(1px) saturate(.92)!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 94%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,black 8%,black 94%,transparent 100%)!important;
 }
 
-/* 공통 caption 장식선 교체: 07컷은 박스 안쪽의 짧고 약한 금선만 사용한다. */
+/* 07컷은 장식선을 끈다. 텍스트 자체만 차갑게 남긴다. */
 html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption:before{
-  content:""!important;
-  display:block!important;
-  width:118px!important;
-  height:1px!important;
-  margin:0 0 4px 0!important;
-  opacity:.62!important;
-  background:linear-gradient(to right,rgba(215,191,134,.58),rgba(215,191,134,.14),rgba(215,191,134,0))!important;
+  content:none!important;
+  display:none!important;
 }
 
 /* 혹시 과거 카드용 after가 남아도 영향 없게 차단한다. */
@@ -722,45 +717,47 @@ html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption
   display:none!important;
 }
 
-/* 첫 문장: 절대 줄바꿈 금지. 공통 caption 크기와 완전히 분리한다. */
+/* 첫 문장: 별도 금색 강조 제거. 본문보다 살짝 작고 옅은 기록문 톤으로만 둔다. */
 html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption > .carmin-kicker{
   display:block!important;
   width:100%!important;
   max-width:none!important;
 
-  color:#cbb27d!important;
-  font-size:42px!important;
-  font-weight:500!important;
-  line-height:1.42!important;
-  letter-spacing:-.026em!important;
+  color:#eee5d7!important;
+  opacity:.82!important;
+  font-size:50px!important;
+  font-weight:400!important;
+  line-height:1.40!important;
+  letter-spacing:-.028em!important;
 
   white-space:nowrap!important;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
 
-  text-align:left!important;
+  text-align:right!important;
   text-shadow:
-    0 4px 13px rgba(0,0,0,.90),
+    0 4px 14px rgba(0,0,0,.92),
     0 0 14px rgba(0,0,0,.62)!important;
 }
 
-/* 핵심 문장: 너무 크지 않게. 1216px 축소 기준에서도 읽히는 정도만 유지한다. */
+/* 핵심 문장: 한 줄 고정. 오른쪽 정렬로 단정하게 붙인다. */
 html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption > .carmin-main{
   display:block!important;
   width:100%!important;
   max-width:none!important;
 
-  color:#f0e7d8!important;
-  font-size:50px!important;
+  color:#f2eadc!important;
+  opacity:1!important;
+  font-size:58px!important;
   font-weight:400!important;
-  line-height:1.56!important;
-  letter-spacing:-.036em!important;
+  line-height:1.44!important;
+  letter-spacing:-.044em!important;
 
   white-space:nowrap!important;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
 
-  text-align:left!important;
+  text-align:right!important;
   text-shadow:
     0 5px 18px rgba(0,0,0,.96),
     0 0 22px rgba(0,0,0,.72),
