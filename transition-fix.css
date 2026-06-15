@@ -1533,8 +1533,8 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   display:block!important;
   width:100%!important;
 
-  color:#e9dfcf!important;
-  opacity:.95!important;
+  color:#e6dccb!important;
+  opacity:.96!important;
   font-size:84px!important;
   font-weight:500!important;
   line-height:1.26!important;
@@ -1546,7 +1546,8 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   text-align:center!important;
 
   text-shadow:
-    0 8px 24px rgba(0,0,0,1),
-    0 0 30px rgba(0,0,0,.82),
-    0 0 2px rgba(255,255,255,.06)!important;
+    0 2px 0 rgba(255,255,255,.04),
+    0 6px 18px rgba(0,0,0,.92),
+    0 12px 30px rgba(0,0,0,.78),
+    0 0 22px rgba(0,0,0,.56)!important;
 }
