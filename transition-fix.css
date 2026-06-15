@@ -658,7 +658,7 @@ html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption
   position:absolute!important;
   left:auto!important;
   right:3.6%!important;
-  top:37.0%!important;
+  top:45.8%!important;
   bottom:auto!important;
   transform:none!important;
 
@@ -673,14 +673,13 @@ html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption
   flex-direction:column!important;
   align-items:flex-end!important;
   justify-content:flex-start!important;
-  gap:10px!important;
+  gap:12px!important;
 
   text-align:right!important;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
   white-space:normal!important;
 
-  /* 핵심 안전장치: 공통 .caption font-size:88px가 새어 나오는 걸 차단한다. */
   font-size:0!important;
   line-height:1!important;
   letter-spacing:0!important;
@@ -725,10 +724,10 @@ html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption
 
   color:#eee5d7!important;
   opacity:.82!important;
-  font-size:50px!important;
+  font-size:54px!important;
   font-weight:400!important;
-  line-height:1.40!important;
-  letter-spacing:-.028em!important;
+  line-height:1.42!important;
+  letter-spacing:-.030em!important;
 
   white-space:nowrap!important;
   word-break:keep-all!important;
@@ -748,9 +747,9 @@ html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption
 
   color:#f2eadc!important;
   opacity:1!important;
-  font-size:58px!important;
+  font-size:64px!important;
   font-weight:400!important;
-  line-height:1.44!important;
+  line-height:1.46!important;
   letter-spacing:-.044em!important;
 
   white-space:nowrap!important;
