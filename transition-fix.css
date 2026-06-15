@@ -1211,12 +1211,12 @@ html body .page .export-panel.image-panel.lilia-panel:before{
   top:54%!important;
   transform:translate(-50%,-50%)!important;
   width:58%!important;
-  height:52%!important;
+  height:58%!important;
   z-index:3!important;
   pointer-events:none!important;
   opacity:1!important;
   background:
-    radial-gradient(ellipse at 50% 50%,rgba(8,12,18,.16) 0%,rgba(8,12,18,.07) 52%,rgba(8,12,18,.015) 80%,rgba(8,12,18,0) 100%),
+    radial-gradient(ellipse at 50% 50%,rgba(8,12,18,.15) 0%,rgba(8,12,18,.065) 52%,rgba(8,12,18,.014) 80%,rgba(8,12,18,0) 100%),
     repeating-linear-gradient(0deg,rgba(238,230,214,.004) 0 1px,transparent 1px 24px)!important;
   -webkit-mask-image:linear-gradient(to right,transparent 0%,black 10%,black 90%,transparent 100%)!important;
   mask-image:linear-gradient(to right,transparent 0%,black 10%,black 90%,transparent 100%)!important;
@@ -1245,12 +1245,12 @@ html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption{
   bottom:auto!important;
   transform:translate(-50%,-50%)!important;
 
-  width:1160px!important;
-  min-width:1160px!important;
-  max-width:1160px!important;
+  width:1220px!important;
+  min-width:1220px!important;
+  max-width:1220px!important;
 
   z-index:8!important;
-  padding:42px 44px 46px!important;
+  padding:44px 44px 50px!important;
 
   display:flex!important;
   flex-direction:column!important;
@@ -1315,76 +1315,90 @@ html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption >
   display:block!important;
   width:100%!important;
   color:#e5dfd2!important;
-  opacity:.86!important;
-  font-size:60px!important;
+  opacity:.88!important;
+  font-size:66px!important;
   font-weight:400!important;
-  line-height:1.44!important;
+  line-height:1.52!important;
   letter-spacing:-.030em!important;
   white-space:normal!important;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
   text-align:center!important;
   text-shadow:
-    0 4px 14px rgba(0,0,0,.86),
-    0 0 14px rgba(0,0,0,.50)!important;
+    0 4px 14px rgba(0,0,0,.88),
+    0 0 14px rgba(0,0,0,.52)!important;
 }
 
-/* 금선: 이전 컷들보다 확실히 보이게 크게 */
+/* 첫 번째 금선: 첫 문단과 두 번째 문단 사이를 황실 기록처럼 가른다. */
 html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption > .lilia-divider{
   display:block!important;
-  width:240px!important;
-  height:2px!important;
-  margin:30px 0 32px!important;
-  opacity:.92!important;
+  width:320px!important;
+  height:3px!important;
+  margin:42px 0 46px!important;
+  opacity:1!important;
   background:
     linear-gradient(to right,
       rgba(214,198,164,0) 0%,
-      rgba(214,198,164,.30) 12%,
-      rgba(224,208,172,.88) 36%,
-      rgba(236,222,190,1) 50%,
-      rgba(224,208,172,.88) 64%,
-      rgba(214,198,164,.30) 88%,
+      rgba(214,198,164,.34) 10%,
+      rgba(224,208,172,.92) 34%,
+      rgba(240,226,194,1) 50%,
+      rgba(224,208,172,.92) 66%,
+      rgba(214,198,164,.34) 90%,
       rgba(214,198,164,0) 100%)!important;
   box-shadow:
-    0 0 10px rgba(214,198,164,.14),
-    0 0 20px rgba(214,198,164,.06)!important;
+    0 0 12px rgba(214,198,164,.18),
+    0 0 26px rgba(214,198,164,.10)!important;
 }
 
-/* 두 번째 금선은 살짝만 짧게 */
-html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption > .lilia-divider-second{
-  width:210px!important;
-  margin:34px 0 36px!important;
-}
-
-/* 두 번째 문단: 중심 서술 */
+/* 두 번째 문단: 죽음의 시점을 기록처럼 고정한다. */
 html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption > .lilia-line-middle{
   display:block!important;
   width:100%!important;
   color:#eee5d7!important;
-  opacity:.96!important;
-  font-size:66px!important;
+  opacity:.97!important;
+  font-size:72px!important;
   font-weight:500!important;
-  line-height:1.46!important;
+  line-height:1.54!important;
   letter-spacing:-.034em!important;
   white-space:normal!important;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
   text-align:center!important;
   text-shadow:
-    0 5px 18px rgba(0,0,0,.94),
-    0 0 22px rgba(0,0,0,.66),
-    0 0 2px rgba(255,255,255,.07)!important;
+    0 5px 18px rgba(0,0,0,.95),
+    0 0 24px rgba(0,0,0,.68),
+    0 0 2px rgba(255,255,255,.08)!important;
 }
 
-/* 마지막 문장: 한 체급 올려서 결론처럼 */
+/* 두 번째 금선: 마지막 문장을 훨씬 멀리 떼어내기 위한 긴 침묵. */
+html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption > .lilia-divider-second{
+  width:300px!important;
+  height:3px!important;
+  margin:88px 0 118px!important;
+  opacity:1!important;
+  background:
+    linear-gradient(to right,
+      rgba(214,198,164,0) 0%,
+      rgba(214,198,164,.34) 10%,
+      rgba(224,208,172,.92) 34%,
+      rgba(240,226,194,1) 50%,
+      rgba(224,208,172,.92) 66%,
+      rgba(214,198,164,.34) 90%,
+      rgba(214,198,164,0) 100%)!important;
+  box-shadow:
+    0 0 12px rgba(214,198,164,.18),
+    0 0 26px rgba(214,198,164,.10)!important;
+}
+
+/* 마지막 문장: 넓게 벌어진 침묵 뒤에 결론처럼 떨어진다. */
 html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption > .lilia-line-final{
   display:block!important;
   width:100%!important;
-  color:#f5ecde!important;
+  color:#f6edde!important;
   opacity:1!important;
-  font-size:78px!important;
+  font-size:86px!important;
   font-weight:500!important;
-  line-height:1.34!important;
+  line-height:1.40!important;
   letter-spacing:-.040em!important;
   white-space:nowrap!important;
   word-break:keep-all!important;
@@ -1392,6 +1406,6 @@ html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption >
   text-align:center!important;
   text-shadow:
     0 7px 24px rgba(0,0,0,1),
-    0 0 30px rgba(0,0,0,.76),
+    0 0 32px rgba(0,0,0,.78),
     0 0 2px rgba(255,255,255,.10)!important;
 }
