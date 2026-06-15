@@ -1418,7 +1418,7 @@ html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption >
 }
 
 /* 마지막컷: .winter-threshold-panel / assets/13_winter_threshold.png / 독자에게 공이 넘어가는 선언 컷 */
-/* 목적: 정면을 응시하는 카민 앞에서, 중앙 하단의 짧은 선언문이 독자를 직접 겨누게 한다. */
+/* 목적: 인물 얼굴과 붉은 눈을 살리고, 중앙 하단의 2줄 선언문만 조용히 강조한다. */
 /* 주의: styles.css는 건드리지 않고, transition-fix.css에서 마지막컷 전용 클래스만 수정한다. */
 html body .page .export-panel.image-panel.winter-threshold-panel{
   background:#050307!important;
@@ -1426,68 +1426,68 @@ html body .page .export-panel.image-panel.winter-threshold-panel{
   overflow:hidden!important;
 }
 
-/* 이미지: 검은 배경은 깊게, 얼굴과 제복의 하이라이트는 살린다. */
+/* 이미지: 얼굴이 묻히지 않게 밝기 복구. 검은 배경만 유지하고 인물은 살린다. */
 html body .page .export-panel.image-panel.winter-threshold-panel > img{
   object-fit:cover!important;
   object-position:center center!important;
   transform:none!important;
-  filter:saturate(.92) brightness(.93) contrast(1.08)!important;
+  filter:saturate(1.02) brightness(1.06) contrast(1.02)!important;
 }
 
-/* 워시: 중앙 하단 자막 영역만 아주 살짝 눌러 가독성 확보 */
-html body .page .export-panel.image-panel.winter-threshold-panel > .image-wash{
+/* 워시: 자막 뒤 하단만 아주 얇게 눌러준다. 인물 얼굴 쪽은 건드리지 않는다. */
+html body .page .export-panel.image-panel.winter-threshold-panel > .image-wash.hook-wash{
   display:block!important;
-  opacity:.34!important;
+  opacity:.16!important;
   mix-blend-mode:normal!important;
   background:
-    radial-gradient(ellipse at 50% 82%,rgba(6,8,14,.36) 0%,rgba(6,8,14,.18) 34%,rgba(6,8,14,0) 72%),
-    linear-gradient(to top,rgba(5,3,7,.28) 0%,rgba(5,3,7,.10) 16%,rgba(5,3,7,0) 34%)!important;
+    radial-gradient(ellipse at 50% 84%,rgba(6,8,14,.24) 0%,rgba(6,8,14,.10) 36%,rgba(6,8,14,0) 72%),
+    linear-gradient(to top,rgba(5,3,7,.18) 0%,rgba(5,3,7,.06) 15%,rgba(5,3,7,0) 30%)!important;
 }
 
-/* 전체 오버레이: 가장자리는 살짝 닫고, 중앙 인물은 유지 */
-html body .page .export-panel.image-panel.winter-threshold-panel > .overlay{
+/* 오버레이: 얼굴과 손은 거의 안 누르고, 하단 자막 영역과 가장자리만 정리한다. */
+html body .page .export-panel.image-panel.winter-threshold-panel > .overlay.overlay-hook{
   z-index:2!important;
   background:
-    linear-gradient(to right,rgba(0,0,0,.34) 0%,rgba(0,0,0,.10) 16%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 68%,rgba(0,0,0,.10) 84%,rgba(0,0,0,.34) 100%),
-    linear-gradient(to top,#050307 0%,rgba(5,3,7,.24) 12%,rgba(5,3,7,.06) 24%,rgba(5,3,7,0) 38%)!important;
+    linear-gradient(to right,rgba(0,0,0,.20) 0%,rgba(0,0,0,.06) 15%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 68%,rgba(0,0,0,.06) 85%,rgba(0,0,0,.20) 100%),
+    linear-gradient(to top,#050307 0%,rgba(5,3,7,.18) 10%,rgba(5,3,7,.04) 22%,rgba(5,3,7,0) 36%)!important;
 }
 
-/* 중앙 하단 자막 무대: 보이지 않는 얇은 안개층 */
+/* 자막 뒤 공기층: 박스처럼 보이지 않게, 글자 주변만 살짝 어둡게. */
 html body .page .export-panel.image-panel.winter-threshold-panel:before{
   content:""!important;
   position:absolute!important;
   left:50%!important;
-  top:82.5%!important;
+  top:84%!important;
   transform:translate(-50%,-50%)!important;
-  width:62%!important;
-  height:18%!important;
+  width:72%!important;
+  height:22%!important;
   z-index:3!important;
   pointer-events:none!important;
-  background:
-    radial-gradient(ellipse at 50% 50%,rgba(6,8,14,.34) 0%,rgba(6,8,14,.16) 44%,rgba(6,8,14,0) 100%)!important;
   opacity:1!important;
+  background:
+    radial-gradient(ellipse at 50% 50%,rgba(6,8,14,.28) 0%,rgba(6,8,14,.13) 44%,rgba(6,8,14,0) 100%)!important;
 }
 
-/* 자막 묶음: 중앙 하단 */
+/* 자막 묶음: 중앙 하단 2줄. */
 html body .page .export-panel.image-panel.winter-threshold-panel > .caption.winter-threshold-caption{
   position:absolute!important;
   left:50%!important;
-  top:82.5%!important;
+  top:84%!important;
   bottom:auto!important;
   transform:translate(-50%,-50%)!important;
 
-  width:1120px!important;
-  min-width:1120px!important;
-  max-width:1120px!important;
+  width:1320px!important;
+  min-width:1320px!important;
+  max-width:1320px!important;
 
   z-index:8!important;
-  padding:10px 0 12px!important;
+  padding:8px 0 10px!important;
 
   display:flex!important;
   flex-direction:column!important;
   align-items:center!important;
   justify-content:flex-start!important;
-  gap:22px!important;
+  gap:24px!important;
 
   text-align:center!important;
   word-break:keep-all!important;
@@ -1506,16 +1506,16 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   text-shadow:none!important;
 }
 
-/* 첫 줄: 작고 얇게 */
+/* 첫 줄: 작고 차갑게. */
 html body .page .export-panel.image-panel.winter-threshold-panel > .caption.winter-threshold-caption > .winter-threshold-lead{
   display:block!important;
   width:100%!important;
 
-  color:#e7dfd2!important;
-  opacity:.84!important;
-  font-size:56px!important;
+  color:#e4ddd2!important;
+  opacity:.88!important;
+  font-size:54px!important;
   font-weight:400!important;
-  line-height:1.28!important;
+  line-height:1.22!important;
   letter-spacing:-.026em!important;
 
   white-space:nowrap!important;
@@ -1525,20 +1525,20 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
 
   text-shadow:
     0 4px 14px rgba(0,0,0,.88),
-    0 0 14px rgba(0,0,0,.46)!important;
+    0 0 14px rgba(0,0,0,.48)!important;
 }
 
-/* 둘째 줄: 확실히 강조 */
+/* 둘째 줄: 한 줄로 강하게. 점층형처럼 과하게 키우지 않고, 선언만 선명하게. */
 html body .page .export-panel.image-panel.winter-threshold-panel > .caption.winter-threshold-caption > .winter-threshold-main{
   display:block!important;
   width:100%!important;
 
-  color:#f4ebdd!important;
+  color:#f5ecde!important;
   opacity:1!important;
-  font-size:82px!important;
+  font-size:76px!important;
   font-weight:500!important;
-  line-height:1.30!important;
-  letter-spacing:-.038em!important;
+  line-height:1.24!important;
+  letter-spacing:-.040em!important;
 
   white-space:nowrap!important;
   word-break:keep-all!important;
@@ -1546,7 +1546,7 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   text-align:center!important;
 
   text-shadow:
-    0 8px 24px rgba(0,0,0,1),
-    0 0 30px rgba(0,0,0,.78),
-    0 0 2px rgba(255,255,255,.08)!important;
+    0 7px 22px rgba(0,0,0,1),
+    0 0 28px rgba(0,0,0,.76),
+    0 0 2px rgba(255,255,255,.10)!important;
 }
