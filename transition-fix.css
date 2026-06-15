@@ -812,10 +812,10 @@ html body .page .export-panel.image-panel.ruben-panel > .overlay{
 html body .page .export-panel.image-panel.ruben-panel:before{
   content:""!important;
   position:absolute!important;
-  left:4.2%!important;
-  top:62%!important;
-  width:58%!important;
-  height:30%!important;
+  left:2.8%!important;
+  top:64%!important;
+  width:48%!important;
+  height:24%!important;
   z-index:3!important;
   pointer-events:none!important;
   opacity:1!important;
@@ -847,24 +847,24 @@ html body .page .export-panel.image-panel.ruben-panel:after{
 /* 자막: 좌측 하단 75% 높이. 07과 같은 체급의 글씨 크기를 유지하되, 더 낮고 거칠게 받쳐준다. */
 html body .page .export-panel.image-panel.ruben-panel > .caption.ruben-caption{
   position:absolute!important;
-  left:7.0%!important;
+  left:4.8%!important;
   right:auto!important;
   top:75%!important;
   bottom:auto!important;
   transform:none!important;
 
   width:1180px!important;
-  min-width:1180px!important;
-  max-width:1180px!important;
+  min-width:980px!important;
+  max-width:980px!important;
 
   z-index:8!important;
-  padding:20px 28px 22px!important;
+  padding:16px 22px 18px!important;
 
   display:flex!important;
   flex-direction:column!important;
   align-items:flex-start!important;
   justify-content:flex-start!important;
-  gap:10px!important;
+  gap:8px!important;
 
   text-align:left!important;
   word-break:keep-all!important;
@@ -945,10 +945,10 @@ html body .page .export-panel.image-panel.ruben-panel > .caption.ruben-caption >
   opacity:1!important;
   font-size:70px!important;
   font-weight:500!important;
-  line-height:1.42!important;
+  line-height:1.36!important;
   letter-spacing:-.044em!important;
 
-  white-space:normal!important;
+  white-space:nowrap!important;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
 
