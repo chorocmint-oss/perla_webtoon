@@ -623,10 +623,10 @@ html body .page .export-panel.image-panel.carmin-panel > .overlay{
 html body .page .export-panel.image-panel.carmin-panel:before{
   content:""!important;
   position:absolute!important;
-  top:42%!important;
+  top:58%!important;
   right:4.4%!important;
   width:43%!important;
-  height:34%!important;
+  height:24%!important;
   z-index:3!important;
   pointer-events:none!important;
   opacity:1!important;
@@ -658,7 +658,7 @@ html body .page .export-panel.image-panel.carmin-panel > .caption.carmin-caption
   position:absolute!important;
   left:auto!important;
   right:4.0%!important;
-  top:58.5%!important;
+  top:75%!important;
   bottom:auto!important;
   transform:none!important;
 
