@@ -936,15 +936,15 @@ html body .page .export-panel.image-panel.ruben-panel > .caption.ruben-caption >
 }
 
 /* 7컷: .vow-panel / assets/09_letter_sword_flower.png / 두 사람의 맹세가 하나로 모이는 중앙 서약 컷 */
-/* 목적: 07과 08에서 갈라진 흐름을 중앙으로 수렴시켜, 편지·칼·꽃 위에 조용하지만 분명한 서약문처럼 얹는다. */
-/* 주의: 이 블록은 09_letter_sword_flower.png 전용이다. styles.css는 건드리지 않고, .vow-panel로만 제한한다. */
+/* 목적: 07 우측, 08 좌측으로 갈라진 흐름을 중앙의 서약문으로 수렴시킨다. */
+/* 주의: 이 블록은 09_letter_sword_flower.png 전용이다. styles.css는 건드리지 않고 .vow-panel로만 제한한다. */
 html body .page .export-panel.image-panel.vow-panel{
   background:#04070d!important;
   position:relative!important;
   overflow:hidden!important;
 }
 
-/* 이미지: 편지, 칼, 꽃 디테일은 유지하고 전체를 과하게 죽이지 않는다. */
+/* 이미지: 편지, 칼, 마른 꽃 디테일이 먼저 읽히도록 밝기와 질감을 과하게 죽이지 않는다. */
 html body .page .export-panel.image-panel.vow-panel > img{
   object-fit:cover!important;
   object-position:center center!important;
@@ -962,7 +962,7 @@ html body .page .export-panel.image-panel.vow-panel > .image-wash.vow-wash{
     linear-gradient(135deg,rgba(58,76,102,.065) 0%,rgba(58,76,102,.018) 30%,rgba(0,0,0,0) 58%,rgba(112,96,72,.035) 100%)!important;
 }
 
-/* 가장자리만 눌러 중앙 서약문과 소품이 함께 살아 있게 둔다. */
+/* 전체 오버레이: 중앙 소품과 텍스트는 살리고, 좌우와 하단만 조용히 닫는다. */
 html body .page .export-panel.image-panel.vow-panel > .overlay{
   z-index:2!important;
   background:
@@ -971,7 +971,7 @@ html body .page .export-panel.image-panel.vow-panel > .overlay{
     linear-gradient(to top,#04070d 0%,rgba(4,7,13,.28) 11%,rgba(4,7,13,.08) 24%,rgba(4,7,13,0) 46%)!important;
 }
 
-/* 중앙 박스 무대: 유지하되, 아주 얇은 기록 밴드처럼만 남긴다. */
+/* 중앙 무대: 캡션 뒤에 아주 약한 공기층만 만든다. 박스처럼 진하게 보이면 안 된다. */
 html body .page .export-panel.image-panel.vow-panel:before{
   content:""!important;
   position:absolute!important;
@@ -979,33 +979,33 @@ html body .page .export-panel.image-panel.vow-panel:before{
   top:50%!important;
   transform:translate(-50%,-50%)!important;
   width:56%!important;
-  height:46%!important;
+  height:48%!important;
   z-index:3!important;
   pointer-events:none!important;
   opacity:1!important;
   background:
-    radial-gradient(ellipse at 50% 50%,rgba(8,12,18,.34) 0%,rgba(8,12,18,.16) 50%,rgba(8,12,18,.045) 78%,rgba(8,12,18,0) 100%),
-    repeating-linear-gradient(0deg,rgba(238,230,214,.007) 0 1px,transparent 1px 22px)!important;
+    radial-gradient(ellipse at 50% 50%,rgba(8,12,18,.12) 0%,rgba(8,12,18,.055) 50%,rgba(8,12,18,.014) 78%,rgba(8,12,18,0) 100%),
+    repeating-linear-gradient(0deg,rgba(238,230,214,.004) 0 1px,transparent 1px 22px)!important;
   -webkit-mask-image:linear-gradient(to right,transparent 0%,black 10%,black 90%,transparent 100%)!important;
   mask-image:linear-gradient(to right,transparent 0%,black 10%,black 90%,transparent 100%)!important;
 }
 
-/* 입자와 하단 마감: 약하게만. */
+/* 미세 입자와 하단 닫힘. 세로선과 글자보다 튀지 않게 낮춘다. */
 html body .page .export-panel.image-panel.vow-panel:after{
   content:""!important;
   position:absolute!important;
   inset:0!important;
   z-index:5!important;
   pointer-events:none!important;
-  opacity:.32!important;
+  opacity:.30!important;
   background:
-    radial-gradient(circle at 42% 66%,rgba(238,230,214,.024) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 58% 72%,rgba(215,191,134,.020) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 42% 66%,rgba(238,230,214,.022) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 58% 72%,rgba(215,191,134,.018) 0 1px,transparent 1.8px),
     linear-gradient(to bottom,rgba(4,7,13,0) 0%,rgba(4,7,13,0) 54%,rgba(4,7,13,.06) 74%,#04070d 100%)!important;
   background-size:220px 240px,250px 250px,100% 100%!important;
 }
 
-/* 중앙 서약문 박스: 완전 정중앙. 박스는 유지하되 가볍게. */
+/* 중앙 서약문 박스: 정중앙. 배경은 한 장짜리 :before로만 깔아 분절돼 보이지 않게 한다. */
 html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption{
   position:absolute!important;
   left:50%!important;
@@ -1013,12 +1013,12 @@ html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption{
   bottom:auto!important;
   transform:translate(-50%,-50%)!important;
 
-  width:1160px!important;
-  min-width:1160px!important;
-  max-width:1160px!important;
+  width:1180px!important;
+  min-width:1180px!important;
+  max-width:1180px!important;
 
   z-index:8!important;
-  padding:38px 0 42px!important;
+  padding:46px 44px 50px!important;
 
   display:flex!important;
   flex-direction:column!important;
@@ -1036,37 +1036,57 @@ html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption{
   font-weight:400!important;
 
   color:#efe7d9!important;
-  background:
-    radial-gradient(ellipse at 50% 50%,rgba(6,10,16,.22) 0%,rgba(6,10,16,.10) 54%,rgba(6,10,16,0) 100%),
-    linear-gradient(to right,rgba(6,10,16,0) 0%,rgba(6,10,16,.10) 18%,rgba(6,10,16,.16) 50%,rgba(6,10,16,.10) 82%,rgba(6,10,16,0) 100%)!important;
-  border-top:1px solid rgba(214,198,164,.15)!important;
-  border-bottom:1px solid rgba(214,198,164,.09)!important;
-  border-left:0!important;
-  border-right:0!important;
-  box-shadow:
-    0 14px 34px rgba(0,0,0,.14),
-    inset 0 1px 0 rgba(255,255,255,.016)!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
   text-shadow:none!important;
-  -webkit-backdrop-filter:blur(1px) saturate(.95)!important;
-  backdrop-filter:blur(1px) saturate(.95)!important;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)!important;
-  mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  isolation:isolate!important;
 }
 
-/* 공통 장식 차단 */
-html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption:before,
+/* 실제 박스: 한 장짜리 아주 옅은 서약 밴드. 줄마다 나뉘어 보이지 않도록 여기서만 배경을 만든다. */
+html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption:before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.032) 0%,rgba(255,255,255,.014) 36%,rgba(255,255,255,0) 100%),
+    linear-gradient(to right,rgba(10,14,22,.020) 0%,rgba(10,14,22,.046) 20%,rgba(10,14,22,.065) 50%,rgba(10,14,22,.046) 80%,rgba(10,14,22,.020) 100%)!important;
+  border-top:1px solid rgba(214,198,164,.10)!important;
+  border-bottom:1px solid rgba(214,198,164,.06)!important;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.07),
+    inset 0 1px 0 rgba(255,255,255,.012)!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%)!important;
+}
+
+/* 공통 장식 차단. */
 html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption:after{
   content:none!important;
   display:none!important;
 }
 
-/* 1행: 가장 얇고 가장 작게 */
+/* 캡션 내부 요소는 박스 위로 올린다. */
+html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vow-line,
+html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vow-divider{
+  position:relative!important;
+  z-index:1!important;
+}
+
+/* 1행: 가장 얇고 담담한 도입. */
 html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vow-line-small{
   display:block!important;
   width:100%!important;
-  color:#e1ddd3!important;
-  opacity:.74!important;
-  font-size:54px!important;
+  background:none!important;
+  color:#e3dfd5!important;
+  opacity:.76!important;
+  font-size:58px!important;
   font-weight:400!important;
   line-height:1.34!important;
   letter-spacing:-.024em!important;
@@ -1079,18 +1099,19 @@ html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vo
     0 0 12px rgba(0,0,0,.48)!important;
 }
 
-/* 첫 문장과 둘째 문장 사이 여백 확장 */
+/* 1행과 2행 사이 여백. */
 html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vow-line-small + .vow-line-main{
-  margin-top:34px!important;
+  margin-top:40px!important;
 }
 
-/* 2행: 중간 단계. 그림자감은 유지 */
+/* 2행: 중간 단계. 그림자감 유지. */
 html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vow-line-main{
   display:block!important;
   width:100%!important;
-  color:#f0e8db!important;
-  opacity:.97!important;
-  font-size:72px!important;
+  background:none!important;
+  color:#f1e9dc!important;
+  opacity:.98!important;
+  font-size:78px!important;
   font-weight:500!important;
   line-height:1.30!important;
   letter-spacing:-.038em!important;
@@ -1100,37 +1121,38 @@ html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vo
   text-align:center!important;
   text-shadow:
     0 6px 20px rgba(0,0,0,.95),
-    0 0 26px rgba(0,0,0,.70),
+    0 0 28px rgba(0,0,0,.72),
     0 0 2px rgba(255,255,255,.08)!important;
 }
 
-/* 세로선: 더 길고 더 굵고 더 선명하게 */
+/* 세로선: 이미지 크기에서도 보이도록 길이, 두께, 광량을 올린다. */
 html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vow-divider{
   display:block!important;
-  width:2px!important;
-  height:86px!important;
-  margin:48px 0 42px!important;
+  width:4px!important;
+  height:128px!important;
+  margin:64px 0 54px!important;
   opacity:1!important;
   background:
     linear-gradient(to bottom,
-      rgba(214,198,164,0) 0%,
-      rgba(214,198,164,.78) 18%,
-      rgba(214,198,164,.96) 50%,
-      rgba(214,198,164,.34) 82%,
-      rgba(214,198,164,0) 100%)!important;
+      rgba(230,218,184,0) 0%,
+      rgba(230,218,184,.88) 18%,
+      rgba(245,235,204,1) 50%,
+      rgba(230,218,184,.50) 84%,
+      rgba(230,218,184,0) 100%)!important;
   box-shadow:
-    0 0 12px rgba(214,198,164,.20),
-    0 0 26px rgba(214,198,164,.08),
-    0 0 18px rgba(0,0,0,.42)!important;
+    0 0 16px rgba(230,218,184,.32),
+    0 0 38px rgba(230,218,184,.16),
+    0 0 24px rgba(0,0,0,.50)!important;
 }
 
-/* 3행: 결의. 가장 크게 */
+/* 3행: 결의. 가장 크고 가장 선명하게. */
 html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vow-line-final{
   display:block!important;
   width:100%!important;
-  color:#f3ebdd!important;
+  background:none!important;
+  color:#f4ecde!important;
   opacity:1!important;
-  font-size:84px!important;
+  font-size:90px!important;
   font-weight:500!important;
   line-height:1.30!important;
   letter-spacing:-.042em!important;
@@ -1140,6 +1162,6 @@ html body .page .export-panel.image-panel.vow-panel > .caption.vow-caption > .vo
   text-align:center!important;
   text-shadow:
     0 8px 26px rgba(0,0,0,1),
-    0 0 34px rgba(0,0,0,.80),
+    0 0 36px rgba(0,0,0,.82),
     0 0 2px rgba(255,255,255,.10)!important;
 }
