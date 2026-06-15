@@ -1334,7 +1334,7 @@ html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption >
   display:block!important;
   width:320px!important;
   height:3px!important;
-  margin:42px 0 46px!important;
+  margin:44px 0 44px!important;
   opacity:1!important;
   background:
     linear-gradient(to right,
@@ -1372,9 +1372,9 @@ html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption >
 
 /* 두 번째 금선: 마지막 문장을 훨씬 멀리 떼어내기 위한 긴 침묵. */
 html body .page .export-panel.image-panel.lilia-panel > .caption.lilia-caption > .lilia-divider-second{
-  width:300px!important;
+  width:320px!important;
   height:3px!important;
-  margin:88px 0 118px!important;
+  margin:104px 0 104px!important;
   opacity:1!important;
   background:
     linear-gradient(to right,
