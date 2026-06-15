@@ -1511,11 +1511,11 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   display:block!important;
   width:100%!important;
 
-  color:#e4ddd2!important;
-  opacity:.88!important;
-  font-size:54px!important;
+  color:#d9d0c3!important;
+  opacity:.82!important;
+  font-size:60px!important;
   font-weight:400!important;
-  line-height:1.22!important;
+  line-height:1.24!important;
   letter-spacing:-.026em!important;
 
   white-space:nowrap!important;
@@ -1524,8 +1524,8 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   text-align:center!important;
 
   text-shadow:
-    0 4px 14px rgba(0,0,0,.88),
-    0 0 14px rgba(0,0,0,.48)!important;
+    0 5px 16px rgba(0,0,0,.92),
+    0 0 14px rgba(0,0,0,.54)!important;
 }
 
 /* 둘째 줄: 한 줄로 강하게. 점층형처럼 과하게 키우지 않고, 선언만 선명하게. */
@@ -1533,11 +1533,11 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   display:block!important;
   width:100%!important;
 
-  color:#f5ecde!important;
-  opacity:1!important;
-  font-size:76px!important;
+  color:#e9dfcf!important;
+  opacity:.95!important;
+  font-size:84px!important;
   font-weight:500!important;
-  line-height:1.24!important;
+  line-height:1.26!important;
   letter-spacing:-.040em!important;
 
   white-space:nowrap!important;
@@ -1546,7 +1546,7 @@ html body .page .export-panel.image-panel.winter-threshold-panel > .caption.wint
   text-align:center!important;
 
   text-shadow:
-    0 7px 22px rgba(0,0,0,1),
-    0 0 28px rgba(0,0,0,.76),
-    0 0 2px rgba(255,255,255,.10)!important;
+    0 8px 24px rgba(0,0,0,1),
+    0 0 30px rgba(0,0,0,.82),
+    0 0 2px rgba(255,255,255,.06)!important;
 }
